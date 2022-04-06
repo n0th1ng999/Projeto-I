@@ -6,6 +6,6 @@
     "tailwindcss": "^3.0.23"
   },
 
-  "scripts":{"BuildCss":"npx tailwindcss -i ./s configuration.rc/input.css -o ./styles/output.css --watch"
+  "scripts":{"BuildCss":"npx tailwindcss -i ./src/input.css -o ./styles/output.css --watch"
   }
 }
