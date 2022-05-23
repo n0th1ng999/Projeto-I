@@ -1,0 +1,101 @@
+@import url(Colors.css);
+
+body{
+    margin:0;
+    display: flex;
+    flex-direction: column;
+}
+
+/*display*/
+
+.d-flex{
+    display: flex;
+}
+
+/* flex */
+
+.flex-column{
+    flex-direction: column;
+}
+
+.flex-center{
+    justify-content: center;
+    align-items: center;
+}
+
+/* Width */
+
+.w-full{
+    width: 100%;
+    grid-column: 1 / 9;
+}
+
+/* Height */
+
+.h-full{
+    height: 100%;
+}
+
+/*PADDING MOBILE*/
+.padding-L{
+    padding: 30px;
+}
+
+.padding-M{
+    padding: 20px;
+}
+
+.padding-S{
+    padding: 10px;
+}
+
+/*MARGIN MOBILE*/
+.margin-L{
+    margin: 30px;
+}
+
+.margin-M{
+    margin: 20px;
+}
+
+.margin-S{
+    margin: 10px;
+}
+
+
+@media only screen and (min-width: 1000px) {
+
+    body{
+        display:grid;
+        grid-template-columns: repeat(9, auto); 
+    }
+
+    /*PADDING DESKTOP*/
+
+    .padding-L{
+        padding: 50px;
+    }
+    
+    .padding-M{
+        padding: 40px;
+    }
+    
+    .padding-S{
+        padding: 30px;
+    }
+
+    /*MARGIN DESKTOP*/
+    
+    .margin-L{
+        margin: 50px;
+    }
+    
+    .margin-M{
+        margin: 40px;
+    }
+    
+    .margin-S{
+        margin: 30px;
+    }
+
+}

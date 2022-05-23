@@ -1,0 +1,42 @@
+:root{
+
+     /*Yellow and Shades*/
+     
+    --Yellow: #F9ED69;
+    
+    --Yellow_S_1:#FFFBCC;
+
+     /*Marroon and Shades*/
+
+    --Orange:#F08A5D;
+
+    --Orange_S_1:#FFEAE1;
+
+    /*Marroon and Shades*/
+
+    --Marroon:#F08A5D;
+
+    --Marroon_S_1:#FF618D;
+
+    --Marroon_S_2:#FFAEC5;
+    
+    --Marroon_S_3:#FFD7E2;
+
+
+    /*Purple and Shades*/
+
+    --Purple:#6A2C70;
+    
+    --Purple_S_1:#F69AFF;
+
+    --Purple_S_2:#F1A6F8;
+    
+    --Purple_S_3:#FCD6FF;
+    
+    --Purple_S_4:#FDE7FF;
+
+    /*black*/
+
+    --Black:#181818;
+
+}
