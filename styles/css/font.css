@@ -1,0 +1,156 @@
+:root{
+    font-size: 16px;
+}
+
+p,h1,h2,h3,h4,h5{
+    margin:0
+}
+
+@font-face {
+    font-family: Heading;
+    src: url(fonts/Uniform_Rounded/Uniform\ Rounded\ Condensed\ Black.otf);
+  }
+
+  @font-face {
+    font-family: Body;
+    src: url(fonts/Hind_Siliguri/HindSiliguri-Medium.ttf);
+  }
+
+/*font-family*/
+
+.Heading{
+    font-family: Heading;
+}
+
+.Body{
+    font-family: Body;
+}
+    
+
+/*font-size Mobile*/
+
+.f-size-XL{
+    font-size:55px;
+  
+}
+
+.f-size-L{
+    font-size:50px;
+    
+}
+
+.f-size-M{
+    font-size:40px;
+   
+}
+
+.f-size-S{
+    font-size:24px;
+    
+}
+
+.f-size-XS{
+    font-size:20px;
+    
+}
+
+.f-size-XXS{
+    font-size:16px;
+    
+}
+
+/*line-height Mobile*/
+
+.line-height-XL{
+    line-height:45px;
+  
+}
+
+.line-height-L{
+    line-height:30px;
+  
+}
+
+.line-height-M{
+    line-height:24px;
+  
+}
+
+.line-height-S{
+    line-height:20px;
+  
+}
+
+.line-height-XS{
+    line-height:18px;
+  
+}
+
+
+
+
+
+@media only screen and (min-width: 1368px) {
+    
+    /*font-size Desktop*/
+    .f-size-XXL{
+        font-size:96px
+    }
+    
+    .f-size-XL{
+        font-size:76px
+    }
+
+    .f-size-L{
+        font-size:76px
+    }
+    
+    
+    .f-size-M{
+        font-size:64px
+    }
+    
+    .f-size-S{
+        font-size:56px
+    }
+    
+    .f-size-XS{
+        font-size:40px
+    }
+    
+    .f-size-XXS{
+        font-size:30px
+    }
+
+    /*line-height Desktop*/
+
+    .line-height-XL{
+        line-height:60px;
+    
+    }
+
+    .line-height-L{
+        line-height:50px;
+    
+    }
+
+    .line-height-M{
+        line-height:40px;
+    
+    }
+
+    .line-height-S{
+        line-height:25px;
+    
+    }
+
+    .line-height-XS{
+        line-height:20px;
+    
+    }
+
+    .line-height-XXS{
+        line-height:18px;
+    
+    }
+}

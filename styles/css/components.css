@@ -1,0 +1,85 @@
+
+
+/* Avatar icon Landing Page*/
+.Avatar{
+    height: 100px;
+}
+
+/* Carousel Word.it */
+.carousel{
+  
+    height: fit-content;
+    display: -webkit-inline-box;
+    overflow: hidden;
+
+}
+
+.carousel > div{
+    width: 1.2em;
+    height: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;   
+    
+}
+
+
+
+
+.carousel div:nth-child(1n+0) {
+    background: var(--Purple);
+    color: var(--Yellow)
+  }
+
+  
+  .carousel div:nth-child(2n+0) {
+    background: var(--Marroon);
+    color: var(--Orange)
+  }
+  
+  .carousel div:nth-child(3n+0) {
+    background: var(--Orange);
+    color: var(--Marroon)
+  }
+  .carousel div:nth-child(4n+0) {
+    background: var(--Yellow);
+    color: var(--Purple)
+  }
+  
+  .carousel div:nth-child(5n+0) {
+    background: white;
+    color: var(--Black)
+  }
+  
+  /* Pill */
+
+  .Pill{
+    
+    
+    display: flex;  
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border:none;
+    background-color: var(--Yellow);
+    color: var(--Purple);
+    border-radius: 150px;
+    width: 370px;
+    height: 80px;
+  }
+  
+
+
+
+
+
+@media only screen and (min-width: 1368px) {
+    /* Avatar icon Landing Page*/
+    .Avatar{
+        height: 200px;
+    }
+
+
+}
+
+

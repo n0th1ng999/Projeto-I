@@ -1,7 +1,7 @@
 :root{
 
      /*Yellow and Shades*/
-     
+
     --Yellow: #F9ED69;
     
     --Yellow_S_1:#FFFBCC;
@@ -14,7 +14,7 @@
 
     /*Marroon and Shades*/
 
-    --Marroon:#F08A5D;
+    --Marroon:#B83B5E;
 
     --Marroon_S_1:#FF618D;
 
@@ -39,4 +39,124 @@
 
     --Black:#181818;
 
+}
+
+/* Background */
+
+.bg-Yellow{
+    background-color: var(--Yellow);
+}
+
+.bg-Yellow_S_1{
+    background-color: var(--Yellow_S_1);
+}
+
+.bg-Orange{
+    background-color: var(--Orange);
+}
+
+.bg-Orange_S_1{
+    background-color: var(--Orange_S_1);
+}
+
+.bg-Marroon{
+    background-color: var(--Marroon);
+}
+
+.bg-Marroon_S_1{
+    background-color: var(--Marroon_S_1);
+}
+
+.bg-Marroon_S_2{
+    background-color: var(--Marroon_S_2);
+}
+
+.bg-Marroon_S_3{
+    background-color: var(--Marroon_S_3);
+}
+
+.bg-Purple{
+    background-color: var(--Purple);
+}
+
+.bg-Purple_S_1{
+    background-color: var(--Purple_S_1);
+}
+
+.bg-Purple_S_2{
+    background-color: var(--Purple_S_2);
+}
+
+.bg-Purple_S_3{
+    background-color: var(--Purple_S_3);
+}
+
+.bg-Purple_S_4{
+    background-color: var(--Purple_S_4);
+}
+
+.bg-white{
+    background-color: white;
+}
+
+/* Color (font) */
+
+.color-Yellow{
+    color: var(--Yellow);
+}
+
+.color-Yellow_S_1{
+    color: var(--Yellow_S_1);
+}
+
+.color-Orange{
+    color: var(--Orange);
+}
+
+.color-Orange_S_1{
+    color: var(--Orange_S_1);
+}
+
+.color-Marroon{
+    color: var(--Marroon);
+}
+
+.color-Marroon_S_1{
+    color: var(--Marroon_S_1);
+}
+
+.color-Marroon_S_2{
+    color: var(--Marroon_S_2);
+}
+
+.color-Marroon_S_3{
+    color: var(--Marroon_S_3);
+}
+
+.color-Purple{
+    color: var(--Purple);
+}
+
+.color-Purple_S_1{
+    color: var(--Purple_S_1);
+}
+
+.color-Purple_S_2{
+    color: var(--Purple_S_2);
+}
+
+.color-Purple_S_3{
+    color: var(--Purple_S_3);
+}
+
+.color-Purple_S_4{
+    color: var(--Purple_S_4);
+}
+
+.color-Black{
+    color: var(--Black);
+}
+
+.color-White{
+    color:white;
 }
