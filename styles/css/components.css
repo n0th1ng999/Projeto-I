@@ -1,5 +1,3 @@
-
-
 /* Avatar icon Landing Page*/
 .Avatar{
     height: 100px;
@@ -7,11 +5,10 @@
 
 /* Carousel Word.it */
 .carousel{
-  
     height: fit-content;
     display: -webkit-inline-box;
     overflow: hidden;
-
+    z-index: 0;
 }
 
 .carousel > div{
@@ -20,11 +17,14 @@
     display: flex;
     justify-content: center;
     align-items: baseline;   
-    
+    transition: all ease-in-out 0.2s;
+    user-select: none;
 }
 
-
-
+.carousel > div:hover{
+  transform: scale(1.1);
+  z-index: 0;
+}
 
 .carousel div:nth-child(1n+0) {
     background: var(--Purple);
@@ -54,8 +54,6 @@
   /* Pill */
 
   .Pill{
-    
-    
     display: flex;  
     flex-direction: row;
     justify-content: center;
@@ -64,22 +62,26 @@
     background-color: var(--Yellow);
     color: var(--Purple);
     border-radius: 150px;
-    width: 370px;
-    height: 80px;
+    padding-inline: 1.0em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    margin-bottom: 30px;
   }
   
-
-
-
-
+/* */
+.navLandingPage{
+  display: flex;
+  justify-content: space-around ;
+  
+}
 
 @media only screen and (min-width: 1368px) {
     /* Avatar icon Landing Page*/
     .Avatar{
         height: 200px;
     }
-
-
+ 
+    .Pill{
+      margin-bottom: 50px;
+    }
 }
-
-

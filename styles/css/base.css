@@ -5,6 +5,12 @@ body{
     scroll-behavior: smooth;
 }
 
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
 /*display*/
 
 .d-flex{
@@ -33,8 +39,6 @@ body{
     align-items: center;
 }
 
-
-
 /* Width */
 
 .w-full{
@@ -46,102 +50,4 @@ body{
 
 .h-full{
     height: 100%;
-}
-
-
-/* SPACING */
-
-
-/*GAP MOBILE (GAP = DISTANCE BETWEEN FLEX ITEMS)*/
-.gap-L{
-    gap:30px
-}
-
-.gap-M{
-    gap:20px
-}
-
-.gap-S{
-    gap:10px
-}
-
-
-/*PADDING MOBILE*/
-.padding-L{
-    padding: 30px;
-}
-
-.padding-M{
-    padding: 20px;
-}
-
-.padding-S{
-    padding: 10px;
-}
-
-/*MARGIN MOBILE*/
-.margin-L{
-    margin: 30px;
-}
-
-.margin-M{
-    margin: 20px;
-}
-
-.margin-S{
-    margin: 10px;
-}
-
-.margin-0{
-    margin: 0;
-}
-
-@media only screen and (min-width: 1368px) {
-
-    body{
-        display:grid;
-        grid-template-columns: repeat(9, auto); 
-    }
-
-    /*PADDING DESKTOP*/
-
-    .padding-L{
-        padding: 50px;
-    }
-    
-    .padding-M{
-        padding: 40px;
-    }
-    
-    .padding-S{
-        padding: 30px;
-    }
-
-    /*MARGIN DESKTOP*/
-    
-    .margin-L{
-        margin: 50px;
-    }
-    
-    .margin-M{
-        margin: 40px;
-    }
-    
-    .margin-S{
-        margin: 30px;
-    }
-
-    /*GAP DESKTOP (GAP = DISTANCE BETWEEN FLEX ITEMS)*/
-    .gap-L{
-        gap:50px
-    }
-
-    .gap-M{
-        gap:40px
-    }
-
-    .gap-S{
-        gap:30px
-    }
-
 }
