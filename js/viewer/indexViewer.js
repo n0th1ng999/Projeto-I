@@ -2,7 +2,7 @@ const carousels = document.querySelectorAll('.carousel');
 
     carousels.forEach(carousel => {
 
-        carousel.scrollLeft = Math.floor(Math.random() * 3000);
+        carousel.scrollLeft = Math.floor(Math.random() * 2000) + 1000;
 
         let direction = Boolean(Math.random())
 

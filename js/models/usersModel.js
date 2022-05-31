@@ -7,7 +7,7 @@ export class users{
     #email = ""
     #rank=""
     #Achievements = [] // array of Achievement Id's
-    #Lessons = [] // array of Lesson Id's
+    #Lessons = [] // array of Completed Lessons Id's'
     #Friends = [] // array of Friend Id's'
     #allXp = 0 // All time Xp
     #weekXp = 0 // week Xp
@@ -19,8 +19,8 @@ export class users{
         this.#password   = password
         this.#email = email
         this.#rank = 'begginner'
-        this.#Achievements = []
-        this.#Lessons = []
+        this.#Achievements = [] 
+        this.#Lessons = []  
         this.#Friends = []
         this.#allXp = 0
         this.#weekXp = 0
@@ -86,7 +86,51 @@ export class users{
         
         set email(value){
             if(value.includes('@') && value.includes('.')){
-                
-            }else{}
+                this.#email =  value
+            }else{
+                throw new Error('invalid email')
+            }
         }
+
+        finishLesson(LessonId) {
+            
+            if(this.#Lessons.indexOf(LessonId) == -1){
+                this.#Lessons.push(LessonId)
+            }else{
+                throw new Error('Lesson was already completed')
+            }
+            
+        }
+
+        getAchievement(AchievementId) {
+            
+            if(this.#Achievements.indexOf(AchievementId) == -1){
+                this.#Achievements.push(AchievementId)
+            }else{
+                throw new Error('Achievement was already completed')
+            }
+            
+        }
+
+        addFriend(friendId) {
+            
+            if(this.#Friends.indexOf(friendId) == -1){
+                this.#Friends.push(friendId)
+            }else{
+                throw new Error('Friend was already added')
+            }
+            
+        }
+
+        addXP(value) {
+            this.#allXp  += value
+            this.#weekXp += value
+
+        }
+
+        resetWeekXP(){
+            this.#weekXp = 0
+        }
+
+
 }
