@@ -9,6 +9,7 @@
     display: -webkit-inline-box;
     overflow: hidden;
     z-index: 0;
+    background-color: var(--Marroon);
 }
 
 .carousel > div{
@@ -21,8 +22,8 @@
     user-select: none;
 }
 
-.carousel > div:hover{
-  transform: scale(1.1);
+.carousel > div:hover {
+  transform: scale(1.20);
   z-index: 0;
 }
 

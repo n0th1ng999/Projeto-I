@@ -1,6 +1,11 @@
-let usersDB = []
+let usersDBjson = localStorage.getItem('usersDB') 
 
-export class users{
+let usersDB = []
+if(usersDBjson){
+    usersDB = JSON.parse(usersDBjson)
+}
+
+export default class users{
     #id = 0
     #name = ""
     #password = ""
@@ -11,6 +16,7 @@ export class users{
     #Friends = [] // array of Friend Id's'
     #allXp = 0 // All time Xp
     #weekXp = 0 // week Xp
+    #blocked = false
 
 
     constructor(name, password, email){
@@ -24,6 +30,7 @@ export class users{
         this.#Friends = []
         this.#allXp = 0
         this.#weekXp = 0
+        this.#blocked = false
 
     }
 
@@ -67,20 +74,23 @@ export class users{
             return this.#weekXp
         }
 
+        get blocked(){ 
+            return this.#blocked
+        }
 
         set name(value){
-            if(value.length >= 5 && value.length <= 15){
+            if(value.length >= 5 && value.length <= 20){
                 this.#name = value
             }else{
-                throw new Error('Name lenght must be between 5-15 characters')
+                throw new Error('Name lenght must be between 5-20 characters')
             }
         }
 
         set password(value){
-            if(value.length >= 5 && value.length <= 15){
+            if(value.length >= 5 && value.length <= 20){
                 this.#password = value
             }else{
-                throw new Error('Password lenght must be between 5-15 characters')
+                throw new Error('Password lenght must be between 5-20 characters')
             }
         }
         
@@ -90,6 +100,10 @@ export class users{
             }else{
                 throw new Error('invalid email')
             }
+        }
+
+        set blocked(boolean){
+            this.#blocked = boolean
         }
 
         finishLesson(LessonId) {
@@ -131,6 +145,5 @@ export class users{
         resetWeekXP(){
             this.#weekXp = 0
         }
-
 
 }

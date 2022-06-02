@@ -1,3 +1,7 @@
+/**
+ * CAROUSEL // WORD.IT LOGO //
+ */
+
 const carousels = document.querySelectorAll('.carousel');
 
     carousels.forEach(carousel => {
@@ -24,4 +28,9 @@ const carousels = document.querySelectorAll('.carousel');
                
         }, 15)     
     })
+
+/**
+ * Sign In //
+ */
+
 
