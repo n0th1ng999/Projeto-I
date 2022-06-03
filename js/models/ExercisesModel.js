@@ -1,5 +1,3 @@
-const ExercisesDB = localStorage.getItem('ExercisesDB') || []
-
 export default class Exercises{
    #id="" // Exercise ID
    #question ="" // Question
@@ -7,7 +5,7 @@ export default class Exercises{
    #CorrectAnswer = 0 // CorrectAnswer(s) Index
    #LessonId = 0 // Respective Lesson Id
 
-   constructor(question, answers, CorrectAnswer, LessonId) {
+   constructor(ExercisesDB, question, answers, CorrectAnswer, LessonId) {
       this.#id = ExercisesDB.length == 0 ? 1 : ExercisesDB[ExercisesDB.length - 1].id + 1
       this.#question = question
       this.#Answers = answers

@@ -1,4 +1,3 @@
-const MissionsDB = localStorage.getItem('MissionsDB') || []
 export default class Missions{
     #id = 0
     #name = ''
@@ -7,7 +6,7 @@ export default class Missions{
     #funcIdentifier = '' // Identifier for type of Mission
     #type = '' // daily , weekly , monthly
     
-    constructor(name, quest, xp , funcIdentifier, type ){
+    constructor(MissionsDB,name, quest, xp , funcIdentifier, type ){
         this.#id = MissionsDB.length == 0 ? 1 : MissionsDB[MissionsDB.length - 1].id + 1;
         this.#name = name ;
         this.#quest = quest ;

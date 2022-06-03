@@ -8,72 +8,94 @@ import Achievements from './models/AchievementsModel.js'
 const date = new Date();
 
 /* Check existence of LocalDB Storage */
-let usersDBjson = localStorage.getItem('usersDB') || false
+let usersDBjson = localStorage.getItem('usersDB') 
 
-let LessonsDBjson = localStorage.getItem('LessonsDB') || false
+let LessonsDBjson = localStorage.getItem('LessonsDB') 
 
-let ExercisesDBjson = localStorage.getItem('ExercisesDB') || false 
+let ExercisesDBjson = localStorage.getItem('ExercisesDB') 
 
-let AchievementsDBjson = localStorage.getItem('AchievementsDB') || false
+let AchievementsDBjson = localStorage.getItem('AchievementsDB') 
 
-let ModulesDBjson = localStorage.getItem('ModulesDB') || false 
+let ModulesDBjson = localStorage.getItem('ModulesDB')  
 
-let MissionsDBjson = localStorage.getItem('MissionsDB') || false
-
-
+let MissionsDBjson = localStorage.getItem('MissionsDB') 
 
 /* if it doesnt exist, create it */
-if(!usersDBjson){ 
-    /* create usersDB */
-    console.log('Creating usersDB')
-    localStorage.setItem('usersDB','[]')
-    const usersDB =  []
+
+
+    /* INITIALIZING USERSDB */
+        if(!usersDBjson){ 
+            console.log('Creating USERS');
+             /* create usersDB */
+            localStorage.setItem('usersDB','[]')
+            const usersDB =  []
+            
+            /* push users to usersDB */
+            usersDB.push(new users(usersDB,'Tiago','Password','Email@mail.com'))
+            usersDB.push(new users(usersDB,'Gabriela','Password','Email@mail.com'))
+            console.log(usersDB);
+
+            /* pass usersDB to string */
+            usersDBjson = JSON.stringify(usersDB)
+            console.log(usersDBjson);
+            
+            /* pass usersDB to localStorage */
+            localStorage.setItem('usersDB',usersDBjson)
+
+            }
+
+    /* INITIALIZING LessonsDB */
+        if(!LessonsDBjson){ 
+            /* create LessonsDB */
+            localStorage.setItem('LessonsDB','[]')
+            const LessonsDB =  []
+            
+            /* push Lessons to LessonsDB */
+            LessonsDB.push(new Lessons(LessonsDB,'This','Beginner','1',[],'../that/stuff',20))
+            LessonsDB.push(new Lessons(LessonsDB,'That','Beginner','1',[],'../that/thing',20))
+            console.log(LessonsDB);
+
+            /* pass LessonsDB to string */
+            LessonsDBjson = JSON.stringify(LessonsDB)
+            console.log(LessonsDBjson);
+            
+            /* pass LessonsDB to localStorage */
+            localStorage.setItem('LessonsDB',LessonsDBjson)
+        }
+
+    /* INITIALIZING ExercisesDB */
+        if(!ExercisesDBjson){ 
+            localStorage.setItem('ExercisesDB','[]')
+        }
     
-    /* push users to usersDB */
-    usersDB.push(
-    new users('Tiago','Password','Email@email.com')
-    ,new users('Gabriela','Password','Gmail@email.com'))
-    console.log(usersDB);
+    /* INITIALIZING AchievementsDB */
+        if(!AchievementsDBjson){ 
+            localStorage.setItem('AchievementsDB','[]')
+        }
 
-    /* pass usersDB to string */
-    usersDBjson = JSON.stringify(usersDB)
-    console.log(usersDBjson);
-    
-    /* pass usersDB to localStorage */
-    localStorage.setItem('usersDB',usersDBjson)
-    localStorage.removeItem('usersDB')
+    /* INITIALIZING ModulesDB */
+        if(!ModulesDBjson){ 
+            localStorage.setItem('ModulesDB','[]')
+            const ModulesDB =  []
+            
+        
+            /* push Lessons to LessonsDB */
+            ModulesDB.push(new Modules(ModulesDB,'Begin',[1,2],'beginner'))
+            ModulesDB.push(new Modules(ModulesDB,'Begun',[],'beginner'))
+            console.log(ModulesDB);
 
+            /* pass LessonsDB to string */
+            ModulesDBjson = JSON.stringify(ModulesDB)
+            console.log(ModulesDBjson);
+            
+            /* pass LessonsDB to localStorage */
+            localStorage.setItem('ModulesDB',ModulesDBjson)
+        }
 
-    /* testing */
-    let A1 = new users('Tiago','Password','Email@email.com')
-    const Test = new users('Tiago','Password','Email@email.com')
-    
-    
-
-    localStorage.setItem('TEST', JSON.stringify(Test))
-}
-
-
-
-if(!LessonsDBjson){ 
-    localStorage.setItem('LessonsDB','[]')
-}
-
-if(!ExercisesDBjson){ 
-    localStorage.setItem('ExercisesDB','[]')
-}
-
-if(!AchievementsDBjson){ 
-    localStorage.setItem('AchievementsDB','[]')
-}
-
-if(!ModulesDBjson){ 
-    localStorage.setItem('ModuleDB','[]')
-}
-
-if(!MissionsDBjson){ 
-    localStorage.setItem('MissionsDB','[]')
-}
+    /* INITIALIZING MissionsDB */
+        if(!MissionsDBjson){ 
+            
+        }
 
 
 /* 0 - 6 (from Sunday to Saturday)  */

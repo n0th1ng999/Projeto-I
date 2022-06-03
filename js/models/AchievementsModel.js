@@ -1,6 +1,3 @@
-const AchievmentsDB = localStorage.getItem('AchievmentsDB') || []
-
-
 export default class Achievements{
     #id = 0
     #name = '' // Achievement Name
@@ -8,7 +5,7 @@ export default class Achievements{
     #description = '' ; // Description of Achievement
     #funcIdentifier = '' // Identifier for type of Achievement
 
-    constructor( name, imageUrl, Description , funcIdentifier){
+    constructor(AchievmentsDB, name, imageUrl, Description , funcIdentifier){
         this.#id = AchievmentsDB.length == 0 ? 1 : AchievmentsDB[AchievmentsDB.length - 1].id + 1;
         this.#name = name;
         this.#imageUrl = imageUrl;
