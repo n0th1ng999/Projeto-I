@@ -136,13 +136,32 @@ function ModulesTable() {
     TbodyModulesTable.innerHTML = ''
     for (const module of ModulesDB) {
 
-        TbodyModulesTable.innerHTML += `<tr>
-                <th>${module?.id}</th>
-                <th>${module?.name}</th>
-                <th>${module?.rank}</th>
-                <th><button id="${module?.id}" class="EditModalModule btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditModalModule" >Change Module</button></th>
+        TbodyModulesTable.innerHTML += `
+                      
+                <tr class="bg-light  text-dark">
+                <th class="">${module?.id}</th>
+                <th class="">${module?.name}</th>
+                <th class="">${module?.rank}</th>
+                <th class="">
+                <button id="${module?.id}" class="EditModalModule btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#EditModalModule" >Change Module</button>
+                <div class="btn-group-vertical">
+                <button id="${module?.id}" class="btn btn-default ModuleListUp" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                </svg>
+                </button>
+                <button id="${module?.id}" class="btn btn-default ModuleListDown" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                </svg>
+                </button>
+                </div>
+                  </th>
                 </tr>
-                <tr>`
+                
+                `
 
         // FOR EACH LESSONID OF THIS MODULE
         for (const LessonID of module.lessons) {
@@ -176,9 +195,73 @@ function ModulesTable() {
     }
 
     EditModuleModal_LoadModule()
+    
+    LoadModuleOrderListButtons()
 
     OpenEditLessonModal()
+
 }
+
+function LoadModuleOrderListButtons() {
+    
+    document.querySelectorAll('.ModuleListDown').forEach(btn => btn.addEventListener('mouseup', () => {
+
+        for (const ModuleIndex in ModulesDB) {
+
+            if(ModulesDB[ModuleIndex].id == btn.id){
+
+                if(ModuleIndex < ModulesDB.length - 1){
+
+                    const tempModule =  ModulesDB[ ModuleIndex ]
+
+                    ModulesDB[ ModuleIndex ] = ModulesDB[parseInt(ModuleIndex) + 1 ] 
+
+                    ModulesDB[parseInt(ModuleIndex) + 1] = tempModule
+
+                    break;
+               
+
+                }
+            }
+        }
+        
+        localStorage.setItem('ModulesDB', JSON.stringify(ModulesDB))
+
+        ModulesTable()
+
+
+    }))
+
+    document.querySelectorAll('.ModuleListUp').forEach(btn => btn.addEventListener('mouseup', () => {
+
+        for (const ModuleIndex in ModulesDB) {
+
+            if(ModulesDB[ModuleIndex].id == btn.id){
+
+                if(ModuleIndex > 0){
+
+                    const tempModule =  ModulesDB[ ModuleIndex ]
+
+                    ModulesDB[ ModuleIndex ] = ModulesDB[parseInt(ModuleIndex) - 1 ] 
+
+                    ModulesDB[parseInt(ModuleIndex) - 1] = tempModule
+
+                    break;
+               
+
+                }
+            }
+        }
+        
+        localStorage.setItem('ModulesDB', JSON.stringify(ModulesDB))
+
+        ModulesTable()
+        
+    }))
+
+
+}
+
 
 ModulesTable()
 
@@ -508,7 +591,7 @@ EditModalModule_ModuleLessonsSave.addEventListener('click', () => {
 
 
 /* CREATE LESSONS */
-const lesson_create_Btn = document.querySelector('#lesson_create_Btn')
+const CreateModal_Lesson = document.querySelector('#CreateModal_Lesson')
 
 const lesson_create_name = document.querySelector('#lesson_create_name')
 
@@ -578,7 +661,9 @@ function OpenEditLessonModal() {
 
                     EditModal_Lesson_CurrentUrl.innerHTML += Lesson.urlVideo
                 }
+
                 LessonToEdit = Lesson
+
             }
         }
 
@@ -627,3 +712,334 @@ EditModal_Lesson_DelBtn.addEventListener('click', () => {
 
     ModulesTable()
 })
+
+/* EXERCISES TABLE */
+    const ExercisesTableTbody = document.querySelector('#ExercisesTable tbody')
+
+    /* EXERCISES MODAL BUTTON */
+    const Exercises_CreateBtn = document.querySelector('#Exercises_CreateBtn')
+
+    /* EXERCISES MODAL FieldSet */
+
+        /* EXERCISE NAME */
+
+    const CreateModal_Exercise_name = document.querySelector('#CreateModal_Exercise_name')
+
+        /* ANSWERS / INPUT / ADD / TABLE / SELECT */
+
+    const CreateModal_Exercise_Answer_input = document.querySelector('#CreateModal_Exercise_Answer_input')
+
+    const CreateModal_Exercise_Answer_btn = document.querySelector('#CreateModal_Exercise_Answer_btn')  
+
+    const TableQuestions_Create = document.querySelector('#TableQuestions_Create tbody')
+
+    const CreateModal_Exercise_CorrectAnswer = document.querySelector('#CreateModal_Exercise_CorrectAnswer')
+
+         /* SELECT LESSON */
+
+    const CreateModal_Exercise_Lesson = document.querySelector('#CreateModal_Exercise_Lesson')
+
+    /* EXERCISES MODAL Save */
+    const CreateModal_Exercise_Savebtn = document.querySelector('#CreateModal_Exercise_Savebtn')
+
+    /* EXERCISES LOAD TABLE*/
+    function LoadExercisesTable() {
+        ExercisesTableTbody.innerHTML=''
+        for (const Exercise of ExercisesDB) {
+            for (const Lesson of LessonsDB) {
+                if(Exercise.LessonId == Lesson.id){
+                    
+                   
+                    let row = ''
+
+                    row += 
+                    `
+                    <tr class="Exercise-Row">
+                    <td>${Exercise.id}</td>
+                    <td>${Lesson.name}</td>
+                    <td>${Exercise.question}</td>
+                    <td>
+                    `
+                   
+                    for(const AnswerIndex in Exercise.Answers) {
+        
+                        if( AnswerIndex == Exercise.CorrectAnswer){
+                            row += 
+                            `<span class="text-success">
+                            ${Exercise.Answers[parseInt(AnswerIndex)]}
+                            </span><br>`
+                        }
+                        else{
+                            row += 
+                            `<span> ${Exercise.Answers[parseInt(AnswerIndex)]} </span><br>`
+                        }
+                    }
+
+                    row += `</td><td><button id="${Exercise.id}" class="Exercise_edit btn btn-primary bg-primary" data-bs-toggle="modal" 
+                    data-bs-target="#EditModal_Exercise">Edit Exercise</button></td></tr>`
+
+                    ExercisesTableTbody.innerHTML+=row
+                } 
+            
+            }
+
+        }
+        Load_EditExercise()
+    }
+
+
+    let Exercise_Answers = []
+
+    Exercises_CreateBtn.addEventListener("click", () => {
+        
+        Exercise_Answers = []
+
+        CreateModal_Exercise_name.value = ''
+
+        CreateModal_Exercise_Answer_input.value = ''
+
+        CreateModal_Exercise_CorrectAnswer.value = ''
+
+        CreateModal_Exercise_Lesson.value = ''
+
+        LoadToSelect_Lessons(CreateModal_Exercise_Lesson)
+
+        LoadToSelect_Answers(CreateModal_Exercise_CorrectAnswer)
+
+    })
+
+    CreateModal_Exercise_Answer_btn.addEventListener('click', ()=> {
+
+        console.log(CreateModal_Exercise_Answer_btn);
+
+        if(CreateModal_Exercise_Answer_input.value){
+
+        Exercise_Answers.push(CreateModal_Exercise_Answer_input.value)
+        }   
+
+        LoadToTable_Answers(TableQuestions_Create)
+
+        LoadToSelect_Answers(CreateModal_Exercise_CorrectAnswer)
+
+    })
+    
+
+    function LoadToSelect_Lessons(target){
+
+ 
+        target.innerHTML = ''
+
+        for (const Lesson of LessonsDB) {
+            target.innerHTML += `<option value="${Lesson.id}">${Lesson.name}</option>`
+        }
+        
+    }
+
+    function LoadToSelect_Answers(target){
+
+    
+        target.innerHTML = ''
+
+        for (const AnswerIndex in Exercise_Answers) {
+            target.innerHTML += `<option value="${AnswerIndex}">${Exercise_Answers[AnswerIndex]}</option>`
+        }
+        
+    }
+
+    function LoadToTable_Answers(target){
+        target.innerHTML = ''
+
+        for (const AnswerIndex in Exercise_Answers) {
+            target.innerHTML += `<tr> 
+            <td> ${parseInt(AnswerIndex)+1} </td>
+            <td>${Exercise_Answers[AnswerIndex]}</td>
+            <td><button id="${AnswerIndex}" class="btn btn-danger RemoveAnswer">Remove</button></td>
+            </tr>`
+        }
+
+        Load_RemoveAnswer()
+    }
+
+    function Load_RemoveAnswer(){
+
+        document.querySelectorAll('.RemoveAnswer').forEach(btn => btn.addEventListener('click', () => {
+
+            for (const ExerciseIndex in Exercise_Answers) {
+                
+                if(btn.id == parseInt(ExerciseIndex)){
+                    
+                    Exercise_Answers.splice(parseInt(ExerciseIndex) , 1) 
+                }
+            }
+                LoadToTable_Answers(TableQuestions_Create)
+
+                LoadToSelect_Answers(CreateModal_Exercise_CorrectAnswer)
+
+            }))
+        }
+        
+
+
+    LoadExercisesTable() 
+
+    CreateModal_Exercise_Savebtn.addEventListener('click', () => {
+
+        if(CreateModal_Exercise_name.value){
+
+            if(Exercise_Answers){
+
+        ExercisesDB.push(new Exercises(ExercisesDB, CreateModal_Exercise_name.value , Exercise_Answers , CreateModal_Exercise_CorrectAnswer.value , CreateModal_Exercise_Lesson.value))
+            
+    }
+        }
+
+        Exercise_Answers = []
+
+        const ExercisesDBjson = JSON.stringify(ExercisesDB)
+
+        localStorage.setItem('ExercisesDB', ExercisesDBjson)
+  
+        LoadExercisesTable() 
+
+    })
+
+
+/* EDIT EXERCISE MODAL */ 
+    const EditModal_Exercise_name = document.querySelector('#EditModal_Exercise_name')
+
+    const EditModal_Exercise_Answer_input = document.querySelector('#EditModal_Exercise_Answer_input')
+
+    const EditModal_Exercise_Answer_btn = document.querySelector('#EditModal_Exercise_Answer_btn')
+
+    const TableQuestions_Edit = document.querySelector('#TableQuestions_Edit tbody')
+
+    const EditModal_Exercise_CorrectAnswer = document.querySelector('#EditModal_Exercise_CorrectAnswer')
+
+    const EditModal_Exercise_Lesson = document.querySelector('#EditModal_Exercise_Lesson')
+
+    const  EditModal_Exercise_Savebtn = document.querySelector('#EditModal_Exercise_Savebtn')
+
+    /* INITIALIZE Load_EditExercise */
+
+    let ExerciseToEdit 
+    function Load_EditExercise(){
+
+        
+        document.querySelectorAll('.Exercise_edit').forEach(btn => btn.addEventListener('click', ()=> {
+            
+            ExerciseToEdit = btn.id
+
+            console.log('cliking');
+
+            for (const Exercise of ExercisesDB) {
+                
+                if(Exercise.id == btn.id) {
+                    
+
+                    Exercise_Answers = Exercise.Answers.slice()
+
+                    EditModal_Exercise_name.value = Exercise.question
+                }
+            
+            }
+            
+            EditExercise_LoadTable()
+            
+            LoadToSelect_Lessons(EditModal_Exercise_Lesson)
+
+            LoadToSelect_Answers(EditModal_Exercise_CorrectAnswer)
+           
+        }))
+    }
+
+    function EditExercise_LoadTable(){
+        TableQuestions_Edit.innerHTML = ''
+
+        for (const AnswerID in Exercise_Answers) {
+            TableQuestions_Edit.innerHTML += 
+            `
+            <tr>
+            <td>${AnswerID}</td>
+            <td>${Exercise_Answers[AnswerID]}</td>
+            <td><button id="${AnswerID}" class="RemoveAnswer btn btn-danger">Remove</button></td>
+            </tr>
+            `
+            
+        }
+
+             Edit_Load_RemoveAnswer()
+
+    }
+
+    function Edit_Load_RemoveAnswer(){
+
+        
+
+        document.querySelectorAll('.RemoveAnswer').forEach(btn => btn.addEventListener('click', () => {
+
+            for (const ExerciseIndex in Exercise_Answers) {
+                
+                if(btn.id == parseInt(ExerciseIndex)){
+                    
+               
+                    Exercise_Answers.splice(parseInt(ExerciseIndex) , 1) 
+
+                }
+            }
+
+
+            EditExercise_LoadTable()
+
+            LoadToSelect_Lessons(EditModal_Exercise_Lesson)
+
+            LoadToSelect_Answers(EditModal_Exercise_CorrectAnswer)
+
+            
+        }))
+
+
+    }
+    
+
+    EditModal_Exercise_Answer_btn.addEventListener('click', () => {
+
+        if(EditModal_Exercise_Answer_input.value){
+
+            Exercise_Answers.push(EditModal_Exercise_Answer_input.value)
+        
+            EditExercise_LoadTable()
+            
+            LoadToSelect_Lessons(EditModal_Exercise_Lesson)
+
+            LoadToSelect_Answers(EditModal_Exercise_CorrectAnswer)
+
+            console.log(Exercise_Answers);
+        }
+    })
+
+    EditModal_Exercise_Savebtn.addEventListener('click', () => {
+        
+
+        for (const Exercise of ExercisesDB) {
+
+            if(Exercise.id == ExerciseToEdit){
+
+                Exercise.question = EditModal_Exercise_name.value
+
+                Exercise.Answers = Exercise_Answers
+
+                Exercise.CorrectAnswer = EditModal_Exercise_CorrectAnswer.value
+
+                Exercise.LessonId = EditModal_Exercise_Lesson.value
+            
+                const ExercisesDBjson = JSON.stringify(ExercisesDB)
+                
+                localStorage.setItem('ExercisesDB', ExercisesDBjson)
+
+            }
+
+            LoadExercisesTable()
+
+        }
+
+    })
