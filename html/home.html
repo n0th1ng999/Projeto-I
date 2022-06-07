@@ -4,36 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="../styles/output.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../Media/imgs/Logos/WordIT_Logo_Hand.svg">
     <title>Home</title>
 </head>
 <body>
-    <!-- Nav Bar -->
-    <nav id="navBar">
-        <div><button id="btnToMenu"></button></div>
-        <div><ul>
-            <li>Home</li>
-            <li>Lessons</li>
-            <li>Profile</li>
-            <li>Friends</li>
-        </ul></div>
-    </nav>
-
-    <br><br>
-
-    <!-- Header -->
-    <div id="header" class="w-full d-flex bg-Marroon_S_2">
-        <h1 class="Heading f-size-L">Welcome</h1>
-        <h1><!-- User -->!</h1>
-        <img src='<!-- User Avatar -->'' alt="">
+    <!-- Nav -->
+    <div class="container w-full">
+        <nav class="navbar navbar-expand-sm navbar-light">
+                <a class="navbar-brand" href="Home.html">
+                    <img src="../Media/imgs/Logos/WordIT_Logo.svg" alt="Bootstrap" width="200" height="50" class="d-inline-block align-top">
+                </a>
+                <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#toggleMobileMenu" 
+                aria-controls="toggleMobileMenu" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation"
+                >
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="toggleMobileMenu">
+            
+                  <ul class="navbar-nav ms-auto text-center">
+                      <li>
+                        <a class="nav-link" href="#">Lessons</a>
+                      </li>
+                      <li>
+                          <a class="nav-link" href="#">Leaderboard</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#">Friends</a>
+                        </li>
+                      <li>
+                          <a class="nav-link" href="#">Profile</a>
+                      </li>
+                    </ul>
+                </div>
+        </nav>
     </div>
 
-    <br><br>
+    <!-- Body -->
+    <!-- <div id="header" class="w-full d-flex bg-Marroon_S_2 container-fluid" >
+        <div>
+            <h1 class="Heading f-size-L color-Marroon">Welcome</h1>
+            <h2 class="Heading f-size-L color-black">'!</h2>
+            <img src="../Media/imgs/Icons/Boy2.svg" width="150" height="100" id="iconDisplay">
+        </div>    
+    </div> -->
 
-    <!-- Current Lesson -->
-    <div id="currentLesson">
-        <h3>Continue your journey:</h3>
+    <div class="container w-full margin-L" style="justify-self: center">
+        <div class="bg-Marroon_S_2">
+                <h1 class="Heading f-size-L color-Marroon">Welcome</h1>
+            <h2 class="Heading f-size-L color-black">!</h2>
+            <img src="../Media/imgs/Icons/Boy2.svg" width="150" height="100" id="iconDisplay">
+        </div>
+    </div>
+
+
+    
+    <div id="currentLesson container-fluid" class="container w-full">
+        <h3 class="f-size-M">Continue your journey:</h3>
         <p>Lesson <!-- Lesson number --></p>
         <br>
         <p>You've finished <!-- Percentage --> of the lesson the <!-- rank -->, continue your jouney by completing <!-- modulos a completar -->.</p>
@@ -41,25 +75,24 @@
         <!-- Progress Bar -->
     </div>
 
+
+    
+    <div id="statsLogIn" class="container w-full">
+        <table border="1" id="tableStats">
+            <tr>
+                <th><h3>This week XP:</h3><br><p><!-- User XP --></p></th>
+                <th><h3>Overall:</h3><br><p><!-- Total XP --></p></th>
+            </tr>
+            <tr>
+                <th><h3>Current rank:</h3><br><p><!-- User Rank --></p></th>
+                <th><h3>Achievement Collection:</h3><br><p><!-- User XP --></p></th>
+            </tr>
+        </table> 
+    </div>
     <br><br>
 
-    <!-- User Stats -->
-    <div id="statsLogIn"></div>
-    <table border="1" id="tableStats">
-        <tr>
-            <th><h3>This week XP:</h3><br><p><!-- User XP --></p></th>
-            <th><h3>Overall:</h3><br><p><!-- Total XP --></p></th>
-        </tr>
-        <tr>
-            <th><h3>Current rank:</h3><br><p><!-- User Rank --></p></th>
-            <th><h3>Achievement Collection:</h3><br><p><!-- User XP --></p></th>
-        </tr>
-    </table> 
- 
-    <br><br>
-
-    <!-- Buttons -->
-    <div id="buttonsLogIn">
+    
+    <div id="buttonsLogIn" class="container w-full">
         <table border="1">
             <tr>
                 <th><button type="button" id="btnToDailyExercises"><h1>Daily Exercises</h1><img src="" alt="" id="bookExercisesPink"></button></th>
@@ -71,7 +104,7 @@
     <br><br>
 
     <!-- Leaderboard Positions -->
-    <div id="leaderboardPositionLogIn">
+    <div id="leaderboardPositionLogIn" class="container w-full">
         <table border="1">
             <tr>
                 <th><h3>You're in the #<!-- Position --> position in the <!-- Leaderboard in question --></h3></th>
@@ -79,6 +112,9 @@
             </tr>
         </table>
     </div>
-</body>
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>
 
