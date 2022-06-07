@@ -10,7 +10,7 @@
 <body>
 <h1>Admin</h1>
 <div class="container">
-    <div class="row">
+    
         <h2>Users List</h2>
             <table id="UserTable" class="col-10 table table-light">
                 <thead>
@@ -25,13 +25,9 @@
                     
                 </tbody>
             </table>
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <strong>Save down here</strong> If you're sure of the changes you've made
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
             <button
             id="btnSaveUsers" 
-            class="btn btn-success" 
+            class="btn btn-success " 
             role="button" 
             data-toggle="popover" 
             data-trigger="focus" 
@@ -39,14 +35,21 @@
             data-content="You've just updated the users Database"
             >Save</button>
             
-    </div>
+            <br>    
+            <!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Save up here</strong> If you're sure of the changes you've made
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div> -->
+            <br>    
+            
+    
         <table id="ModulesTable" class="col-10 table table-light">
             <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Name</th>
-                <th scope="col">Rank</th>
-                <th scope="col">change</th> 
+                <th scope="col">Module / Lesson Name</th>
+                <th scope="col">Rank / XP</th>
+                <th scope="col">Action</th> 
             </tr>
             </thead>
             <tbody>
@@ -58,12 +61,19 @@
             Create Module
         </button>
 
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" 
+        data-bs-target="#lesson_create_Btn">
+          Create Lesson 
+        </button>
+
+        
+
         
 
   
     </div>
 
-    <!-- Modal CreateModalModule -->
+    <!-- Modal Create Module Modal-->
     <div class="modal fade " id="CreateModuleModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -96,24 +106,168 @@
                 <button id="CreateModuleModal_ModuleLessonsSave" class="btn btn-success">Add Lesson</button>
             </div>
             <br>
-            <table id="CreateModuleModal_ModuleLessonsTable" class="table table-light">
-                <thead>
-                    <tr><th colspan="3">Lessons</th></tr>
-                    <tr><th>Id</th><th>Name</th><th>Action</th></tr>
-                </thead>
-                <tbody>
+                <div class="form-group m-2">
+                    <table id="CreateModuleModal_ModuleLessonsTable" class="table table-light">
+                        <thead>
+                            <tr><th colspan="3">Lessons</th></tr>
+                            <tr><th>Id</th><th>Name</th><th>Action</th></tr>
+                        </thead>
+                        <tbody>
 
-                </tbody>
-            </table>
+                        </tbody>
+                    </table>
+                </div>
             </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button id="CreateModuleModal_CloseBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            
             <button id="CreateModuleModal_SaveBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
           </div>
         </div>
       </div>
     </div>
+  
+
+
+  <!-- Modal Edit Module Modal-->
+  <div class="modal fade " id="EditModalModule" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="EditModalModuleLabel">Edit Module</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            
+            <div class="form-group m-2">
+                <label for="EditModalModule_ModuleNameInput">Module Name</label>
+                <input type="text" class="form-control" id="EditModalModule_ModuleNameInput" placeholder="Module name">
+            </div>
+            <br>
+            <div class="form-group m-2">
+              <label for="EditModalModule_ModuleRankSelect">Edit Rank</label>
+              <select type="text" class="form-control" id="EditModalModule_ModuleRankSelect" placeholder="Module Rank">
+                  <option value="beginner">Beginner</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="pro">Pro</option>
+              </select>
+          </div>
+          <br>
+          <div class="form-group m-2">
+              <label for="EditModalModule_LessonsSelect">Add lessons</label>
+              <select type="text" class="form-control" id="EditModalModule_LessonsSelect" placeholder="Module Rank">
+                  <option disabled>Add lessons</option>
+              </select>
+              <br>
+              <button id="EditModalModule_ModuleLessonsSave" class="btn btn-success">Add Lesson</button>
+          </div>
+          <br>
+              <div class="form-group m-2">
+                  <table id="EditModalModule_ModuleLessonsTable" class="table table-light">
+                      <thead>
+                          <tr><th colspan="3">Lessons</th></tr>
+                          <tr><th>Id</th><th>Name</th><th>Action</th></tr>
+                      </thead>
+                      <tbody>
+
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+        <div class="modal-footer">
+          <button id="EditModalModule_CloseBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button id="EditModalModule_DelBtn" type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+          <button id="EditModalModule_SaveBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+        </div>
+      </div>
+    </div>
   </div>
+
+
+ <!-- Modal Edit Lesson Modal -->
+ <div class="modal fade " id="EditModal_Lesson" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="EditModal_LessonLabel">Edit Lesson</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group m-2">
+          <label for="EditModal_Lesson_Name">Lesson Name</label>
+          <input type="text" class="form-control" id="EditModal_Lesson_Name" placeholder="Lesson name">
+        </div>
+        <br>
+        <div class="form-group m-2">
+          <label for="EditModal_Lesson_XP">XP</label>
+          <input step="1" type="number" class="form-control" id="EditModal_Lesson_XP" placeholder="Lesson XP amount">
+        </div>
+        <br>
+        <div class="form-group m-2">
+          <label for="EditModal_Lesson_Url">URL Video</label>
+          <input 
+            type="file"
+            class="form-control"
+            id="EditModal_Lesson_Url" 
+            placeholder="URL Video"
+            accept="video/mp4,video/x-m4v,video/*,images/"
+            >
+          <div id="EditModal_Lesson_CurrentUrl" class="alert alert-info"></div>
+          </div>
+        <br>
+        
+      </div>
+      <div class="modal-footer">
+        <button id="EditModal_Lesson_CloseBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button id="EditModal_Lesson_DelBtn" type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+        <button id="EditModal_Lesson_SaveBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <!-- Modal Create Lesson Modal -->
+ <div class="modal fade " id="lesson_create_Btn" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="CreateModal_LessonLabel">Edit Lesson</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group m-2">
+          <label for="lesson_create_name">Lesson Name</label>
+          <input type="text" class="form-control" id="lesson_create_name" placeholder="Lesson name">
+        </div>
+        <br>
+        <div class="form-group m-2">
+          <label for="lesson_create_xp">XP</label>
+          <input step="1" type="number" class="form-control" id="lesson_create_xp" placeholder="Lesson XP amount">
+        </div>
+        <br>
+        <div class="form-group m-2">
+          <label for="lesson_create_videoUrl">URL Video</label>
+          <input 
+            type="file"
+            class="form-control"
+            id="lesson_create_videoUrl" 
+            placeholder="URL Video"
+            accept="video/mp4,video/x-m4v,video/*,images/"
+            >
+          <div id="lesson_create_CurrentUrl" class="alert alert-info"></div>
+          </div>
+        <br>
+        
+      </div>
+      <div class="modal-footer">
+        <button id="EditModal_Lesson_CloseBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        <button id="lesson_create_Savebtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Create</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
   
     

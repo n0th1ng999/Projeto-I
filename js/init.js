@@ -51,8 +51,8 @@ let MissionsDBjson = localStorage.getItem('MissionsDB')
             const LessonsDB =  []
             
             /* push Lessons to LessonsDB */
-            LessonsDB.push(new Lessons(LessonsDB,'This','Beginner','1',[],'../that/stuff',20))
-            LessonsDB.push(new Lessons(LessonsDB,'That','Beginner','1',[],'../that/thing',20))
+            LessonsDB.push(new Lessons(LessonsDB,'This',[],'',20))
+            LessonsDB.push(new Lessons(LessonsDB,'That',[],'',20))
             console.log(LessonsDB);
 
             /* pass LessonsDB to string */
