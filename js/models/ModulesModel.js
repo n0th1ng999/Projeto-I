@@ -1,12 +1,11 @@
 export default class Modules{
     id = 0
     name = ''
-    rank = ''
     lessons = [] // array of Lesson objects
     
-    constructor(ModulesDB, name, lessons = [] , rank){
+    constructor(ModulesDB, name, lessons, rank){
         this.id = ModulesDB.length == 0 ? 1 : ModulesDB[ModulesDB.length - 1].id + 1;
-        this.rank = rank ;
+        this.rank = rank
         this.name = name ;
         this.lessons = lessons || [] ;
     }
@@ -46,7 +45,7 @@ export default class Modules{
 
     set rank(value){ 
         if(value == 'beginner' || value == 'intermediate' || value == 'pro'){
-            this.rank = value
+            this.name = value
         }else{
             throw new Error('Module Rank not valid')
         }
