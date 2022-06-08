@@ -51,8 +51,8 @@ let MissionsDBjson = localStorage.getItem('MissionsDB')
             const LessonsDB =  []
             
             /* push Lessons to LessonsDB */
-            LessonsDB.push(new Lessons(LessonsDB,'This','Beginner','1',[],'../that/stuff',20))
-            LessonsDB.push(new Lessons(LessonsDB,'That','Beginner','1',[],'../that/thing',20))
+            LessonsDB.push(new Lessons(LessonsDB,'This',[],'',20))
+            LessonsDB.push(new Lessons(LessonsDB,'That',[],'',20))
             console.log(LessonsDB);
 
             /* pass LessonsDB to string */
@@ -66,6 +66,20 @@ let MissionsDBjson = localStorage.getItem('MissionsDB')
     /* INITIALIZING ExercisesDB */
         if(!ExercisesDBjson){ 
             localStorage.setItem('ExercisesDB','[]')
+
+            const ExercisesDB =  []
+            
+            /* push Lessons to LessonsDB */
+            ExercisesDB.push(new Exercises(ExercisesDB,'What is ... ?',['Answer 1','Answer 2','Answer 3','Answer 4'],1,3))
+            ExercisesDB.push(new Exercises(ExercisesDB,'What is ... ? . 2',['Answer 1','Answer 2','Answer 3','Answer 4'],1,4))
+            console.log(ExercisesDB);
+
+            /* pass LessonsDB to string */
+            ExercisesDBjson = JSON.stringify(ExercisesDB)
+            console.log(ExercisesDBjson);
+            
+            /* pass LessonsDB to localStorage */
+            localStorage.setItem('ExercisesDB',ExercisesDBjson)
         }
     
     /* INITIALIZING AchievementsDB */
