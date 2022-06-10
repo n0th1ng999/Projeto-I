@@ -5,30 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/output.css" rel="stylesheet">
+
     
     <title>Landing Page</title>
     <link rel="icon" type="image/x-icon" href="Media/imgs/Logos/WordIT_Logo_Hand.svg">
 </head>
 <body class="">
     <nav class="navLandingPage bg-white w-full"><img class="Avatar margin-L" alt="logo" src="/Media/imgs/Logos/WordIT_Logo.svg">
-    <ul class="d-flex"><li>Sign in</li><li><button>Sign up</button></li></ul></nav>
-
-    <div id="Message1" class="d-flex w-full "> 
-        <div class="d-flex flex-center padding-L bg-Marroon_S_1">  
-            <img src="Media\imgs\Icons\Girl2.svg" alt="text" class="Avatar"><img>
+        <ul class="d-flex"><li>Sign in</li><li><button>Sign up</button></li></ul></nav>
+        
+        <div id="Message1" class="d-flex w-full "> 
+            <div class="d-flex flex-center padding-L bg-Marroon_S_1">  
+                <img src="Media\imgs\Icons\Girl2.svg" alt="text" class="Avatar"><img>
+            </div>
+            <div class="d-flex padding-L flex-column bg-Marroon gap-L w-full">
+                <h1 class="color-Yellow Heading f-size-M  line-height-XL">
+                    Welcome to WORD.IT
+                </h1>
+                <p class="color-White Body f-size-XS  line-height-M">
+                    WORD.IT is a brand new website where you can learn sign language easily and in a fun way
+                </p>
+            </div>
         </div>
-        <div class="d-flex padding-L flex-column bg-Marroon gap-L w-full">
-            <h1 class="color-Yellow Heading f-size-M  line-height-XL">
-                Welcome to WORD.IT
-            </h1>
-            <p class="color-White Body f-size-XS  line-height-M">
-                WORD.IT is a brand new website where you can learn sign language easily and in a fun way
-            </p>
-        </div>
-    </div>
-
-    <div  class=" carousel w-full ">
-        <div class="Heading f-size-L">W</div>
+        
+        <div  class=" carousel w-full ">
+            <div class="Heading f-size-L">W</div>
         <div class="Heading f-size-L">O</div>
         <div class="Heading f-size-L">R</div>
         <div class="Heading f-size-L">D</div>
@@ -69,7 +70,7 @@
         <div class="Heading f-size-L">D</div>
         <div class="Heading f-size-L">.IT</div>
     </div>
-
+    
     <div id="Message2" class="d-flex w-full "> 
         <div class="d-flex padding-L flex-column bg-Yellow gap-L w-full">
             <h1 class="color-Marroon Heading f-size-M  line-height-XL">
@@ -129,17 +130,131 @@
 
     <div class=" d-flex flex-center  w-full flex-column  bg-Purple ">
         <p class="color-White Body f-size-XS  line-height-M padding-L">Click in the button down below to get started or choose to Sign In</p>
-        <button class="Pill f-size-L Heading">Get Started</button>
+        
+        <button id="Register_Button" class="Pill f-size-L Heading">Get Started</button>
+
         <p class="color-White Body f-size-XS line-height-XS">or</p>
-        <h1 class=" color-Yellow Heading f-size-L line-height-XL padding-L">Sign in</h1>
+
+        <a id="Login_Button"><h1 class=" color-Yellow Heading f-size-L line-height-XL padding-L">Sign in</h1></a>
         
     </div>
-
     
+    <!--MODAL SIGN IN-->
+    <div id="Sign-In-Modal" class="Custom_Modal_Background">
+
+        <div class="Custom_Modal">
+
+            <div class="Custom_Modal_Head padding-S gap-L"  >
+
+                <h1 class="Heading f-size-S color-Purple">Sign up</h1>
+
+                <button id="Sign-In-Modal_Close" class="closeButton">X</button>
+
+            </div>
+
+            <div class="Custom_Modal_Body  margin-L  gap-M" >
+
+                <div class="form-control   gap-S">
+                   
+                    <label class="Body" for="Sign-In-Modal_Username">Username</label>
+                   
+                    <input  class="Body" id="Sign-In-Modal_Username" type="text">
+
+                </div>
+
+                <div class="form-control  gap-S">
+                    
+                    <label  class="Body" for="Sign-In-Modal_Password">Password</label>
+                    
+                    <input  class="Body" id="Sign-In-Modal_Password" type="password">
+
+                </div>
+
+            </div>
+
+            <div class="Custom_Modal_Footer  margin-L" >
+                
+                <a id="SignInBtn" class="Body color-Black">Sign in</a>
+
+                <a  class="Body color-Purple" >Register instead</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+     <!--MODAL SIGN UP-->
+     <div id="Sign-Up-Modal" class="Custom_Modal_Background">
+
+        <div class="Custom_Modal">
+
+            <div class="Custom_Modal_Head padding-S gap-L"  >
+
+                <h1 class="Heading f-size-S color-Purple">Sign up</h1>
+
+                <button id="Sign-Up-Modal_Close" class="closeButton">X</button>
+
+            </div>
+
+            <div class="Custom_Modal_Body  margin-L  gap-M" >
+
+                <div class="form-control   gap-S">
+                   
+                    <label class="Body" for="Sign-Up-Modal_Username">Username</label>
+                   
+                    <input  class="Body" id="Sign-Up-Modal_Username" type="text">
+
+                </div>
+
+                <div class="form-control   gap-S">
+                   
+                    <label class="Body" for="Sign-Up-Modal_Mail">Gmail</label>
+                   
+                    <input  class="Body" id="Sign-Up-Modal_Mail" type="mail">
+
+                </div>
+
+                <div class="form-control  gap-S">
+                    
+                    <label  class="Body" for="Sign-Up-Modal_Password">Password</label>
+                    
+                    <input  class="Body" id="Sign-Up-Modal_Password" type="password">
+
+                </div>
+
+                <div class="form-control  gap-S">
+                    
+                    <label  class="Body" for="Sign-Up-Modal_Password_Confirm">Password</label>
+                    
+                    <input  class="Body" id="Sign-Up-Modal_Password_Confirm" type="password">
+
+                </div>
+
+            </div>
+
+            <div class="Custom_Modal_Footer  margin-L" >
+                
+                <a id="SignUpBtn" class="Body color-Black">Sign up</a>
+
+                <a  class="Body color-Purple" >Login instead</a>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+
+
 </body>
 
-<script type="module" src="/js/init.js"></script>
 
-<script  type="module"  src="/js/viewer/indexViewer.js"></script>
+<script type="Module" src="js/init.js"></script>
+<script type="Module" src="js/viewer/IndexViewer/indexViewer.js"></script>
+<script type="Module" src="js/viewer/IndexViewer/LoginRedirectView.js"></script>
+<script src="js/viewer/IndexViewer/loginView.js"></script>
+<script type="Module" src="js/viewer/IndexViewer/registerView.js""></script>
 
 </html>

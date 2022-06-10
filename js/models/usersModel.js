@@ -16,9 +16,6 @@ export default class users{
 
     constructor(usersDB ,name, password, email){
 
-      
-
-
         this.id = usersDB.length == 0 ? 1 : usersDB[usersDB.length - 1].id + 1
         this.name = name
         this.password   = password

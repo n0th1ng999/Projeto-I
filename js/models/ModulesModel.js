@@ -3,12 +3,14 @@ export default class Modules{
     name = ''
     rank = ''
     lessons = [] // array of Lesson objects
+    requisitedModules = []
     
-    constructor(ModulesDB, name, lessons = [] , rank){
+    constructor(ModulesDB, name, lessons = [] , rank, requisitedModules = []){
         this.id = ModulesDB.length == 0 ? 1 : ModulesDB[ModulesDB.length - 1].id + 1;
         this.rank = rank ;
         this.name = name ;
         this.lessons = lessons || [] ;
+        this.requisitedModules = requisitedModules
     }
     
     get id(){

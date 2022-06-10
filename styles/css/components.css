@@ -17,7 +17,7 @@
     height: 1.2em;
     display: flex;
     justify-content: center;
-    align-items: baseline;   
+    align-items: center;   
     transition: all ease-in-out 0.2s;
     user-select: none;
 }
@@ -76,6 +76,65 @@
   
 }
 
+.Custom_Modal_Background{
+  
+  position: fixed;
+  top:0;
+  background: #22222266; 
+  height: 100%;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.Custom_Modal{
+  width: fit-content;
+  height: fit-content;
+  background: #fff;
+  border-radius: 10px;
+ 
+}
+
+.Custom_Modal_Head{
+  display: flex;
+  border-bottom : 3px solid var(--Black);
+  border-radius: 0px;
+  justify-content: space-between;
+  align-items: center;
+
+
+
+}
+
+.Custom_Modal_Body{
+  display: flex;
+  flex-direction: column;
+}
+
+.Custom_Modal_Footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-control{
+  
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.closeButton{
+  background: none;
+  outline: none;
+  border:none;
+  height: 100%;
+
+}
+
+
+
 @media only screen and (min-width: 1368px) {
     /* Avatar icon Landing Page*/
     .Avatar{
@@ -86,3 +145,4 @@
       margin-bottom: 50px;
     }
 }
+
