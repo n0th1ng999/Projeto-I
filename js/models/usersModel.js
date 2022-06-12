@@ -11,22 +11,24 @@ export default class users{
     Friends = [] // array of Friend Id's'
     allXp = 0 // All time Xp
     weekXp = 0 // week Xp
+    Avatar = 1 // Avatar ID
     blocked = false
 
 
-    constructor(usersDB ,name, password, email){
+    constructor(usersDB ,name, password, email ){
 
         this.id = usersDB.length == 0 ? 1 : usersDB[usersDB.length - 1].id + 1
         this.name = name
         this.password   = password
         this.email = email
-        this.rank = 'begginner'
+        this.rank = 'beginner'
         this.Achievements = [] 
         this.Lessons = []  
         this.Friends = []
         this.allXp = 0
         this.weekXp = 0
         this.blocked = false
+        this.Avatar = 1
 
     }
 
