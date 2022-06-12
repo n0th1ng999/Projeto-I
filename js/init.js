@@ -33,6 +33,7 @@ let MissionsDBjson = localStorage.getItem('MissionsDB')
             /* push users to usersDB */
             usersDB.push(new users(usersDB,'Tiago','Password','Email@mail.com'))
             usersDB.push(new users(usersDB,'Gabriela','Password','Email@mail.com'))
+            usersDB.push(new users(usersDB,'Gabrielo','Password','Email@mail.com'))
             console.log(usersDB);
 
             /* pass usersDB to string */
@@ -85,6 +86,13 @@ let MissionsDBjson = localStorage.getItem('MissionsDB')
     /* INITIALIZING AchievementsDB */
         if(!AchievementsDBjson){ 
             localStorage.setItem('AchievementsDB','[]')
+            const AchievementsDB =  []
+
+            AchievementsDB.push(new Achievements(AchievementsDB,'Achievement','test.png','this is a description'))
+            AchievementsDBjson = JSON.stringify(AchievementsDB)
+
+            localStorage.setItem('AchievementsDB', AchievementsDBjson)
+
         }
 
     /* INITIALIZING ModulesDB */
