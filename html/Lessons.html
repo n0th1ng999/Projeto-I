@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/output.css" rel="stylesheet">
+    <link href="../styles/output.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Media/imgs/Logos/WordIT_Logo_Hand.svg">
     <title>Lessons</title>
 </head>
 <body>
     <!-- Nav Bar -->
-    <nav id="navBar">
+    <nav id="navBar"  class="w-full">
         <div><button id="btnToMenu"></button></div>
         <div><ul>
             <li>Home</li>
@@ -19,28 +19,67 @@
             <li>Friends</li>
         </ul></div>
     </nav>
+    <div id="ContainerLessons"></div>
 
     <br><br>
 
-    <!-- Body -->
-    <div id="beginner" >
+    <!--MODAL SIGN IN-->
+    <div id="Lesson-Modal" class="Custom_Modal_Background">
 
-        <h1>Beginner</h1>
+        <div class="Custom_Modal">
 
-        <div id="beginnerModule1">
+            <div class="Custom_Modal_Head padding-S gap-L"  >
 
-            <h3>Module 1 : Introduction</h3>
-            
-            <button id="btnBeginnerModule1"></button>
-            
-            <h4>Grammar Basics</h4>
+                <h1 class="Heading f-size-S color-Purple" id="Lesson-Modal-Title"></h1>
+
+                <button id="Lesson-Modal_Close" class="closeButton">X</button>
+
+            </div>
+
+            <div class="Custom_Modal_Body margin-L gap-M" >
+
+                <div class="form-control gap-S">
+                   
+                    <video id="videoLesson" width="480" height="" controls>
+
+                        <source src="" type="video/mp4">
+
+                        <source src="" type="video/ogg">
+                        
+                        Your browser does not support the video tag.
+
+                      </video>
+
+                </div>
+
+                <div id="Exercises_Field" class="form-control  gap-S">
+                    
+                    
+
+                </div>
+
+            </div>
+
+
+          
+
+            <div class="Custom_Modal_Footer  margin-L" >
+                
+               
+
+                <button id="FinishLesson" class="Body color-Black">Finish</button>
+
+               
+            </div>
 
         </div>
 
     </div>
 
-    <br><br>
+
 
 </body>
-<script type="Module" src="../js/viewer/LessonsViewer/RankModuleLoadViewer.js"></script>
+<script src="../js/viewer/Redirect.js"></script>
+<script type="Module" src="../js/viewer/LessonsView.js"></script>
+
 </html>
