@@ -38,6 +38,9 @@ li{
     flex-direction: column;
 }
 
+.space-evenly{
+    justify-content: space-evenly;
+}
 
 .flex-center{
     justify-content: center;

@@ -4,11 +4,121 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/output.css" rel="stylesheet">
+    <link href="../styles/output.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="icon" type="image/x-icon" href="Media/imgs/Logos/WordIT_Logo_Hand.svg">
     <title>Edit Profile</title>
 </head>
 <body>
-    
-</body>
+    <!-- Nav -->
+    <div class=" w-full">
+        <nav class="navbar navbar-expand-sm navbar-light">
+                <a class="navbar-brand" href="Home.html">
+                    <img src="../Media/imgs/Logos/WordIT_Logo.svg" alt="Bootstrap" width="200" height="50" class="d-inline-block align-top">
+                </a>
+        </nav>
+    </div>
+    <div class=" w-full " style="justify-self: center">
+        <div class="bg-Yellow">
+            <img src="..\Media\imgs\Icons\purpleArrow1.svg">
+            <img src="..\Media\imgs\Icons\purpleArrow2.svg">
+            <img src="..\Media\imgs\Icons\purpleArrow3.svg">
+                <h1 class="Heading f-size-L color-Purple" fontFamily="Uniform Rounded">Edit Profile</h1>
+                <img src="..\Media\imgs\Icons\iconPeopleSet1.svg">
+                <img src="..\Media\imgs\Icons\iconPeopleSet2.svg">
+                <img src="..\Media\imgs\Icons\iconPeopleSet3.svg">
+            </div>
+        </div> 
+        <div class=" w-full  ">
+            <h3 class="f-size-M w-full bg-Purple color-White padding-L">Change Profile Picture</h2>
+                <div class="d-flex space-evenly pfpHolder gap-L flex-wrap margin-L">
+
+                <div class="pfpFrame ">
+                    <img src="..\Media\imgs\Avatars\1.svg" width="60px" height="60px">
+                    <img src=".." >
+                </div>
+                
+                <div class="pfpFrame">
+                    <img src="..\Media\imgs\Avatars\2.svg" width="60px" height="60px">
+                </div>
+
+                <div class="pfpFrame">
+                    <img src="..\Media\imgs\Avatars\3.svg" width="60px" height="60px">
+                </div>
+
+                <div class="pfpFrame">
+                    <img src="..\Media\imgs\Avatars\4.svg" width="60px" height="60px">
+                </div>
+
+                <div class="pfpFrame">
+                    <img src="..\Media\imgs\Avatars\5.svg" width="60px" height="60px">
+                </div>
+
+                <div class="pfpFrame">
+                    <img src="..\Media\imgs\Avatars\6.svg" width="60px" height="60px">
+                </div>
+            
+            
+                <div class="pfpFrame">
+                    <img src="..\Media\imgs\Avatars\7.svg" width="60px" height="60px">
+                </div>
+
+                <div class="pfpFrame">
+                    <img src="..\Media\imgs\Avatars\8.svg" width="60px" height="60px">
+                </div>
+
+                
+                <div class="pfpFrame">
+                    <img src="..\Media\imgs\Avatars\9.svg" width="60px" height="60px">
+                </div>
+
+                
+                <div class="pfpFrame">
+                    <img src="..\Media\imgs\Avatars\10.svg" width="60px" height="60px">
+                </div>
+
+                
+                <div class="pfpFrame">
+                    <img src="..\Media\imgs\Avatars\11.svg" width="60px" height="60px">
+                </div>
+
+                
+                <div class="pfpFrame">
+                    <img src="..\Media\imgs\Avatars\12.svg" width="60px" height="60px">
+                </div>           
+            </div>
+    </div>
+    <div class=" w-full ">
+
+        <div class="bg-Yellow  d-flex flex-column ">
+
+            <h3 class="Heading f-size-L color-Purple margin-L" fontFamily="Uniform Rounded">Change Profile Username</h3>
+
+            <div class="d-flex flex-column gap-L margin-L ">
+                <div class="d-flex">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" id="username">
+                </div>
+
+                <div  class="d-flex">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                    <button id="passwordShow">Show</button>
+                </div>
+
+                <div>
+                    <input id="Change_User" class="btn btn-primary " value="Change">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</body> 
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script src="../js/viewer/EditProfile.js"></script>
+
 </html>
