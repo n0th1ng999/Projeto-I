@@ -1,6 +1,9 @@
 let loggedUser = sessionStorage.getItem('loggedUser')
 loggedUser = JSON.parse(loggedUser)
 
+let usersDB = localStorage.getItem('usersDB')
+usersDB = JSON.parse(usersDB)
+
 let ExercisesDBjson = localStorage.getItem('ExercisesDB')
 let ExercisesDB = JSON.parse(ExercisesDBjson)
 
@@ -14,8 +17,6 @@ let AchievementsDBjson = localStorage.getItem('AchievementsDB')
 let AchievementsDB = JSON.parse(AchievementsDBjson)
 
 
-let usersDB = localStorage.getItem('usersDB')
-usersDB = JSON.parse(usersDB)
 
 
 const ProfileImageContainer = document.querySelector('#Profile_Image_Container')
@@ -127,5 +128,8 @@ for (const user of usersDB) {
         Top10Table.innerHTML += `<tr><td>${place}</td><td>${user.name}</td><td>${user.weekXp}</td></tr>`     
     }
     
+    if(place == 10)
+        break;
+
     place += 1
 }

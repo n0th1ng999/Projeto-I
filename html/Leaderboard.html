@@ -4,11 +4,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/output.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="Media/imgs/Logos/WordIT_Logo_Hand.svg">
-    <title>Document</title>
+    <link href="../styles/output.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../Media/imgs/Logos/WordIT_Logo_Hand.svg">
+    <title>Leaderboard</title>
 </head>
 <body>
-    
+    <div>
+        <h2>
+            Top 50 table this week
+        </h2>
+        <table id="Top10Table_Week">
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>User</th>
+                    <th>XP</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        <button value="Top10Table_Week" class="LoadBigTable">See more</button>
+    </div>
+
+    <div>
+        <h2>
+            Top 50 table this week within <span class="InsertUserRank"></span>
+        </h2>
+        <table id="Top10Table_Week_Rank">
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>User</th>
+                    <th>XP</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        <button value="Top10Table_Week_Rank" class="LoadBigTable">See more</button>
+    </div>
+
+    <div>
+        <h2>
+            The top 50 table 
+        </h2>
+        <table id="Top10Table">
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>User</th>
+                    <th>XP</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        <button value="Top10Table"  class="LoadBigTable">See more</button>
+    </div>
+
+    <div>
+        <h2>
+            The top 50 table within <span class="InsertUserRank"></span>
+        </h2>
+        <table id="Top10Table_Rank">
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>User</th>
+                    <th>XP</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        <button value="Top10Table_Rank" class="LoadBigTable">See more</button>
+    </div>
+<div>
+    <h2 id="Top50TableTitle"></h2>
+    <table id="Top50Table">
+        <thead>
+            <tr>
+                <th>Place</th>
+                <th>User</th>
+                <th>XP</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</div>
 </body>
+<script type="module" src="../js/viewer/Redirect.js"></script>
+<script type="module" src="../js/viewer/Leaderboard.js"></script>
 </html>
