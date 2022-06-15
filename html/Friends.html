@@ -6,9 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../styles/output.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="Media/imgs/Logos/WordIT_Logo_Hand.svg">
-    <title>Document</title>
+    <title>Friends</title>
 </head>
 <body>
+    <!-- Nav -->
+    <div class=" w-full">
+        <nav class="navbar navbar-expand-sm navbar-light">
+                <a class="navbar-brand" href="Home.html">
+                    <img src="../Media/imgs/Logos/WordIT_Logo.svg" alt="Bootstrap" width="200" height="50" class="d-inline-block align-top">
+                </a>
+        </nav>
+    </div>
+
+    <div class=" w-full" >
+        <div class="bg-Orange_S_1 ">
+            <img src="..\Media\imgs\Icons\OrangeArrow1.svg">
+            <img src="..\Media\imgs\Icons\OrangeArrow2.svg">
+            <img src="..\Media\imgs\Icons\OrangeArrow3.svg">
+                <h1 class="Heading f-size-L color-Orange margin-L">Friends</h1>
+                <img src="..\Media\imgs\Icons\iconOrange1.svg">
+                <img src="..\Media\imgs\Icons\iconOrange2.svg">
+                <img src="..\Media\imgs\Icons\iconOrange3.svg">
+            </div>
+
+            <div class=" w-full ">
+                <h2 class="Heading f-size-M">Friends List</h2>
+                <div id="FriendsList"></div>
+            </div>
+    </div> 
+    <button class="Heading btn btn-primary bg-Orange color-White">See More</button>
+
+    <div class=" w-full " >
+        <div class="bg-Orange_S_1" >
+            <h3 class="Heading f-size-L margin-L">Add Friend</h3>  
+            <div class="d-flex margin-L">
+                <input type="text" id="friendSearch">
+                
+                <button id="friendSearchBtn" class="bg-Orange square padding-S">
+                    <img src="..\Media\imgs\Icons\magnifyingGlass.png">
+                </button>
+
+            </div>
+
+            
+            <div id="AddFriendsDiv" class="d-flex flex-wrap align-items-center flex-column">
+                <!--
+                <div  class=" bg-white  d-flex card-friend margin-M space-between ">
+                    <a id="" class="VisitProfile">
+                        <div class="d-flex align-items-center gap-L margin-S">
+                            <div class="pfpFrame pfpFrame-Orange">
+                                <img src="../Media/imgs/Avatars/1.svg" alt="User Avatar">
+                            </div>
+                            <h4  class="Heading f-size-M color-Black ">Name</h4>
+                        </div>
+                    </a>
+                    <button class="bg-Orange h-full square AddFriendButon">
+                        <h4 class="f-size-S Heading color-White padding-L">Add</h4>
+                    </button>
+                </div>  
+            -->
+            </div>
+                
+                
+            </div>
+        </div>
+    </div>
     
 </body>
+<script type="module" src="../js/viewer/Redirect.js"></script>
+
+<script type="module" src="../js/viewer/Friends.js"></script>
 </html>

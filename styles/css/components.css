@@ -138,15 +138,19 @@
 .pfpFrame{
   display: flex;
   justify-content: center;
-    align-items: center;
+  align-items: center;
 
   background-color: #fff;
   border-radius: 50%;
-  border: 3px solid #6A2C70;
+  border: 3px solid var(--Purple);
   box-sizing: border-box;
 
   width: 90px;
   height: 90px;
+}
+
+.pfpFrame-Orange{
+  border-color: var(--Orange);
 }
 
 .check{
@@ -159,6 +163,18 @@
   position: absolute;
 }
 
+.card-friend{
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  width: 80%;
+}
+
+.AddFriendButon{
+  border: none;
+  border-top-right-radius: 15px ;
+  border-bottom-right-radius: 15px ;
+}
 
 @media only screen and (min-width: 1368px) {
     /* Avatar icon Landing Page*/

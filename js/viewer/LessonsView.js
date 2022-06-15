@@ -50,18 +50,24 @@ function LoadRank_Module_Lesson(){
                     
                     // SE OS REQUESITOS SAO VAZIOS OU SE ESTAO VAZIOS
 
-                    Lesson.requisitedLessons.every(Rl => loggedUser.Lessons.find(el => el == Rl)) 
-                    ? 
-                    RankModulesLessonsHtml += `<button id="${Lesson.id}" class="OpenLessonModal_btn" >${Lesson.name}</button><p> Unlocked </p>` 
-                    : 
-                    RankModulesLessonsHtml += ` <button disabled id="${Lesson.id}" class="OpenLessonModal_btn" >${Lesson.name}</button><p> Locked </p>`
+
                     
-                    
-                    if(loggedUser.Lessons.find(el => el == Lesson.id)){
-    
-                        RankModulesLessonsHtml += `<p> done </p>`
+                    if(loggedUser.Lessons.find(el => el == parseInt(Lesson.id))){
+                        
+                        RankModulesLessonsHtml += `<button id="${Lesson.id}" class="OpenLessonModal_btn" >${Lesson.name}</button>`
+                        RankModulesLessonsHtml += `<p> Finished </p>`
+                        
+                    }else if(Lesson.requisitedLessons.every(Rl => loggedUser.Lessons.find(el => el == Rl)))
+                    {
+                        RankModulesLessonsHtml += `<button id="${Lesson.id}" class="OpenLessonModal_btn" >${Lesson.name}</button><p> Unlocked </p>` 
+
+                    }else{
+                        RankModulesLessonsHtml += ` <button disabled id="${Lesson.id}" class="OpenLessonModal_btn" >${Lesson.name}</button><p> Locked </p>`
                         
                     }
+                    
+                    
+            
 
                     RankModulesLessonsHtml +=  `</div>  `
     
@@ -159,8 +165,6 @@ document.querySelector('#FinishLesson').addEventListener('click', () => {
 
         let Ex = ExercisesDB.find(Ex => Ex.id == Exercise.id) 
 
-        console.log(Ex);
-
         if(!(Ex.CorrectAnswer == Exercise.value))
             pass = false
 
@@ -168,9 +172,7 @@ document.querySelector('#FinishLesson').addEventListener('click', () => {
 
     document.querySelectorAll('.Exercise_Input').forEach(Exercise => {
 
-        let Ex = ExercisesDB.find(Ex => Ex.id == Exercise.id) 
-
-        console.log(Ex);
+        let Ex = ExercisesDB.find(Ex => Ex.id == Exercise.id)    
 
         if(!(Ex.Answers.find(Answer => Answer == Exercise.value)))
             pass = false
@@ -180,8 +182,11 @@ document.querySelector('#FinishLesson').addEventListener('click', () => {
     console.log(pass);
 
     if(pass){
+        if(!(loggedUser.Lessons.find(L => L == CurrentLesson.id))){
 
-        loggedUser.Lessons.push(CurrentLesson.id)
+        loggedUser.Lessons.push(parseInt(CurrentLesson.id))
+
+        sessionStorage.setItem('loggedUser',JSON.stringify(loggedUser))
 
         for (let User of usersDB) {
 
@@ -189,14 +194,18 @@ document.querySelector('#FinishLesson').addEventListener('click', () => {
 
                 User.Lessons = loggedUser.Lessons
 
-                LoadRank_Module_Lesson()
+                localStorage.setItem('usersDB',JSON.stringify(usersDB))
 
+                console.log(usersDB)
+                              
             }
-
-            localStorage.setItem('usersDB',JSON.stringify(usersDB))
-
+            
+            
+            }
         }
+        document.querySelector('#Lesson-Modal').style.display = 'none';
 
+        LoadRank_Module_Lesson()
     }else{
 
         alert('Not all the Answers are correct')

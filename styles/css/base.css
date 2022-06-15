@@ -47,6 +47,22 @@ li{
     align-items: center;
 }
 
+.align-items-center{
+    align-items: center;
+}
+
+.justify-content-center{
+    justify-content: center;
+}
+
+.space-around{
+    justify-content: space-around;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
 /* Width */
 
 .w-full{
@@ -58,4 +74,10 @@ li{
 
 .h-full{
     height: 100%;
+}
+
+/* aspect-ratio-1-to-1 */
+
+.square{
+aspect-ratio: 1/1;
 }

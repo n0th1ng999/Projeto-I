@@ -102,3 +102,4 @@ document.querySelectorAll('.LoadBigTable').forEach(btn => btn.addEventListener('
 
 
 }))
+
