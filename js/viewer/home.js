@@ -44,13 +44,17 @@ if(CurrentModuleIndicator){
         if(loggedUser.Lessons.find(l => l == lesson))
         i += 1
     }
-    
-    ModuleCompletion.innerHTML += Math.round( ( i / CurrentModuleIndicator.lessons.length * 100 ) * 100) / 100 + ' %'
-    
-    ProgressBar.style.setProperty("--percentage",( i / CurrentModuleIndicator.lessons.length * 100 ))
 
-    ProgressBarIndicator.innerHTML += Math.round( ( i / CurrentModuleIndicator.lessons.length * 100 ) * 100) / 100 + ' %'
 }
+    
+    
+    ModuleCompletion.innerHTML += Math.round( ( loggedUser.Lessons.length / LessonsDB.length * 100 ) * 100) / 100 + ' %'
+    
+    ProgressBar.style.setProperty("--percentage",( loggedUser.Lessons.length / LessonsDB.length * 100 )+'%') 
+
+    ProgressBarIndicator.innerHTML += Math.round( ( loggedUser.Lessons.length / LessonsDB.length * 100 ) * 100) / 100 + ' %'
+
+    ProgressBarIndicator.style.setProperty("--percentage",( loggedUser.Lessons.length / LessonsDB.length * 100 )+'%') 
 
 if(CurrentModuleIndicator){
     
@@ -86,4 +90,3 @@ usersDB.sort((a , b) => {
 })
 
 userPosition.innerHTML = usersDB.findIndex(user => user.id == loggedUser.id) + 1
-

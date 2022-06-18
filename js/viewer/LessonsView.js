@@ -185,6 +185,10 @@ document.querySelector('#FinishLesson').addEventListener('click', () => {
         if(!(loggedUser.Lessons.find(L => L == CurrentLesson.id))){
 
         loggedUser.Lessons.push(parseInt(CurrentLesson.id))
+        
+        loggedUser.allXp += CurrentLesson.xp
+        
+        loggedUser.weekXp += CurrentLesson.xp
 
         sessionStorage.setItem('loggedUser',JSON.stringify(loggedUser))
 
@@ -193,6 +197,10 @@ document.querySelector('#FinishLesson').addEventListener('click', () => {
             if(User.id == loggedUser.id){
 
                 User.Lessons = loggedUser.Lessons
+
+                User.allXp = loggedUser.allXp
+
+                User.weekXp = loggedUser.weekXp
 
                 localStorage.setItem('usersDB',JSON.stringify(usersDB))
 
@@ -203,8 +211,13 @@ document.querySelector('#FinishLesson').addEventListener('click', () => {
             
             }
         }
-        document.querySelector('#Lesson-Modal').style.display = 'none';
+       
+        
+            document.querySelector('#Lesson-Modal').style.display = 'none';
 
+      
+
+       
         LoadRank_Module_Lesson()
     }else{
 

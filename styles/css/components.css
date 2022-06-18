@@ -176,6 +176,38 @@
   border-bottom-right-radius: 15px ;
 }
 
+.Progress-Bar{
+  position: relative;
+  width: 80%;
+  height: 50px;
+  background: var(--Marroon_S_3);
+  border-radius: 30px;
+}
+
+ #ProgressBar{
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--Marroon_S_1) var(--percentage), var(--Marroon_S_3)  var(--percentage));
+  border-radius: 30px;
+}
+
+#ProgressBarIndicator{
+  width: fit-content;
+  padding: 10px;  
+  position: absolute;
+  left: 10px;
+  bottom: -2px;
+
+}
+
+#MoonProgressBar{
+
+  position: absolute;
+  right:  0;
+  bottom: -25px;
+}
+
+
 @media only screen and (min-width: 1368px) {
     /* Avatar icon Landing Page*/
     .Avatar{

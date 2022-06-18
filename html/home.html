@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   
     <link href="../styles/output.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="../Media/imgs/Logos/WordIT_Logo_Hand.svg">
     <title>Home</title>
 </head>
 <body>
     <!-- Nav -->
-    <div class="container w-full">
-        <nav class="navbar navbar-expand-sm navbar-light">
-                <a class="navbar-brand" href="Home.html">
-                    <img src="../Media/imgs/Logos/WordIT_Logo.svg" alt="Bootstrap" width="200" height="50" class="d-inline-block align-top">
+    <div class=" w-full d-grid-9">
+        <nav class="d-grid-2to9 ">
+                <a class="navbar-brand " href="Home.html">
+                    <img class="margin-L" src="../Media/imgs/Logos/WordIT_Logo.svg" alt="Bootstrap" width="200" height="50" class="d-inline-block align-top">
                 </a>
                 <button 
                 class="navbar-toggler" 
@@ -48,7 +48,7 @@
     </div>
 
     <!-- Body -->
-    <!-- <div id="header" class="w-full d-flex bg-Marroon_S_2 container-fluid" >
+    <!-- <div id="header" class="w-full d-flex bg-Marroon_S_2 -fluid" >
         <div>
             <h1 class="Heading f-size-L color-Marroon">Welcome</h1>
             <h2 class="Heading f-size-L color-black">'!</h2>
@@ -56,19 +56,23 @@
         </div>    
     </div> -->
 
-    <div class="container w-full margin-L" style="justify-self: center">
-        <div class="bg-Marroon_S_2">
-                <h1 class="Heading f-size-L color-Marroon">Welcome</h1>
-            <h2 id="UserName" class="Heading f-size-L color-black"></h2>
-            <img src="../Media/imgs/Avatars/1.svg" width="150" height="100" id="iconDisplay">
+    <div class=" w-full bg-Marroon_S_2 d-grid-9" >
+        <div class="d-flex d-grid-3to8">
+            <div class="w-full ">
+                <h1 class="Heading f-size-XL color-Marroon w-full">Welcome</h1>
+                <h2 id="UserName" class="Heading f-size-XL color-black"></h2>
+            </div>
+
+            <div class="h-full d-flex flex-center">
+                <img class="" src="../Media/imgs/Avatars/1.svg" width="150" height="100" id="iconDisplay">
+            </div>
         </div>
     </div>
 
 
     
-    <div id="currentLesson container-fluid" class="container w-full">
+    <div id="currentLesson -fluid" class=" w-full">
         <h3 class="f-size-M">Continue your journey:</h3>
-        <p>Module <span id="CurrentModule"><!-- Module name --></span></p>
         <br>
         <p>You've finished <span id="ModuleCompletion"><!-- % of Module Completed --></span>
              of the Module 
@@ -76,9 +80,11 @@
         
         <h3>Course Completion:</h3>
         <div>
-            <div class="">
+            <div class="Progress-Bar">
                 <div id="ProgressBar"></div>
-                <div id="ProgressBarIndicator"></div>
+                <h3 class="Heading f-size-XXS color-White" id="ProgressBarIndicator"></h3>
+                <div id="RocketProgressBar"></div>
+                <img src="../Media/imgs/Icons/lua.svg" id="MoonProgressBar"></img>
             </div>
         </div>
         
@@ -86,7 +92,7 @@
 
 
     
-    <div id="statsLogIn" class="container w-full">
+    <div id="statsLogIn" class=" w-full">
         <table border="1" id="tableStats">
             <tr>
                 <th><h3>This week XP:</h3><br><p id="UserWeekXp"><!-- User XP --></p></th>
@@ -101,7 +107,7 @@
     <br><br>
 
     
-    <div id="buttonsLogIn" class="container w-full">
+    <div id="buttonsLogIn" class=" w-full">
         <table border="1">
             <tr>
                 <th><button type="button" id="btnToDailyExercises"><h1>Daily Exercises</h1><img src="" alt="" id="bookExercisesPink"></button></th>
@@ -113,7 +119,7 @@
     <br><br>
 
     <!-- Leaderboard Positions -->
-    <div id="leaderboardPositionLogIn" class="container w-full">
+    <div id="leaderboardPositionLogIn" class=" w-full">
         <table border="1">
             <tr>
                 <th><h3>You're in the #<span id="userPosition"></span><!-- Position --> position in this week's top 10 table</h3></th>
@@ -124,7 +130,7 @@
 
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
     
     <script type="module" src="../js/viewer/home.js"></script>
 

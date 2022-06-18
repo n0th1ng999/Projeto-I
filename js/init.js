@@ -5,7 +5,7 @@ import Exercises from './models/ExercisesModel.js'
 import Missions from './models/MissionsModel.js'
 import Achievements from './models/AchievementsModel.js'
 
-const date = new Date();
+const date = new Date(); 
 
 /* Check existence of LocalDB Storage */
 let usersDBjson = localStorage.getItem('usersDB') 

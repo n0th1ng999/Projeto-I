@@ -27,11 +27,21 @@ li{
 }
 
 /* grid */
-
+@media only screen and (min-width: 1368px) {
 .d-grid-9{
+    display: grid;
     grid-template-columns: repeat(9, auto); 
 }
 
+.d-grid-2to9{
+    grid-column: 2/9;
+}
+
+.d-grid-3to8{
+    grid-column: 3/8;
+}
+
+}
 /* flex */
 
 .flex-column{
@@ -63,6 +73,9 @@ li{
     justify-content: space-between;
 }
 
+.flex-wrap{
+    flex-wrap: wrap;
+}
 /* Width */
 
 .w-full{
