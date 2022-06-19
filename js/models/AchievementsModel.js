@@ -3,14 +3,16 @@ export default class Achievements{
     name = '' // Achievement Name
     imageUrl = '' ; // Image Url
     description = '' ; // Description of Achievement
-    funcIdentifier = () => {} // Identifier for type of Achievement
+    funcIdentifier = 0 // Identifier for type of Achievement
+    funcProps = [];
 
-    constructor(AchievmentsDB, name, imageUrl, Description , funcIdentifier = () => {} ){
+    constructor(AchievmentsDB, name, imageUrl, Description , funcIdentifier  , funcProps = []){
         this.id = AchievmentsDB.length == 0 ? 1 : AchievmentsDB[AchievmentsDB.length - 1].id + 1;
         this.name = name;
         this.imageUrl = imageUrl;
         this.description = Description;
         this.funcIdentifier = funcIdentifier;
+        this.funcProps = funcProps;
 
     }
 

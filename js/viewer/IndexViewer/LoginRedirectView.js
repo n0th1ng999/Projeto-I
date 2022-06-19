@@ -10,4 +10,3 @@ if(loggedInUser){
         window.location.replace("/html/home.html")
     } 
 }
-

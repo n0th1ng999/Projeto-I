@@ -4,8 +4,6 @@ usersDB = JSON.parse(usersDB)
 let loggedInUser = sessionStorage.getItem('loggedUser')
 loggedInUser = JSON.parse(loggedInUser)
 
-
-
 // Username 
 
 const username = document.getElementById('username')
@@ -15,7 +13,6 @@ const password = document.getElementById('password')
 const passwordShow = document.getElementById('passwordShow')
 
 const Change_User = document.getElementById('Change_User')
-
 
 username.value = loggedInUser.name
 
@@ -28,6 +25,7 @@ Change_User.addEventListener('click',()=>{
     loggedInUser.password = password.value
 
     const loggedInUserJSON = JSON.stringify(loggedInUser)
+    
     sessionStorage.setItem('loggedUser',loggedInUserJSON)
 
     usersDB.find(User => User.id == loggedInUser.id).name = loggedInUser.name
@@ -61,9 +59,7 @@ const ProfileFrames = document.querySelectorAll('.pfpFrame')
 
 const ProfileFramesCheck = document.querySelectorAll('.pfpFrameCheck')
 
-
 ProfileFramesCheck[parseInt(loggedInUser.Avatar)-1].innerHTML += `<img class="check" src="../Media/imgs/Icons/Correct.png">`
-
 
 function LoadPfpButton(){
 
@@ -83,8 +79,6 @@ function LoadPfpButton(){
             
                 console.log(loggedInUser.Avatar)    
     
-                
-
                 })
             
             }
@@ -92,10 +86,9 @@ function LoadPfpButton(){
         }
 
     }
-            
-        
+               
 LoadPfpButton()
-    
+
 function clearChecks() {
     ProfileFramesCheck.forEach(pfp => pfp.innerHTML = '')
 }

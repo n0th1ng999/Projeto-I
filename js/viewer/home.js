@@ -1,6 +1,9 @@
 let usersDB = localStorage.getItem('usersDB') // load into string
 usersDB = JSON.parse(usersDB)
 
+let ExercisesDB = localStorage.getItem('ExercisesDB') // load into string
+ExercisesDB = JSON.parse(ExercisesDB)
+
 let LessonsDB = localStorage.getItem('LessonsDB')
 LessonsDB = JSON.parse(LessonsDB)
 
@@ -12,6 +15,9 @@ ModulesDB = JSON.parse(ModulesDB)
 
 let loggedUser = sessionStorage.getItem('loggedUser')
 loggedUser = JSON.parse(loggedUser)
+
+
+sessionStorage.setItem('UserToVisit',JSON.stringify(loggedUser))
 
 const iconDisplay = document.querySelector('#iconDisplay')
 const UserName = document.querySelector('#UserName')
@@ -90,3 +96,146 @@ usersDB.sort((a , b) => {
 })
 
 userPosition.innerHTML = usersDB.findIndex(user => user.id == loggedUser.id) + 1
+
+
+
+let dailyExercises = []
+
+const date = new Date(); 
+
+let yesterday = JSON.parse(localStorage.getItem('yesterday'))
+
+const today = date.getDay()
+
+for (const Exercise of ExercisesDB) {
+    if(loggedUser.Lessons.find(l => l == Exercise.LessonId))
+        dailyExercises.push(Exercise)
+}
+
+let exercisesstring = ''
+
+let RandomExerciseIndex = Math.floor(Math.random() * dailyExercises.length);
+
+document.querySelector('#btnToDailyExercises').addEventListener('click', () => {
+  
+    if(loggedUser.Lessons.length > 0){
+
+    if(today != yesterday){
+      
+        document.querySelector('#DailyExercise-Modal').style.display = 'flex'
+        
+        yesterday = today
+        
+            if(dailyExercises[RandomExerciseIndex].Answers.length > 1){
+            
+                exercisesstring += `<label>${dailyExercises[RandomExerciseIndex].question}</label>
+                <select id="${dailyExercises[RandomExerciseIndex].id}" class="Exercise" >`
+
+                
+
+                for (const AnswerID in dailyExercises[RandomExerciseIndex].Answers) {
+
+                    exercisesstring  += `<option value="${AnswerID}">${dailyExercises[RandomExerciseIndex].Answers[AnswerID]}</option>`
+                    
+                }
+                
+                exercisesstring += `</select>` 
+
+            }else if(dailyExercises[RandomExerciseIndex].Answers.length == 1){
+                
+                exercisesstring  += `<label>${dailyExercises[RandomExerciseIndex].question}</label>
+                <input type="text" id="${dailyExercises[RandomExerciseIndex].id}" class="Exercise_Input">`
+                
+            }
+
+            document.querySelector('#DailyExercise-Modal .Custom_Modal_Body').innerHTML = exercisesstring
+            
+        }else{
+
+            alert('Daily exercise has already been done')
+
+        }
+    }else{
+
+        alert('You have no exercises available!')
+    }
+
+})
+
+document.querySelector('#DailyExercise-Modal_Close').addEventListener('click', () => {
+    document.querySelector('#DailyExercise-Modal').style.display = 'none'
+})
+
+document.querySelector('#FinishDailyExercise').addEventListener('click', () => {
+
+    let pass = true
+
+    document.querySelectorAll('.Exercise').forEach(Exercise => {
+
+        let Ex = ExercisesDB.find(Ex => Ex.id == Exercise.id) 
+
+        if(!(Ex.CorrectAnswer == Exercise.value))
+            pass = false
+
+    })
+
+    document.querySelectorAll('.Exercise_Input').forEach(Exercise => {
+
+        let Ex = ExercisesDB.find(Ex => Ex.id == Exercise.id)    
+
+        if(!(Ex.Answers.find(Answer => Answer == Exercise.value)))
+            pass = false
+
+    })
+
+    let DailyExerciseXp = 0 // THIS WILL BE CHANGED BY ADMIN
+
+    if(pass) {
+        
+        loggedUser.allXp += DailyExerciseXp
+        
+        loggedUser.weekXp += DailyExerciseXp
+
+        sessionStorage.setItem('loggedUser',JSON.stringify(loggedUser))
+
+        for (let User of usersDB) {
+
+            if(User.id == loggedUser.id){
+
+                User.allXp = loggedUser.allXp
+
+                User.weekXp = loggedUser.weekXp
+
+                localStorage.setItem('usersDB',JSON.stringify(usersDB))
+
+                console.log(usersDB)
+                              
+                }
+            }
+
+            document.querySelector('#FinishDailyExercise').innerHTML = "Close"
+
+            document.querySelector('#DailyExercise-Modal .Custom_Modal_Body').innerHTML = 
+            `<h2>Daily exercise completed !!</h2>
+            <p>You've gained ${DailyExerciseXp} XP</p>`
+
+            document.querySelector('#FinishDailyExercise').addEventListener('click', () => {
+
+                document.querySelector('#DailyExercise-Modal').style.display = 'none'
+            }) 
+    }else{
+
+        document.querySelector('#DailyExercise-Modal .Custom_Modal_Body').innerHTML = 
+        `<h2>Daily exercise failed !!</h2>
+        <p>Try again tomorrow</p>`
+        
+        document.querySelector('#FinishDailyExercise').innerHTML = "Close"
+
+        document.querySelector('#FinishDailyExercise').addEventListener('click', () => {
+                
+            document.querySelector('#DailyExercise-Modal').style.display = 'none'
+        
+        }) 
+    }
+
+})

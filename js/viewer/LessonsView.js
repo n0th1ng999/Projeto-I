@@ -107,6 +107,9 @@ function Load_OpenLessonModal_btns() {
 
         document.querySelector('#Exercises_Field').innerHTML = ''
         
+        document.querySelector('#videoLesson').innerHTML =
+        `<source src="../Media/video/Lessons/${CurrentLesson.urlVideo}"></source>`
+
         let exercisesstring = ''
 
         for (const Exercise of ExercisesDB) {
@@ -214,11 +217,9 @@ document.querySelector('#FinishLesson').addEventListener('click', () => {
        
         
             document.querySelector('#Lesson-Modal').style.display = 'none';
-
-      
-
        
         LoadRank_Module_Lesson()
+
     }else{
 
         alert('Not all the Answers are correct')

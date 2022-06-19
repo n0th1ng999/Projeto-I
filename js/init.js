@@ -88,7 +88,7 @@ let MissionsDBjson = localStorage.getItem('MissionsDB')
             localStorage.setItem('AchievementsDB','[]')
             const AchievementsDB =  []
 
-            AchievementsDB.push(new Achievements(AchievementsDB,'Achievement','test.png','this is a description'))
+            AchievementsDB.push(new Achievements(AchievementsDB,'Your first','test.png','Gain 50 XP',1,['allXp',50]))
             AchievementsDBjson = JSON.stringify(AchievementsDB)
 
             localStorage.setItem('AchievementsDB', AchievementsDBjson)
@@ -102,8 +102,8 @@ let MissionsDBjson = localStorage.getItem('MissionsDB')
             
         
             /* push Lessons to LessonsDB */
-            ModulesDB.push(new Modules(ModulesDB,'Begin',[1,2],'beginner'))
-            ModulesDB.push(new Modules(ModulesDB,'Begun',[],'beginner'))
+            ModulesDB.push(new Modules(ModulesDB,'Module 1',[1,2],'beginner'))
+            ModulesDB.push(new Modules(ModulesDB,'Module 2',[],'beginner'))
             console.log(ModulesDB);
 
             /* pass LessonsDB to string */
@@ -124,9 +124,24 @@ let MissionsDBjson = localStorage.getItem('MissionsDB')
 /* reset each user XP at monday     */ 
 let today = date.getDay()
 
-if (today == 1 ) {
-    for (const user of UsersDB) {
-        user.resetWeekXP()        
+let reset = JSON.parse(localStorage.getItem('reset')) 
+
+if (today == 6 ) {
+    
+    if(!reset){
+            console.log('XP RESET !!!')
+
+            for (const user of usersDB) {
+                user.weekXp = 0        
+            }
+        
+            localStorage.setItem('usersDB',JSON.stringify(usersDB))
+
+            localStorage.setItem('reset',JSON.stringify(true))
+
     }
 } 
 
+if (today == 5 ) {
+    localStorage.setItem('reset',JSON.stringify(false))
+}

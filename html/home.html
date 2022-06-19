@@ -31,16 +31,16 @@
             
                   <ul class="navbar-nav ms-auto text-center">
                       <li>
-                        <a class="nav-link" href="#">Lessons</a>
+                        <a class="nav-link" href="Lessons.html">Lessons</a>
                       </li>
                       <li>
-                          <a class="nav-link" href="#">Leaderboard</a>
+                          <a class="nav-link" href="Leaderboard.html">Leaderboard</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="#">Friends</a>
+                            <a class="nav-link" href="Friends.html">Friends</a>
                         </li>
                       <li>
-                          <a class="nav-link" href="#">Profile</a>
+                          <a class="nav-link" href="Profile.html">Profile</a>
                       </li>
                     </ul>
                 </div>
@@ -93,7 +93,7 @@
 
     
     <div id="statsLogIn" class=" w-full">
-        <table border="1" id="tableStats">
+        <table  id="tableStats">
             <tr>
                 <th><h3>This week XP:</h3><br><p id="UserWeekXp"><!-- User XP --></p></th>
                 <th><h3>Overall:</h3><br><p id="UserAllXp"><!-- Total XP --></p></th>
@@ -108,10 +108,10 @@
 
     
     <div id="buttonsLogIn" class=" w-full">
-        <table border="1">
+        <table >
             <tr>
                 <th><button type="button" id="btnToDailyExercises"><h1>Daily Exercises</h1><img src="" alt="" id="bookExercisesPink"></button></th>
-                <th><button type="button" id="btnToLessons"><h1>Review Lessons</h1></button></th>
+
             </tr>
         </table>
     </div>
@@ -120,7 +120,7 @@
 
     <!-- Leaderboard Positions -->
     <div id="leaderboardPositionLogIn" class=" w-full">
-        <table border="1">
+        <table >
             <tr>
                 <th><h3>You're in the #<span id="userPosition"></span><!-- Position --> position in this week's top 10 table</h3></th>
                 <th><a id="btnToLeaderboards" href="Leaderboard.html">Leaderboards</a></th>
@@ -130,10 +130,45 @@
 
 
     <!-- Scripts -->
-  
-    
+
+    <div id="ContainerLessons"></div>
+
+    <br><br>
+
+    <!--MODAL SIGN IN-->
+    <div id="DailyExercise-Modal" class="Custom_Modal_Background">
+
+        <div class="Custom_Modal">
+
+            <div class="Custom_Modal_Head padding-S gap-L"  >
+
+                <h1 class="Heading f-size-S color-Purple" id="DailyExercise-Modal-Title">Daily Exercises</h1>
+
+                <button id="DailyExercise-Modal_Close" class="closeButton">X</button>
+
+            </div>
+
+            <div class="Custom_Modal_Body margin-L gap-M" >
+                <div class="form-control gap-S">
+                    
+                </div>
+                <div id="Exercises_Field" class="form-control  gap-S">
+                    
+                </div>
+            </div>
+            <div class="Custom_Modal_Footer  margin-L" >
+
+                <button id="FinishDailyExercise" class="Body color-Black" >
+                    Finish
+                   </button>
+            
+            </div>
+        </div>
+    </div>
+
+    </body>
     <script type="module" src="../js/viewer/home.js"></script>
 
     <script type="module" src="../js/viewer/Redirect.js"></script>
     </html>
-
+    

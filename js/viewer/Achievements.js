@@ -1,5 +1,12 @@
+let UserToVisit = sessionStorage.getItem('UserToVisit')
+UserToVisit = JSON.parse(UserToVisit)
+
 let loggedInUser = sessionStorage.getItem('loggedUser')
 loggedInUser = JSON.parse(loggedInUser)
+
+if(!UserToVisit){
+    UserToVisit = loggedInUser
+}
 
 let usersDB = localStorage.getItem('usersDB') // load into string
 usersDB = JSON.parse(usersDB)
@@ -17,10 +24,13 @@ for (const Achievement of AchievementsDB) {
     <h3>${Achievement.name}</h3> <p>${Achievement.description}</p>`
     
 
-    if(loggedInUser.Achievements.find( AchivementID => AchivementID == Achievement.id ))
+    if(UserToVisit.Achievements.find( AchivementID => AchivementID == Achievement.id ))
     AchievementDomString += `<p>Completed</p>`
 
     AchievementDomString += `</div></a>`
 
     document.querySelector('#Achievements').innerHTML += AchievementDomString
+
 }
+
+document.querySelector('#username').innerHTML = UserToVisit.name
