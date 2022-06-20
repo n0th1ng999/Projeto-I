@@ -6,7 +6,6 @@ usersDB = JSON.parse(usersDB)
 
 let UsersDBRank = []
 
-usersDB[0].rank = 'intermediate'
 
 loggedUser.Friends.push(2)
 
@@ -22,7 +21,7 @@ console.log(UsersDBRank);
 // LOAD TABLES
 
 function LoadTable(prop,DB,Table,last_place) {
-    
+   
     Table.innerHTML = ''
     let place = 1
     
@@ -35,11 +34,11 @@ function LoadTable(prop,DB,Table,last_place) {
     for (const user of DB) {
 
         if(loggedUser.id == user.id) {
-            Table.innerHTML += `<tr class="user_row"><td>${place}</td><td>${user.name}</td><td>${user.weekXp}</td></tr>`
+            Table.innerHTML += `<tr class="user_row"><td>${place}</td><td>${user.name}</td><td>${user[prop]} XP</td></tr>`
         }else if(loggedUser.Friends.find(friendid => friendid == user.id)){
-            Table.innerHTML += `<tr class="friend_row"><td>${place}</td><td>${user.name}</td><td>${user.weekXp}</td></tr>`
+            Table.innerHTML += `<tr class="friend_row"><td>${place}</td><td>${user.name}</td><td>${user[prop]} XP</td></tr>`
         }else{
-            Table.innerHTML += `<tr><td>${place}</td><td>${user.name}</td><td>${user.weekXp}</td></tr>`     
+            Table.innerHTML += `<tr><td>${place}</td><td>${user.name}</td><td>${user[prop]} XP</td></tr>`     
         }
         
         if(place == last_place)
@@ -81,7 +80,7 @@ const Top50Table = document.querySelector('#Top50Table tbody')
 
 
 document.querySelectorAll('.LoadBigTable').forEach(btn => btn.addEventListener('click',() => {
-
+    document.querySelector('#Leaderboard-Modal').style.display = "flex"
     if(btn.value == "Top10Table_Week"){
         Top50TableTitle.innerHTML = "Top 50 Table this week"
         LoadTable('weekXp',usersDB,Top50Table,50)
@@ -103,3 +102,7 @@ document.querySelectorAll('.LoadBigTable').forEach(btn => btn.addEventListener('
 
 }))
 
+
+document.querySelector("#Leaderboard-Modal_Close").addEventListener('click', ()=>{
+    document.querySelector('#Leaderboard-Modal').style.display = "none"
+})

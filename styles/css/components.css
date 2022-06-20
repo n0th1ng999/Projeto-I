@@ -78,6 +78,7 @@
 
 .Custom_Modal_Background{
   
+  
   position: fixed;
   top:0;
   background: #22222266; 
@@ -89,6 +90,7 @@
 }
 
 .Custom_Modal{
+
   width: fit-content;
   height: fit-content;
   background: #fff;
@@ -99,6 +101,7 @@
 }
 
 .Custom_Modal_Head{
+  
   display: flex;
   border-bottom : 3px solid var(--Black);
   border-radius: 0px;
@@ -110,6 +113,7 @@
 }
 
 .Custom_Modal_Body{
+  transition: all 4s ease-in-out 0s;
   display: flex;
   flex-direction: column;
 }
@@ -132,7 +136,8 @@
   outline: none;
   border:none;
   height: 100%;
-
+  aspect-ratio: 1/1;
+  
 }
 
 .pfpFrame{
@@ -183,6 +188,21 @@
   background: var(--Marroon_S_3);
   border-radius: 30px;
 }
+
+.table{
+  width: 100%;
+  border:0;
+  background: #FDE7FF;
+  border-collapse:collapse; 
+  justify-content: center;
+}
+
+
+.table tr:nth-child(even) {
+  background-color: #FCD6FF;
+}
+
+
 
  #ProgressBar{
   width: 100%;

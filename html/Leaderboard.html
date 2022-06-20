@@ -9,97 +9,181 @@
     <title>Leaderboard</title>
 </head>
 <body>
-    <div>
-        <h2>
-            Top 50 table this week
-        </h2>
-        <table id="Top10Table_Week">
-            <thead>
-                <tr>
-                    <th>Place</th>
-                    <th>User</th>
-                    <th>XP</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-        </table>
-        <button value="Top10Table_Week" class="LoadBigTable">See more</button>
-    </div>
+    
+   
+   
 
-    <div>
-        <h2>
-            Top 50 table this week within <span class="InsertUserRank"></span>
-        </h2>
-        <table id="Top10Table_Week_Rank">
-            <thead>
-                <tr>
-                    <th>Place</th>
-                    <th>User</th>
-                    <th>XP</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-        </table>
-        <button value="Top10Table_Week_Rank" class="LoadBigTable">See more</button>
-    </div>
 
-    <div>
-        <h2>
-            The top 50 table 
-        </h2>
-        <table id="Top10Table">
-            <thead>
-                <tr>
-                    <th>Place</th>
-                    <th>User</th>
-                    <th>XP</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-        </table>
-        <button value="Top10Table"  class="LoadBigTable">See more</button>
+<div class="container w-full" >
+    <div class="bg-Purple_S_4">
+        <div id="purpleArrowsSet1">
+            <img src="..\Media\imgs\Icons\purpleArrow1.svg">
+            <img src="..\Media\imgs\Icons\purpleArrow2.svg">
+            <img src="..\Media\imgs\Icons\purpleArrow3.svg">
+        </div> 
+        <h1 class="Heading f-size-L color-Purple">Classification</h1>
+        <h1 class="Heading f-size-L color-Black">Tables</h1>
+        <div id="purpleArrowsSet2">
+            <img src="..\Media\imgs\Icons\purpleArrow1Set2.svg">
+            <img src="..\Media\imgs\Icons\purpleArrow2Set2.svg">
+            <img src="..\Media\imgs\Icons\purpleArrow1Set2.svg">
+            <img src="..\Media\imgs\Icons\purpleArrow3Set2.svg">
+        </div>
     </div>
-
-    <div>
-        <h2>
-            The top 50 table within <span class="InsertUserRank"></span>
-        </h2>
-        <table id="Top10Table_Rank">
-            <thead>
-                <tr>
-                    <th>Place</th>
-                    <th>User</th>
-                    <th>XP</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-        </table>
-        <button value="Top10Table_Rank" class="LoadBigTable">See more</button>
+    
+    <div class="bg-Purple padding-L">
+        <h2 class=" Heading f-size-M color-White">Top 10 this week</h2>
     </div>
-<div>
-    <h2 id="Top50TableTitle"></h2>
-    <table id="Top50Table">
-        <thead>
+    
+    <table class="table text-align-center color-Black" id="Top10Table_Week">
+        <thead class="Heading f-size-S">
             <tr>
-                <th>Place</th>
-                <th>User</th>
-                <th>XP</th>
+                <th scope="col" class="Heading ">Place</th>
+                <th scope="col" class="Heading ">User</th>
+                <th scope="col" class="Heading ">XP</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="Body f-size-XXS">
             
         </tbody>
     </table>
-</div>
+    <div>
+        <button value="Top10Table_Week" class="LoadBigTable">See more</button>
+    </div>
+
+        <div class="bg-Purple  padding-L">
+            
+            <h2 class="Heading f-size-M color-White"> Top 10 table this week within <span class="InsertUserRank"></span></h2>
+        </div>
+
+        <table class="table text-align-center  color-Black" id="Top10Table_Week_Rank">
+            <thead class="Heading f-size-S">
+                <tr>
+                    <th scope="col" class="Heading ">Place</th>
+                    <th scope="col" class="Heading ">User</th>
+                    <th scope="col" class="Heading ">XP</th>
+                </tr>
+            </thead>
+            <tbody class="Body f-size-XXS">
+                
+            </tbody>
+
+        </table>
+        <div>
+            <button value="Top10Table_Week_Rank" class="LoadBigTable">See more</button>
+        </div>
+        <div class="bg-Purple  padding-L">
+            <h2 class="Heading f-size-M color-White">Top 10</h2>
+        </div>
+
+        <table class="table text-align-center color-Black" id="Top10Table">
+            <thead class="Heading f-size-S">
+                <tr>
+                    <th scope="col" class="Heading ">Place</th>
+                    <th scope="col" class="Heading ">User</th>
+                    <th scope="col" class="Heading ">XP</th>
+                </tr>
+            </thead>
+            <tbody class="Body f-size-XXS">
+                
+            </tbody>
+        </table>
+        <div>
+            <button value="Top10Table" class="LoadBigTable">See more</button>
+        </div>
+
+        <div class="bg-Purple  padding-L">
+            <h2 class="Heading f-size-M color-White">Top 10 on <span class="InsertUserRank"></span></h2>
+        </div>
+
+        <table class="table text-align-center color-Black" id="Top10Table_Rank">
+            <thead class="Heading f-size-S">
+                <tr>
+                    <th scope="col" class="Heading ">Place</th>
+                    <th scope="col" class="Heading ">User</th>
+                    <th scope="col" class="Heading ">XP</th>
+                </tr>
+            </thead>
+            <tbody class="Body f-size-XXS">
+                
+            </tbody>
+        </table>
+        <div>
+            <button value="Top10Table_Rank" class="LoadBigTable">See more</button>
+        </div>
+        
+        
+
+        
+        <div class="d-flex space-between">
+            <div>
+            <h2 class="Heading f-size-S color-Black">You have <span class="color-Purple"><!--User XP--> XP</span> Continue</h2>
+            <h2 class="Heading f-size-S color-Black">your lessons to get more</h2>
+        </div>
+            <a href="Lessons.html">
+                <button class="btn btn-primary">
+                    <img src="..\Media\imgs\Icons\whiteArrow.svg">
+                </button>
+            </a>
+        </div>
+    </div> 
+
+
+
+    <div id="Leaderboard-Modal" class="Custom_Modal_Background">
+
+        <div class="Custom_Modal">
+
+            <div class="d-flex bg-Purple  padding-S gap-L"  >
+
+                    <h1 class="Heading f-size-M color-White" id="Top50TableTitle"></h1>
+               
+                <button id="Leaderboard-Modal_Close" class="closeButton">X</button>
+
+            </div>
+
+            <div class="Custom_Modal_Body margin-L gap-M" >
+
+                <div>
+                    
+                    <table class="table" id="Top50Table">
+                        <thead>
+                            <tr>
+                                <th>Place</th>
+                            <th>User</th>
+                            <th>XP</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+                </div>
+            
+
+                <div id="Exercises_Field" class="form-control  gap-S">
+                    
+                    
+
+                </div>
+
+            </div>
+
+
+          
+
+            <div class="Custom_Modal_Footer  margin-L" >
+                
+            </div>
+
+        </div>
+
+    </div>
+
+
 </body>
 <script type="module" src="../js/viewer/Redirect.js"></script>
 <script type="module" src="../js/viewer/Leaderboard.js"></script>
 </html>
+
+
