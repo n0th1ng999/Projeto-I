@@ -86,15 +86,15 @@ document.querySelectorAll('.LoadBigTable').forEach(btn => btn.addEventListener('
         LoadTable('weekXp',usersDB,Top50Table,50)
 
     }else if(btn.value == "Top10Table_Week_Rank"){
-        Top50TableTitle.innerHTML = "Top 50 Table this week within <span class='InsertUserRank'></span>"
+        Top50TableTitle.innerHTML = "Top 50 Table this week within <span class='InsertUserRank padding-S'></span>"
         LoadTable('weekXp',UsersDBRank,Top50Table,50)
 
     }else if(btn.value == "Top10Table"){
-        Top50TableTitle.innerHTML = "Top 50 Table <span class='InsertUserRank'></span>"
+        Top50TableTitle.innerHTML = "Top 50 Table <span class='InsertUserRank padding-S'></span>"
         LoadTable('allXp',usersDB,Top50Table,50)
 
     }else if(btn.value == "Top10Table_Rank"){
-        Top50TableTitle.innerHTML = "Top 50 Table within <span class='InsertUserRank'></span>"
+        Top50TableTitle.innerHTML = "Top 50 Table within <span class='InsertUserRank padding-S'></span>"
         LoadTable('allXp',UsersDBRank,Top50Table,50)
 
     }

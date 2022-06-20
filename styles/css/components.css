@@ -202,7 +202,25 @@
   background-color: #FCD6FF;
 }
 
+.btn-Arrow{
+  display: flex;
 
+}
+
+.btn-Arrow svg{
+  height: 30px;
+  width: 30px;
+}
+
+.btn-Arrow:hover{
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  
+}
+
+.btn-Arrow:hover svg path{
+ fill: var(--Purple);
+}
 
  #ProgressBar{
   width: 100%;
