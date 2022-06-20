@@ -188,7 +188,7 @@ document.querySelector('#FinishDailyExercise').addEventListener('click', () => {
 
     })
 
-    let DailyExerciseXp = 0 // THIS WILL BE CHANGED BY ADMIN
+    let DailyExerciseXp = JSON.parse(localStorage.getItem('DailyExerciseXp'))
 
     if(pass) {
         

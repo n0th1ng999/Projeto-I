@@ -25,7 +25,10 @@ document.querySelector('#SignInBtn').addEventListener('click', ()=>{
 
     let loggedUser = usersDB.find(user => (user.name == Username.value && user.password == Password.value))
     
-    if(loggedUser){
+    if(loggedUser.blocked == true){
+        alert('User is blocked')
+    
+    }else if(loggedUser){
 
         console.log(loggedUser)
 

@@ -704,7 +704,7 @@ EditModal_Lesson_SaveBtn.addEventListener('click', () => {
 
 EditModal_Lesson_DelBtn.addEventListener('click', () => {
     
-    LessonsDB = LessonsDB.filter(Lesson => Lesson.id == LessonToEdit.id)
+    LessonsDB = LessonsDB.filter(Lesson => Lesson.id != LessonToEdit.id)
     
     const LessonsDBjson = JSON.stringify(LessonsDB)
 
@@ -746,42 +746,48 @@ EditModal_Lesson_DelBtn.addEventListener('click', () => {
     function LoadExercisesTable() {
         ExercisesTableTbody.innerHTML=''
         for (const Exercise of ExercisesDB) {
+
+            let ExerciseLesson = ''
             for (const Lesson of LessonsDB) {
                 if(Exercise.LessonId == Lesson.id){
-                    
-                   
-                    let row = ''
-
-                    row += 
-                    `
-                    <tr class="Exercise-Row">
-                    <td>${Exercise.id}</td>
-                    <td>${Lesson.name}</td>
-                    <td>${Exercise.question}</td>
-                    <td>
-                    `
-                   
-                    for(const AnswerIndex in Exercise.Answers) {
-        
-                        if( AnswerIndex == Exercise.CorrectAnswer){
-                            row += 
-                            `<span class="text-success">
-                            ${Exercise.Answers[parseInt(AnswerIndex)]}
-                            </span><br>`
-                        }
-                        else{
-                            row += 
-                            `<span> ${Exercise.Answers[parseInt(AnswerIndex)]} </span><br>`
-                        }
-                    }
-
-                    row += `</td><td><button id="${Exercise.id}" class="Exercise_edit btn btn-primary bg-primary" data-bs-toggle="modal" 
-                    data-bs-target="#EditModal_Exercise">Edit Exercise</button></td></tr>`
-
-                    ExercisesTableTbody.innerHTML+=row
+                    ExerciseLesson = Lesson
                 } 
             
             }
+
+            
+             let row = ''
+
+             row += 
+             `
+             <tr class="Exercise-Row">
+             <td>${Exercise.id}</td>
+             <td>${ExerciseLesson.name || 'No Lesson'}</td>
+             <td>${Exercise.question}</td>
+             <td>
+             `
+            
+             for(const AnswerIndex in Exercise.Answers) {
+ 
+                 if( AnswerIndex == Exercise.CorrectAnswer){
+                     row += 
+                     `<span class="text-success">
+                     ${Exercise.Answers[parseInt(AnswerIndex)]}
+                     </span><br>`
+                 }
+                 else{
+                     row += 
+                     `<span> ${Exercise.Answers[parseInt(AnswerIndex)]} </span><br>`
+                 }
+             }
+
+             row += `</td><td><button id="${Exercise.id}" class="Exercise_edit btn btn-primary bg-primary" data-bs-toggle="modal" 
+             data-bs-target="#EditModal_Exercise">Edit Exercise</button></td></tr>`
+
+             ExercisesTableTbody.innerHTML+=row
+
+
+           
 
         }
         Load_EditExercise()
@@ -1042,4 +1048,8 @@ EditModal_Lesson_DelBtn.addEventListener('click', () => {
 
         }
 
+    })
+
+    document.querySelector('#Daily_XP_btn').addEventListener('click',()=>{
+        localStorage.setItem('DailyExerciseXp',JSON.stringify(parseInt(document.querySelector('#Daily_XP').value)))
     })
