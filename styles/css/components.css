@@ -86,3 +86,71 @@
       margin-bottom: 50px;
     }
 }
+
+/* Decoration Arrows Sets */
+
+.arrowsDecor{
+  justify-content: center;
+}
+
+.pinkArrow2{
+  justify-content: flex-end;
+}
+
+.pinkArrowFull{
+  justify-content: flex-end;
+}
+
+/* Home Buttons */
+
+.btnHome{
+  background-color: #B83B5E;
+}
+
+.btnHomeLeaderboard{
+  background-color: #B83B5E;
+  width: 68px;
+  height: 116px;
+  border: none;
+}
+
+.btnHomeLeaderboard:hover{
+  background-color: #B83B5E;
+  border: none;
+}
+
+.btnExercises{
+  background-color: #F182A1;
+  border: none;
+}
+
+.btnLessons{
+  background-color: #FAB0C5;
+  border: none;
+}
+
+.btnHomeLessons{
+  background-color: #B83B5E;
+  height: 280px;
+  width: 68px;
+  border: none;
+}
+
+.btnHomeLessons:hover{
+  background-color: #B83B5E;
+  border: none;
+}
+
+/* Tables*/
+
+/* Home Progress Bar */
+
+.planet{
+  position: relative;
+  left: -40px;
+}
+
+.rocket{
+  position: relative;
+  left: 30px;
+}

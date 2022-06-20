@@ -56,61 +56,114 @@
         </div>    
     </div> -->
 
-    <div class="container w-full margin-L" style="justify-self: center">
-        <div class="bg-Marroon_S_2">
-                <h1 class="Heading f-size-L color-Marroon">Welcome</h1>
+    <div class="w-full d-flex bg-Marroon_S_2" style="justify-self: center">
+        
+        <div>
+            <img src="../Media/imgs/Icons/pinkArrows.svg" class="arrowsDecor">
+            <h1 class="Heading f-size-L color-Marroon">Welcome</h1>
             <h2 class="Heading f-size-L color-black">!</h2>
-            <img src="../Media/imgs/Icons/Boy2.svg" width="150" height="100" id="iconDisplay">
+        </div>
+
+        <div>
+            <img src="../Media/imgs/Icons/pinkCross.svg">                
+        </div>
+
+        <div class="squaresFrame d-flex">
+            <img src="../Media/imgs/Icons/squareFrames.png" width="70" height="70">                                                        
+        </div>
+
+        <div>
+            <img src="../Media/imgs/Icons/Boy2.svg" width="41" height="38" id="iconDisplay">
         </div>
     </div>
 
 
     
-    <div id="currentLesson container-fluid" class="container w-full">
-        <h3 class="f-size-M">Continue your journey:</h3>
-        <p>Lesson <!-- Lesson number --></p>
-        <br>
-        <p>You've finished <!-- Percentage --> of the lesson the <!-- rank -->, continue your jouney by completing <!-- modulos a completar -->.</p>
-        <h3>Course Completion:</h3>
-        <!-- Progress Bar -->
+    <div id="currentLesson" class="w-full d-flex">
+        <div>
+            <h3 class="f-size-M Heading color-Black">Continue your journey:</h3>
+            <p class="f-size-S Body"><!-- Lesson number --></p>
+            <br>
+            <p>You've finished <!-- Percentage --> of the lesson the <!-- rank -->, continue your jouney by completing <!-- modulos a completar -->.</p>
+            <h3 class="Heading">Course Completion:</h3>
+            <!-- Progress Bar -->
+            <div>
+                <img class="rocket" src="../Media/imgs/Icons/rocketProgressBar.svg">
+                <img src="../Media/imgs/Icons/progressBar.svg">
+                <img class="planet" src="../Media/imgs/Icons/planet.svg">
+            </div>    
+        </div>
+
+        <div>
+            <img src="../Media/imgs/Icons/trianglesDecor.svg">                
+        </div>
+
+        <div class="d-flex">
+             <button class="btn btn-primary btnHomeLessons">
+                <img src="..\Media\imgs\Icons\whiteArrow.svg">
+            </button>
+        </div>
     </div>
 
 
     
-    <div id="statsLogIn" class="container w-full">
-        <table border="1" id="tableStats">
-            <tr>
-                <th><h3>This week XP:</h3><br><p><!-- User XP --></p></th>
-                <th><h3>Overall:</h3><br><p><!-- Total XP --></p></th>
-            </tr>
-            <tr>
-                <th><h3>Current rank:</h3><br><p><!-- User Rank --></p></th>
-                <th><h3>Achievement Collection:</h3><br><p><!-- User XP --></p></th>
-            </tr>
-        </table> 
+    <div id="statsLogIn" class="w-full d-flex bg-Marroon_S_3 tableHome">
+        
+        <div>
+            <img src="..\Media\imgs\Icons\circlesCrossDecorHome.svg">
+        </div>
+
+        <div class="d-flex w-full">
+             <table class="tableHome"  id="tableStats">
+                <tr class="Heading color-Black">
+                    <td><h3>Week XP:</h3></td>
+                    <td></td>
+                    <td><h3>Overall XP:</h3></td>
+                </tr>
+                <tr>
+                    <td><p><!-- User XP --></p></td>
+                    <td></td>
+                    <td><p><!-- Total XP --></p></td>
+                </tr>
+                <tr></tr>
+                <tr class="Heading color-Black">
+                    <td><h3>Current Rank:</h3></td>
+                    <td></td>
+                    <td><h3>Achievement Collection:</h3></td>
+                </tr>
+                <tr>
+                    <td><p><!-- User Rank --></p></td>
+                    <td></td>
+                    <td><p><!--User XP --></p></td>
+                </tr>
+            </table> 
+        </div>
+
+        <div class="pinkArrowFull">
+            <img src="..\Media\imgs\Icons\pinkArrowFull.svg">
+        </div>
+      
     </div>
-    <br><br>
+   
 
     
-    <div id="buttonsLogIn" class="container w-full">
-        <table border="1">
-            <tr>
-                <th><button type="button" id="btnToDailyExercises"><h1>Daily Exercises</h1><img src="" alt="" id="bookExercisesPink"></button></th>
-                <th><button type="button" id="btnToLessons"><h1>Review Lessons</h1></button></th>
+    <div id="buttonsLogIn" class="d-flex row w-full">
+        <table>
+            <tr style="text-align:center">
+                <th class="btnExercises"><button class="btnExercises" type="button" id="btnToDailyExercises"><h1 class="Heading">Daily Exercises</h1><img src="..\Media\imgs\Icons\exercisesBook.svg" id="bookExercisesPink"></button></th>
+                <th class="btnLessons"><button class="btnLessons" type="button" id="btnToLessons"><h1 class="Heading">Review Lessons</h1><img src="..\Media\imgs\Icons\reviewBook.svg"></button></th>
             </tr>
         </table>
     </div>
-
-    <br><br>
 
     <!-- Leaderboard Positions -->
     <div id="leaderboardPositionLogIn" class="container w-full">
-        <table border="1">
+        <table>
             <tr>
                 <th><h3>You're in the #<!-- Position --> position in the <!-- Leaderboard in question --></h3></th>
-                <th><button id="btnToLeaderboards"></button></th>
+                <th><button id="btnToLeaderboards" class="btn btn-primary btnHomeLeaderboard"><img src="..\Media\imgs\Icons\whiteArrow.svg"></button></th>
             </tr>
-        </table>
+        </table>       
     </div>
 
 
