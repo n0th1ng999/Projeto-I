@@ -119,13 +119,13 @@ let RandomExerciseIndex = Math.floor(Math.random() * dailyExercises.length);
 document.querySelector('#btnToDailyExercises').addEventListener('click', () => {
   
     if(loggedUser.Lessons.length > 0){
-
     if(today != yesterday){
       
         document.querySelector('#DailyExercise-Modal').style.display = 'flex'
         
         yesterday = today
-        
+
+       
             if(dailyExercises[RandomExerciseIndex].Answers.length > 1){
             
                 exercisesstring += `<label>${dailyExercises[RandomExerciseIndex].question}</label>
@@ -150,11 +150,14 @@ document.querySelector('#btnToDailyExercises').addEventListener('click', () => {
 
             document.querySelector('#DailyExercise-Modal .Custom_Modal_Body').innerHTML = exercisesstring
             
+            //localStorage.setItem('yesterday',JSON.stringify(yesterday))
+
         }else{
 
             alert('Daily exercise has already been done')
 
         }
+
     }else{
 
         alert('You have no exercises available!')

@@ -204,7 +204,18 @@
 
 .btn-Arrow{
   display: flex;
+  align-items: center;
+  justify-content: center;
 
+}
+
+
+.btn-Arrow:hover svg path{
+ fill: var(--Purple);
+}
+
+.btn-marroon:hover svg path{
+  fill: var(--Marroon);
 }
 
 .btn-Arrow svg{
@@ -218,9 +229,6 @@
   
 }
 
-.btn-Arrow:hover svg path{
- fill: var(--Purple);
-}
 
 .LoadBigTable{
   width: 100%;
@@ -240,6 +248,10 @@
   position: relative;
   top: 50%;
   left: -80px;
+}
+
+#btnToDailyExercises{
+ border:0
 }
 
  #ProgressBar{

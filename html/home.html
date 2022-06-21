@@ -71,14 +71,15 @@
 
 
     
-    <div id="currentLesson -fluid" class=" w-full">
-        <h3 class="f-size-M">Continue your journey:</h3>
-        <br>
-        <p>You've finished <span id="ModuleCompletion"><!-- % of Module Completed --></span>
-             of the Module 
-             <span id="ModuleName"></span>(<span id="ModuleRank"></span>), continue your jouney</p>
+    <div id="currentLesson" class=" w-full d-flex">
+        <div class="w-full margin-L">
+        <h3 class="f-size-M Heading color-Black">Continue your journey:</h3>
         
-        <h3>Course Completion:</h3>
+        <p class="Body Black">You've finished <span id="ModuleCompletion"><!-- % of Module Completed --></span>
+             of the Module 
+             <span id="ModuleName" ></span>(<span id="ModuleRank"></span>), continue your jouney</p>
+        
+        <h3 class="Heading color-Black">Course Completion:</h3>
         <div>
             <div class="Progress-Bar">
                 <div id="ProgressBar"></div>
@@ -87,45 +88,55 @@
                 <img src="../Media/imgs/Icons/lua.svg" id="MoonProgressBar"></img>
             </div>
         </div>
+    </div>
+    <a class="padding-L btn-Arrow btn-marroon bg-Marroon" href="Lessons.html">
+        <svg width="143" height="184" viewBox="0 0 143 184" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.59825 29.126L83.6912 89.6731C84.2004 90.0679 84.2089 90.834 83.7086 91.2399L5.21132 154.939C-0.270778 159.388 -0.746572 167.585 4.18399 172.638L11.6363 180.275C15.922 184.668 22.8309 185.119 27.6513 181.321L141.987 91.2439C142.5 90.8395 142.494 90.0595 141.974 89.6632L27.6437 2.46033C22.8116 -1.22522 15.9871 -0.716599 11.7547 3.64452L4.33958 11.2852C-0.642252 16.4186 -0.0549707 24.7429 5.59825 29.126Z" fill="white"></path>
+        </svg>  
+    </a>
+    </div>  
         
     </div>
 
 
     
-    <div id="statsLogIn" class=" w-full">
-        <table  id="tableStats">
+    <div id="statsLogIn" class=" w-full Heading color-Black bg-Marroon_S_3 d-flex flex-center">
+        <table  id="tableStats" class="margin-L">
             <tr>
-                <th><h3>This week XP:</h3><br><p id="UserWeekXp"><!-- User XP --></p></th>
-                <th><h3>Overall:</h3><br><p id="UserAllXp"><!-- Total XP --></p></th>
+                <th><h3>This week XP:</h3><p id="UserWeekXp"><!-- User XP --></p></th>
+                <th><h3>Overall:</h3><p id="UserAllXp"><!-- Total XP --></p></th>
             </tr>
             <tr>
-                <th><h3>Current rank:</h3><br><p id="UserRank"><!-- User Rank --></p></th>
-                <th><h3>Achievement Collection:</h3><br><p id="AchievementPercentage"><!-- User XP --></p></th>
+                <th><h3>Current rank:</h3><p id="UserRank"><!-- User Rank --></p></th>
+                <th><h3>Achievement Collection:</h3><p id="AchievementPercentage"><!-- User XP --></p></th>
             </tr>
         </table> 
     </div>
-    <br><br>
+    
 
     
-    <div id="buttonsLogIn" class=" w-full">
-        <table >
-            <tr>
-                <th><button type="button" id="btnToDailyExercises"><h1>Daily Exercises</h1><img src="" alt="" id="bookExercisesPink"></button></th>
+    <div id="" class=" w-full">
+        <button type="button"  class="flex-center d-flex w-full bg-Marroon_S_2 Body padding-L gap-L" id="btnToDailyExercises">
+            <img src="../Media/imgs/Icons/ExercisesBook.png" alt="" >
+            <h1 class="color-Black">Daily Exercises</h1>
+        </button>
 
-            </tr>
-        </table>
-    </div>
+       
 
-    <br><br>
+    
 
     <!-- Leaderboard Positions -->
-    <div id="leaderboardPositionLogIn" class=" w-full">
-        <table >
-            <tr>
-                <th><h3>You're in the #<span id="userPosition"></span><!-- Position --> position in this week's top 10 table</h3></th>
-                <th><a id="btnToLeaderboards" href="Leaderboard.html">Leaderboards</a></th>
-            </tr>
-        </table>
+    <div id="leaderboardPositionLogIn" class=" w-full Heading f-size-S">
+       
+            <div class="d-flex w-full space-between">
+            <h3 class=" margin-L color-Black">You're in the #<span id="userPosition"></span><!-- Position --> position in this week's top 10 table</h3></th>
+            <a class="padding-L btn-Arrow btn-marroon bg-Marroon" href="Leaderboard.html">
+                <svg width="143" height="184" viewBox="0 0 143 184" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.59825 29.126L83.6912 89.6731C84.2004 90.0679 84.2089 90.834 83.7086 91.2399L5.21132 154.939C-0.270778 159.388 -0.746572 167.585 4.18399 172.638L11.6363 180.275C15.922 184.668 22.8309 185.119 27.6513 181.321L141.987 91.2439C142.5 90.8395 142.494 90.0595 141.974 89.6632L27.6437 2.46033C22.8116 -1.22522 15.9871 -0.716599 11.7547 3.64452L4.33958 11.2852C-0.642252 16.4186 -0.0549707 24.7429 5.59825 29.126Z" fill="white"></path>
+                </svg>  
+            </a>
+            </div>
+        
     </div>
 
 
@@ -133,7 +144,7 @@
 
     <div id="ContainerLessons"></div>
 
-    <br><br>
+    
 
     <!--MODAL SIGN IN-->
     <div id="DailyExercise-Modal" class="Custom_Modal_Background">
@@ -165,6 +176,7 @@
             </div>
         </div>
     </div>
+
 
     </body>
     <script type="module" src="../js/viewer/home.js"></script>
