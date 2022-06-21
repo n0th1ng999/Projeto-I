@@ -92,12 +92,35 @@
         Create Exercise 
         </button>
         <br>
+        
         <div class="form-group ">
         <label for="Daily_XP"></label>
         <input type="number" id="Daily_XP" placeholder="XP amount" class="form-control">
         <button class="btn btn-primary" id="Daily_XP_btn" >Change</button>
         </div>
-    
+        <br>
+        <h2>Achievements</h2>
+            <table id="TableAchievements" class="col-10 table table-bordered ">
+                <thead class="thead-dark">
+                <tr class="bg-dark text-white">
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">File</th>
+                    <th scope="col">FuncIdentifier</th>  
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+            <!-- Button trigger modal CreateModalModule -->
+            <button type="button" class="btn btn-success" id="TableAchievementsModal_BT"
+            data-bs-toggle="modal" 
+            data-bs-target="#TableAchievementsModal">
+                Create Module
+            </button>
       </div>
 
   <!-- Modal Create Module Modal-->
@@ -434,7 +457,7 @@
           </div>
         <div class="modal-footer">
           <button id="EditModal_Exercise_CloseBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
+          <button id="EditModal_Exercise_DeleteBtn" type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
           <button id="EditModal_Exercise_Savebtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Edit</button>
         </div>
       </div>
@@ -442,7 +465,157 @@
   </div>
   </div>
   
+   <!-- Modal Create Module Modal-->
+   <div class="modal fade " id="TableAchievementsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="TableAchievementsModalLabel">Creating Module</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+              
+          <div class="form-group m-2">
+              <label for="TableAchievementsModal_NameInput">Achivement Name</label>
+              <input type="text" class="form-control" id="TableAchievementsModal_NameInput" placeholder="Module name">
+          </div>
+          <br>
+          <div class="form-group m-2">
+            <label for="TableAchievementsModal_DescriptionInput">Description</label>
+            <input type="text" class="form-control" id="TableAchievementsModal_DescriptionInput" placeholder="Module name">
+        </div>
+        <br>
+        <div class="form-group m-2">
+          <label for="TableAchievementsModal_Image_Url">URL Video</label>
+          <input 
+            type="file"
+            class="form-control"
+            id="TableAchievementsModal_Image_Url" 
+            placeholder="URL Video"
+            accept="image/*"
+            >
+          <div id="TableAchievementsModal_CurrentUrl_Image" class="alert alert-info"></div>
+        </div>
+        <div class="form-group m-2">
+          <label for="TableAchievementsModal_FuncIdentifier">Description</label>
+          <select type="text" class="form-control" id="TableAchievementsModal_FuncIdentifier" placeholder="Module name">
+            <option value="1">1 - Check XP</option>
+            <option value="2">2 - Check Rank</option>
+          </select>
+      </div>
+      <br>
+      <div id="TableAchievementsModal_XP" class="form-group m-2">
+        <label for="TableAchievementsModal_XP_type">XP Type</label>
+        <select type="text" class="form-control" id="TableAchievementsModal_XP_type" placeholder="Module name">
+          <option value="allXp">Overall Xp</option>
+          <option value="weekXp">Weekly Xp</option>
+        </select>
+        <br>
+        <label  for="TableAchievementsModal_XP_amount">XP amount</label>
+        <input type="text" class="form-control" id="TableAchievementsModal_XP_amount">
+        
+      </div>
+
+      <div id="TableAchievementsModal_Rank" class="form-group m-2">
+        <label for="TableAchievementsModal_Rank_Select">XP Type</label>
+        <select type="text" class="form-control" id="TableAchievementsModal_Rank_Select" placeholder="Module name">
+          <option value="beginner">beginner</option>
+          <option value="intermediate">intermediate</option>
+          <option value="pro">pro</option>
+        </select>
+     
+      </div>
+
+        <br>
+            
+        </div>
+      <div class="modal-footer">
+
+        <button id="TableAchievementsModal_CloseBtn"
+
+         type="button" class="btn btn-secondary"
+          data-bs-dismiss="modal">Close</button>
+        
+        <button id="TableAchievementsModal_SaveBtn"
+
+         type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+      </div>
+      </div>
+    </div>
+  </div>
+
+     <!-- Modal Create Module Modal-->
+     <div class="modal fade " id="TableAchievementsModalEdit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="TableAchievementsModalEditLabel">Edit Achievement</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              
+              <div class="form-group m-2">
+                  <label for="TableAchievementsModalEdit_NameInput">Achivement Name</label>
+                  <input type="text" class="form-control" id="TableAchievementsModalEdit_NameInput" placeholder="Module name">
+              </div>
+              <br>
+              <div class="form-group m-2">
+                <label for="TableAchievementsModalEdit_DescriptionInput">Description</label>
+                <input type="text" class="form-control" id="TableAchievementsModalEdit_DescriptionInput" placeholder="Module name">
+            </div>
+            <br>
+            <div class="form-group m-2">
+              <label for="TableAchievementsModalEdit_Image_Url">URL Video</label>
+              <input 
+                type="file"
+                class="form-control"
+                id="TableAchievementsModalEdit_Image_Url" 
+                placeholder="URL Video"
+                accept="image/*"
+                >
+              <div id="TableAchievementsModalEdit_CurrentUrl_Image" class="alert alert-info"></div>
+            </div>
+            <div class="form-group m-2">
+              <label for="TableAchievementsModalEdit_FuncIdentifier">Description</label>
+              <select type="text" class="form-control" id="TableAchievementsModalEdit_FuncIdentifier" placeholder="Module name">
+                <option value="1">1 - Check XP</option>
+                <option value="2">2 - Check Rank</option>
+              </select>
+          </div>
+          <br>
+          <div id="TableAchievementsModalEdit_XP" class="form-group m-2">
+            <label for="TableAchievementsModalEdit_XP_type">XP Type</label>
+            <select type="text" class="form-control" id="TableAchievementsModalEdit_XP_type" placeholder="Module name">
+              <option value="allXp">Overall Xp</option>
+              <option value="weekXp">Weekly Xp</option>
+            </select>
+            <br>
+            <label  for="TableAchievementsModalEdit_XP_amount">XP amount</label>
+            <input type="text" class="form-control" id="TableAchievementsModalEdit_XP_amount">
+            
+          </div>
+
+          <div id="TableAchievementsModalEdit_Rank" class="form-group m-2">
+            <label for="TableAchievementsModalEdit_Rank_Select">XP Type</label>
+            <select type="text" class="form-control" id="TableAchievementsModalEdit_Rank_Select" placeholder="Module name">
+              <option value="beginner">beginner</option>
+              <option value="intermediate">intermediate</option>
+              <option value="pro">pro</option>
+            </select>
+         
+          </div>
   
+            <br>
+                
+            </div>
+          <div class="modal-footer">
+            <button id="TableAchievementsModalEdit_CloseBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button id="TableAchievementsModalEdit_dangerBtn" type="button" class="btn btn-danger" data-bs-dismiss="modal">Delete</button>
+            <button id="TableAchievementsModalEdit_SaveBtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 </body>

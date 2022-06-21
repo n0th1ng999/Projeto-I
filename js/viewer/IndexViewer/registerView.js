@@ -51,6 +51,12 @@ document.querySelector('#SignUpBtn').addEventListener('click', ()=>{
 
                         usersDB.push(new users(usersDB,Username.value,Password.value,Email.value))
                         
+                        localStorage.setItem('usersDB',JSON.stringify(usersDB))
+
+                        sessionStorage.setItem('loggedUser',JSON.stringify(new users(usersDB,Username.value,Password.value,Email.value)))
+
+                        window.location.replace("/html/home.html")
+
                         console.log(usersDB);
                 
                     }else{

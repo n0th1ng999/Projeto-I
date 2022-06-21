@@ -84,7 +84,7 @@ UserAllXp.innerHTML = loggedUser.allXp
 
 UserRank.innerHTML = loggedUser.rank
 
-AchievementPercentage.innerHTML = Math.round( (loggedUser.Achievements.length / AchievementsDB.length) *100) * 100 + ' %'
+AchievementPercentage.innerHTML = Math.round( (loggedUser.Achievements.length / AchievementsDB.length) * 100)  + ' %'
 
 iconDisplay.src = `../Media/imgs/Avatars/${loggedUser.Avatar}.svg`
 

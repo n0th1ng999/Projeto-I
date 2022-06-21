@@ -947,7 +947,9 @@ EditModal_Lesson_DelBtn.addEventListener('click', () => {
 
     const EditModal_Exercise_Lesson = document.querySelector('#EditModal_Exercise_Lesson')
 
-    const  EditModal_Exercise_Savebtn = document.querySelector('#EditModal_Exercise_Savebtn')
+    const EditModal_Exercise_Savebtn = document.querySelector('#EditModal_Exercise_Savebtn')
+
+    const EditModal_Exercise_DeleteBtn = document.querySelector('#EditModal_Exercise_DeleteBtn')
 
     /* INITIALIZE Load_EditExercise */
 
@@ -1047,6 +1049,20 @@ EditModal_Lesson_DelBtn.addEventListener('click', () => {
         }
     })
 
+
+    EditModal_Exercise_DeleteBtn.addEventListener('click', () => {
+
+        ExercisesDB = ExercisesDB.filter(Exercise => Exercise.id != ExerciseToEdit)
+
+        const ExercisesDBjson = JSON.stringify(ExercisesDB)
+                
+        localStorage.setItem('ExercisesDB', ExercisesDBjson)
+
+        LoadExercisesTable()
+
+    })
+
+
     EditModal_Exercise_Savebtn.addEventListener('click', () => {
         
 
@@ -1077,3 +1093,233 @@ EditModal_Lesson_DelBtn.addEventListener('click', () => {
     document.querySelector('#Daily_XP_btn').addEventListener('click',()=>{
         localStorage.setItem('DailyExerciseXp',JSON.stringify(parseInt(document.querySelector('#Daily_XP').value)))
     })
+
+
+    const TableAchievements = document.querySelector('#TableAchievements tbody')
+    
+    function LoadAchievementsTable(){
+        
+        TableAchievements.innerHTML = ''
+
+        for (const Achievement of AchievementsDB) {
+            TableAchievements.innerHTML +=
+            `<tr>
+            <td>${Achievement.id}</td>
+            <td>${Achievement.name}</td>
+            <td>${Achievement.description}</td>
+            <td>${Achievement.imageUrl}</td>
+            <td>${Achievement.funcProps} </td>
+            <td><button id="${Achievement.id}" 
+            class="AchievementEdit btn btn-success" 
+            data-bs-toggle="modal"
+            data-bs-target="#TableAchievementsModalEdit">Edit</td>
+            </tr>`
+            
+        }
+
+        LoadEditBtns()
+    }
+
+    LoadAchievementsTable()
+
+
+    //MODAL EDIT ACHIEVEMENTS//
+
+    const TableAchievementsModal_BTN = 
+    document.querySelector('#TableAchievementsModal_BTN')
+
+    const TableAchievementsModalEdit_NameInput =
+    document.querySelector('#TableAchievementsModalEdit_NameInput')
+
+    const TableAchievementsModalEdit_DescriptionInput = 
+    document.querySelector('#TableAchievementsModalEdit_DescriptionInput')
+
+    const TableAchievementsModalEdit_Image_Url =
+    document.querySelector('#TableAchievementsModalEdit_Image_Url')
+
+    const TableAchievementsModalEdit_FuncIdentifier =
+    document.querySelector('#TableAchievementsModalEdit_FuncIdentifier')
+
+    TableAchievementsModalEdit_FuncIdentifier.value=''
+
+    const TableAchievementsModalEdit_XP= 
+    document.querySelector('#TableAchievementsModalEdit_XP')
+
+    TableAchievementsModalEdit_XP.style.display = 'none'
+
+    const TableAchievementsModalEdit_XP_type = 
+    document.querySelector('#TableAchievementsModalEdit_XP_type')
+
+    const TableAchievementsModalEdit_XP_amount = 
+    document.querySelector('#TableAchievementsModalEdit_XP_amount')
+
+    const TableAchievementsModalEdit_Rank = 
+    document.querySelector('#TableAchievementsModalEdit_Rank') 
+
+    TableAchievementsModalEdit_Rank.style.display = 'none'
+
+    const TableAchievementsModalEdit_Rank_Select = 
+    document.querySelector('#TableAchievementsModalEdit_Rank_Select')
+
+
+
+    TableAchievementsModalEdit_FuncIdentifier.addEventListener('change',()=>{
+        console.log('click');
+        
+        if(TableAchievementsModalEdit_FuncIdentifier.value == 1){
+
+            TableAchievementsModalEdit_XP.style.display = 'block'
+
+            TableAchievementsModalEdit_Rank.style.display = 'none'
+        }
+        if(TableAchievementsModalEdit_FuncIdentifier.value == 2){
+
+            TableAchievementsModalEdit_Rank.style.display = 'block'
+
+            TableAchievementsModalEdit_XP.style.display = 'none'
+
+        }
+
+    })
+    
+    let AchievementToEdit
+
+function LoadEditBtns() {
+
+    document.querySelectorAll('.AchievementEdit').forEach(btn => btn.addEventListener('click',()=>{
+        
+        AchievementToEdit = AchievementsDB.find(el => el.id == btn.id)
+        
+        TableAchievementsModalEdit_NameInput.value = AchievementToEdit.name
+
+        TableAchievementsModalEdit_DescriptionInput.value = AchievementToEdit.description
+
+        TableAchievementsModalEdit_CurrentUrl_Image.value = AchievementToEdit.imageUrl
+
+        TableAchievementsModalEdit_FuncIdentifier.value = 'none'
+
+        TableAchievementsModalEdit_Rank.style.display = 'none'
+
+        TableAchievementsModalEdit_XP.style.display = 'none'
+
+    }))}
+
+
+    document.querySelector('#TableAchievementsModalEdit_SaveBtn').addEventListener('click',()=>{
+       
+        AchievementToEdit.name = TableAchievementsModalEdit_NameInput.value 
+
+        AchievementToEdit.description = TableAchievementsModalEdit_DescriptionInput.value 
+
+        if(TableAchievementsModalEdit_Image_Url.files[0])
+        AchievementToEdit.urlImage = TableAchievementsModalEdit_Image_Url.files[0] 
+
+        if(TableAchievementsModalEdit_FuncIdentifier.value == 1 ){
+            
+            AchievementToEdit.funcIdentifier = 1
+            AchievementToEdit.funcProps[0] = TableAchievementsModalEdit_XP_type.value
+            AchievementToEdit.funcProps[1] = TableAchievementsModalEdit_XP_amount.value
+        }
+
+        if(TableAchievementsModalEdit_FuncIdentifier.value == 2 ){
+
+            AchievementToEdit.funcIdentifier = 2
+            AchievementToEdit.funcProps[0] = TableAchievementsModalEdit_Rank_Select.value
+            if( AchievementToEdit.funcProps.length > 1)
+            AchievementToEdit.funcProps.pop()
+        }
+
+        for (let Achievement of AchievementsDB) {
+            if(AchievementToEdit.id == Achievement.id){
+                Achievement = AchievementToEdit
+            }
+            
+        }
+
+        LoadAchievementsTable()
+
+    })
+
+    document.querySelector('#TableAchievementsModalEdit_dangerBtn').addEventListener('click',()=>{
+        
+        AchievementsDB = AchievementsDB.filter(el => el.id != AchievementToEdit.id)
+        
+        localStorage.setItem('AchievementsDB',JSON.stringify(AchievementsDB))
+        
+        LoadAchievementsTable()
+
+
+    })
+
+
+    //MODAL CREATE ACHIEVEMENTS//
+
+
+    const TableAchievementsModal_NameInput =
+    document.querySelector('#TableAchievementsModal_NameInput')
+
+    const TableAchievementsModal_DescriptionInput = 
+    document.querySelector('#TableAchievementsModal_DescriptionInput')
+
+    const TableAchievementsModal_Image_Url =
+    document.querySelector('#TableAchievementsModal_Image_Url')
+
+
+    const TableAchievementsModal_XP = 
+    document.querySelector('#TableAchievementsModal_XP')
+
+    const TableAchievementsModal_Rank = 
+    document.querySelector('#TableAchievementsModal_Rank')
+
+    const TableAchievementsModal_FuncIdentifier =
+     document.querySelector('#TableAchievementsModal_FuncIdentifier')
+
+
+    document.querySelector('#TableAchievementsModal_BT').addEventListener('click', () => {
+        TableAchievementsModal_FuncIdentifier.value = ''
+
+        TableAchievementsModal_Rank.style.display = 'none'
+
+        TableAchievementsModal_XP.style.display = 'none'
+    })
+
+
+
+    TableAchievementsModal_FuncIdentifier.addEventListener('change',()=>{
+        
+        console.log('click');
+
+        console.log(TableAchievementsModalEdit_FuncIdentifier.value)
+
+
+        if(TableAchievementsModalEdit_FuncIdentifier.value == 1){
+
+            TableAchievementsModal_XP.style.display = 'block'
+
+            TableAchievementsModal_Rank.style.display = 'none'
+        }
+        if(TableAchievementsModalEdit_FuncIdentifier.value == 2){
+
+            TableAchievementsModal_Rank.style.display = 'block'
+
+            TableAchievementsModal_XP.style.display = 'none'
+
+        }
+
+    })
+    
+  
+document.querySelector('#TableAchievementsModal_SaveBtn').addEventListener('click',()=>{
+        
+    AchievementsDB.push(new Achievements(AchievementsDB,
+            TableAchievementsModal_NameInput.value,TableAchievementsModal_Image_Url.value,
+            TableAchievementsModal_DescriptionInput.value,'',[]
+            ))
+
+LoadAchievementsTable()
+
+
+
+})
+
+    

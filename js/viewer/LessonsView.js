@@ -58,7 +58,7 @@ function LoadRank_Module_Lesson(){
                     if(loggedUser.Lessons.find(el => el == parseInt(Lesson.id))){
                         
                         RankModulesLessonsHtml += `
-                        <button id="${Lesson.id}" 
+                        <button id="${Lesson.id}" value="${Module.rank}"
                         class="OpenLessonModal_btn" 
                         ><img alt="Lesson Image" src="../Media/imgs/IconLesson/${Lesson.urlImage}"></button>
                         <div class="LockedImg"><img alt="Finished" src="../Media/imgs/Icons/Finished.png"></div>`
@@ -68,13 +68,15 @@ function LoadRank_Module_Lesson(){
                     }else if(Lesson.requisitedLessons.every(Rl => loggedUser.Lessons.find(el => el == Rl)))
                     {
                         RankModulesLessonsHtml += `
-                        <button id="${Lesson.id}" class="OpenLessonModal_btn" >
+                        <button id="${Lesson.id}" value="${Module.rank}"
+                        class="OpenLessonModal_btn" >
                         <img alt="Lesson Image" src="../Media/imgs/IconLesson/${Lesson.urlImage}"></button>
                         <div class="LockedImg"><img src="../Media/imgs/Icons/Unlocked.png" alt="Unlocked"></div>` 
 
                     }else{
                         RankModulesLessonsHtml += ` 
-                        <button disabled id="${Lesson.id}" class="OpenLessonModal_btn" >
+                        <button disabled id="${Lesson.id}" value="${Module.rank}"
+                         class="OpenLessonModal_btn" >
                         <img alt="Lesson Image" src="../Media/imgs/IconLesson/${Lesson.urlImage}"></button>
                         <div class="LockedImg"><img src="../Media/imgs/Icons/Locked.png"></div>`
                         
@@ -199,8 +201,9 @@ document.querySelector('#FinishLesson').addEventListener('click', () => {
     console.log(pass);
 
     if(pass){
-        if(!(loggedUser.Lessons.find(L => L == CurrentLesson.id))){
 
+        if(!(loggedUser.Lessons.find(L => L == CurrentLesson.id))){
+        
         loggedUser.Lessons.push(parseInt(CurrentLesson.id))
         
         loggedUser.allXp += CurrentLesson.xp
