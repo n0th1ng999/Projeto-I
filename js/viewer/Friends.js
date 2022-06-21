@@ -10,7 +10,7 @@ function LoadFriends() {
     for (const user of usersDB) {
         if(loggedUser.Friends.find(u => u == user.id)){
         FriendsList.innerHTML +=
-        `<div  class=" bg-white  d-flex card-friend margin-M space-between ">
+        `<div  class=" bg-Orange_S_1  d-flex card-friend margin-M space-between ">
         <div class="d-flex align-items-center gap-L  margin-S">
             <a id="${user.id}" class="VisitProfile">
                 <div class="pfpFrame pfpFrame-Orange">
@@ -59,6 +59,13 @@ function AddFriendButonLoad() {
         loggedUser.Friends.push(btn.id)
         sessionStorage.setItem('loggedUser',JSON.stringify(loggedUser))
         
+        for (const user of usersDB) {
+            if(user.id == loggedUser.id){
+                user.Friends = loggedUser.Friends
+            }
+        }
+
+
         LoadUsers()
 
         LoadFriends()
@@ -72,6 +79,13 @@ function RemoveFriendButonLoad() {
 
         loggedUser.Friends = loggedUser.Friends.filter(friend => friend != btn.id)
         sessionStorage.setItem('loggedUser',JSON.stringify(loggedUser))
+        for (const user of usersDB) {
+            if(user.id == loggedUser.id){
+                user.Friends = loggedUser.Friends
+            }
+        }
+        
+
         LoadUsers()
 
         LoadFriends()
@@ -133,7 +147,7 @@ function LoadUsers(){
                         <h4  class="Heading f-size-M color-Black padding-L">${user.name}</h4>
                     </div>
                     <button id="${user.id}" class="bg-White h-full square AddedFriendButon">
-                        <h4 class="f-size-S Heading color-Black">Added</h4>
+                        <h4 class="f-size-S Heading color-Orange margin-L">Added</h4>
                     </button>
                 </div>
            `

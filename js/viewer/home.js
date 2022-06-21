@@ -95,7 +95,7 @@ usersDB.sort((a , b) => {
     }   
 })
 
-userPosition.innerHTML = usersDB.findIndex(user => user.id == loggedUser.id) + 1
+userPosition.innerHTML = "#" + usersDB.findIndex(user => user.id == loggedUser.id) + 1
 
 
 

@@ -19,15 +19,19 @@ for (const Achievement of AchievementsDB) {
     AchievementDomString = ''
 
     AchievementDomString += 
-    `<a id="${Achievement.id}"><div>
-    <img alt="${Achievement.imageUrl}" src="${Achievement.imageUrl}">
-    <h3>${Achievement.name}</h3> <p>${Achievement.description}</p>`
+    `
+    <div id="${Achievement.id}" class="Achievement flex-column padding-L">
+    <div class="AchievementFrame">
+    <img alt="${Achievement.imageUrl}" src="../Media/imgs/IconAchievements/${Achievement.imageUrl}">
+    </div>
+    <h3>${Achievement.name}</h3> <p>${Achievement.description}</p>
+    `
     
 
     if(UserToVisit.Achievements.find( AchivementID => AchivementID == Achievement.id ))
     AchievementDomString += `<p>Completed</p>`
 
-    AchievementDomString += `</div></a>`
+    AchievementDomString += `</div>`
 
     document.querySelector('#Achievements').innerHTML += AchievementDomString
 
