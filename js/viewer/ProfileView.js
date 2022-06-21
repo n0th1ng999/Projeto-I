@@ -23,6 +23,8 @@ const ProfileImageContainer = document.querySelector('#Profile_Image_Container')
 
 const ProfileNameContainer = document.querySelector('#Profile_Name_Container')
 
+const ProfileRankContainer = document.querySelector('#Profile_Rank_Container')
+
 
 const Course_Completion = document.querySelector('#Course_Completion')
 
@@ -40,11 +42,17 @@ ProfileImageContainer.innerHTML += `<img class="Profile" width="100" src=../Medi
 
 ProfileNameContainer.innerHTML = UserToVisit.name
 
+if(UserToVisit.id == loggedUser.id){
+    ProfileNameContainer.innerHTML += `<div class="edit" ><a href="EditProfile.html"><img src="../Media/imgs/Icons/Pencil.png"></a></div>`
+}
+
+ProfileRankContainer.innerHTML = UserToVisit.rank
+
 //STATISTICS
 
-Course_Completion.innerHTML = Math.round((UserToVisit.Lessons.length / LessonsDB.length * 100 ) * 100) / 100 + '%'
+Course_Completion.innerHTML = `<div class="innercircle">${Math.round((UserToVisit.Lessons.length / LessonsDB.length * 100 ) * 100) / 100 + '%'}</div>`
 
-Course_Completion.style.setProperty("--percentage",UserToVisit.Lessons.length / LessonsDB.length * 100 ) 
+Course_Completion.style.setProperty("--percentage",UserToVisit.Lessons.length / LessonsDB.length * 100 + '%') 
 
 let CurrentModule
 for (const Module of ModulesDB) {
@@ -63,9 +71,9 @@ if(CurrentModule){
         i += 1
     }
     
-    Current_Module_Completion.innerHTML += Math.round( ( i / CurrentModule.lessons.length * 100 ) * 100) / 100 + ' %'
+    Current_Module_Completion.innerHTML = `<div class="innercircle">${Math.round( ( i / CurrentModule.lessons.length * 100 ) * 100) / 100 + ' %'}</div>`
     
-    Current_Module_Completion.style.setProperty("--percentage",( i / CurrentModule.lessons.length * 100 ))
+    Current_Module_Completion.style.setProperty("--percentage",( i / CurrentModule.lessons.length * 100 + '%' ))
 
 }else{
 

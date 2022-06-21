@@ -4,6 +4,7 @@ body{
     flex-direction: column;
     scroll-behavior: smooth;
     align-items: center;
+    
 }
 
 ul{

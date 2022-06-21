@@ -3,16 +3,18 @@ export default class Lessons{
     name = ''
     requisitedLessons = [] // array of requisited Lessons id's
     urlVideo = '' // url 
+    urlImage = ''
+
     xp = 0 // Xp gain of lesson
    
 
-    constructor(LessonsDB,name,requisitedLessons,urlVideo,xp) {
+    constructor(LessonsDB,name,requisitedLessons,urlVideo = '',xp,urlImage = '') {
         this.id = LessonsDB.length == 0 ? 1 : LessonsDB[LessonsDB.length - 1].id + 1;
         this.name = name ;
         this.requisitedLessons = requisitedLessons
         this.urlVideo = urlVideo;
         this.xp = xp;
-        
+        this.urlImage = urlImage;
        
     }
 

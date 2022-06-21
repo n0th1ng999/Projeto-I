@@ -25,8 +25,8 @@ function LoadRank_Module_Lesson(){
     for (const Rank of Ranks) {
     
         RankModulesLessonsHtml += 
-            `<div id="${Rank}"  class="w-full d-flex flex-column" >
-                <h1>${Rank}</h1> `
+            `<div id="${Rank}"  class="w-full d-flex flex-column Rank" >
+                <h1 class="bg-Marroon padding-L f-size-L Heading color-White text-align-center line-height-XXL">${Rank}</h1> `
             
         
         for (const Module of ModulesDB) {
@@ -34,8 +34,10 @@ function LoadRank_Module_Lesson(){
             if(Module.rank == Rank.toLowerCase()){ 
     
                 RankModulesLessonsHtml +=  
-                `<h2>${Module.name}</h2>
-                <div>`
+                `
+                <div class="Module">
+                <h2 class="f-size-M Heading color-Black text-align-center margin-L">${Module.name}</h2>
+                `
     
             for (const Lesson of LessonsDB) {
                 
@@ -43,10 +45,11 @@ function LoadRank_Module_Lesson(){
     
                     RankModulesLessonsHtml += 
                    
-                    ` <div>
+                    ` <div class="Lesson margin-L">
     
-                    <h3>${Lesson.name}</h3>`
-                
+                   
+
+                    `
                     
                     // SE OS REQUESITOS SAO VAZIOS OU SE ESTAO VAZIOS
 
@@ -54,30 +57,42 @@ function LoadRank_Module_Lesson(){
                     
                     if(loggedUser.Lessons.find(el => el == parseInt(Lesson.id))){
                         
-                        RankModulesLessonsHtml += `<button id="${Lesson.id}" class="OpenLessonModal_btn" >${Lesson.name}</button>`
-                        RankModulesLessonsHtml += `<p> Finished </p>`
+                        RankModulesLessonsHtml += `
+                        <button id="${Lesson.id}" 
+                        class="OpenLessonModal_btn" 
+                        ><img alt="Lesson Image" src="../Media/imgs/IconLesson/${Lesson.urlImage}"></button>
+                        <div class="LockedImg"><img alt="Finished" src="../Media/imgs/Icons/Finished.png"></div>`
+
+                       
                         
                     }else if(Lesson.requisitedLessons.every(Rl => loggedUser.Lessons.find(el => el == Rl)))
                     {
-                        RankModulesLessonsHtml += `<button id="${Lesson.id}" class="OpenLessonModal_btn" >${Lesson.name}</button><p> Unlocked </p>` 
+                        RankModulesLessonsHtml += `
+                        <button id="${Lesson.id}" class="OpenLessonModal_btn" >
+                        <img alt="Lesson Image" src="../Media/imgs/IconLesson/${Lesson.urlImage}"></button>
+                        <div class="LockedImg"><img src="../Media/imgs/Icons/Unlocked.png" alt="Unlocked"></div>` 
 
                     }else{
-                        RankModulesLessonsHtml += ` <button disabled id="${Lesson.id}" class="OpenLessonModal_btn" >${Lesson.name}</button><p> Locked </p>`
+                        RankModulesLessonsHtml += ` 
+                        <button disabled id="${Lesson.id}" class="OpenLessonModal_btn" >
+                        <img alt="Lesson Image" src="../Media/imgs/IconLesson/${Lesson.urlImage}"></button>
+                        <div class="LockedImg"><img src="../Media/imgs/Icons/Locked.png"></div>`
                         
                     }
                     
                     
             
 
-                    RankModulesLessonsHtml +=  `</div>  `
+                    RankModulesLessonsHtml +=  ` <h3 class="Heading f-size-XS text-align-center margin-L">${Lesson.name}</h3></div>  `
     
                     }        
                     
                 }
     
-                RankModulesLessonsHtml += `</div>`
+                
 
             }
+            RankModulesLessonsHtml += `</div>`
         }
 
         RankModulesLessonsHtml += `</div>`
@@ -121,13 +136,12 @@ function Load_OpenLessonModal_btns() {
                     exercisesstring += `<label>${Exercise.question}</label>
                     <select id="${Exercise.id}" class="Exercise" >`
 
-                   
-
                     for (const AnswerID in Exercise.Answers) {
 
                         exercisesstring  += `<option value="${AnswerID}">${Exercise.Answers[AnswerID]}</option>`
                         
                     }
+
                     exercisesstring += `</select>` 
                 }else if(Exercise.Answers.length == 1){
                     
@@ -208,10 +222,8 @@ document.querySelector('#FinishLesson').addEventListener('click', () => {
                 localStorage.setItem('usersDB',JSON.stringify(usersDB))
 
                 console.log(usersDB)
-                              
-            }
-            
-            
+                                  
+                }
             }
         }
        

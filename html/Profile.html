@@ -10,35 +10,42 @@
 </head>
 
 <body>
-    <div id="" class="" >
-        <div id="Profile_Image_Container">
+    <div id="" class="w-full d-flex  flex-center flex-column  bg-Yellow Heading" >
+        <div id="Profile_Image_Container" class="margin-L">
 
         </div>
-        <h2 id="Profile_Name_Container" class=""></h2>
+        <div class="margin-L f-size-L d-flex flex-column flex-center text-align-center color-Black ">
+        <h2 id="Profile_Name_Container"  ></h2>
+        <h2 id="Profile_Rank_Container"  class=" f-size-S "></h2>
     </div>
-    <div>
-    <h1>Statistics</h1>
-    <img>
     </div>
-    <table>
-        <thead>
+
+
+    <div class="w-full d-flex flex-column bg-Yellow_S_1 color-Black">
+        <div class="margin-L">
+    <h1 class="w-full text-align-center Heading f-size-S ">Statistics</h1>
+   <div class="d-flex flex-center">
+    <table class="tableStatistics Heading" >
+        <thead class=" f-size-XS " >
         <tr>
-            <th><h3>Current Module 
-                Completion</h3></th>
-                <th><h3>Course
-                    Completion</h3></th>
+            <th>Current Module
+                    Completion</th>
+                <th>Course
+                    Completion</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="f-size-XS">
         <tr>
+            <div class="d-flex flex-center">
             <td>
-                <div>
-                    <h4 id="Current_Module_Completion"></h4>
-                </div>
-            </td>
-            <td>
-                <div>
-                    <h4 id="Course_Completion"></h4>
+              
+                    <div id="Current_Module_Completion" class="Body f-size-XXS LoadRound"></div>
+                </td>
+            </div>
+            <td >
+                <div class="d-flex flex-center">
+               
+                    <div id="Course_Completion" class="Body f-size-XXS LoadRound"></div>
                 </div>
             </td>
         </tr>
@@ -52,7 +59,7 @@
             </td>
             
             <td>
-                <div><p id="XP"></p></div>
+                <div><p id="XP" class="Body"></p></div>
             </td>
 
         </tr>
@@ -62,7 +69,7 @@
             </td>
             
             <td>
-                <div><p id="Lessons_Completed"></p></div>
+                <div><p id="Lessons_Completed" class="Body"></p></div>
             </td>
             
         </tr>
@@ -72,7 +79,7 @@
             </td>
             
             <td>
-                <div><p id="Rank"></p></div>
+                <div><p id="Rank" class="Body"></p></div>
             </td>
 
         </tr>
@@ -82,13 +89,16 @@
             </td>
             
             <td>
-                <div><p id="Levels_Until_Next_Rank"></p></div>
+                <div><p id="Levels_Until_Next_Rank" class="Body"></p></div>
             </td>
             
         </tr>
     </tbody>
     </table>
-    <div>
+    </div>
+    </div>
+    </div>
+    <div class="w-full d-flex flex-column">
         <h2>
             Achievements
         </h2>
@@ -97,25 +107,29 @@
         </div>
         <button id="">See more</button>
     </div>
-    <div>
-        <h2>
-            User position in the top 100 table this week
-        </h2>
-        <table id="Top10Table">
-            <thead>
+    <div class="box-Shadow-div w-full">
+
+        <div class="bg-Purple d-flex">
+            <h2 class="Heading f-size-M color-White margin-L">Top 10</h2>
+        </div>
+    
+        <table class="table text-align-center color-Black" id="Top10Table">
+            <thead class="Heading f-size-S bg-white">
                 <tr>
-                    <th>Place</th>
-                    <th>User</th>
-                    <th>XP</th>
+                    <th scope="col" class="Heading padding-M">Place</th>
+                    <th scope="col" class="Heading padding-M">User</th>
+                    <th scope="col" class="Heading padding-M">XP</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="Body f-size-XXS">
                 
             </tbody>
         </table>
-    </div>
+        <div>
+            <a href="Leaderboard.html"><button value="Top10Table" class="LoadBigTable  Heading f-size-S color-Black padding-S">See more</button></a>
+        </div>
+        </div>
     
-    <button>Tables</button>
 
 </body>
 <script type="Module" src="../js/init.js"></script>
