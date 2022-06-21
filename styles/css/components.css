@@ -191,7 +191,7 @@
 
 .table{
   width: 100%;
-  border:0;
+ 
   background: #FDE7FF;
   border-collapse:collapse; 
   justify-content: center;
@@ -399,8 +399,8 @@
 .edit img{ 
   height: 60px;
   position: relative;
-  bottom: 250px;
-  right: -150px;
+  bottom: 155px;
+  right: -80px;
 }
 
 .innercircle{
@@ -491,8 +491,8 @@
     .edit img{ 
       height: 120px;
       position: relative;
-      bottom: 400px;
-      right: -300px;
+      bottom: 310px;
+      right: -200px;
     }
     
 
