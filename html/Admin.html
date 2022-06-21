@@ -89,13 +89,13 @@
 
         <button type="button" class="btn btn-success" data-bs-toggle="modal" 
         data-bs-target="#CreateModal_Exercise" id="Exercises_CreateBtn">
-          Create Exercise 
+        Create Exercise 
         </button>
         <br>
         <div class="form-group ">
-          <label for="Daily_XP"></label>
-          <input type="number" id="Daily_XP" placeholder="XP amount" class="form-control">
-          <button class="btn btn-primary" id="Daily_XP_btn" >Change</button>
+        <label for="Daily_XP"></label>
+        <input type="number" id="Daily_XP" placeholder="XP amount" class="form-control">
+        <button class="btn btn-primary" id="Daily_XP_btn" >Change</button>
         </div>
     
       </div>
@@ -316,134 +316,134 @@
     </div>
   </div>
 
-    <!--  Create Exercise Modal -->
-    <div class="modal fade " id="CreateModal_Exercise" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="CreateModal_ExerciseLabel">Create Exercise</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <!--  Create Exercise Modal -->
+  <div class="modal fade " id="CreateModal_Exercise" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="CreateModal_ExerciseLabel">Create Exercise</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group m-2">
+            <label for="CreateModal_Exercise_name">Exercise Question</label>
+            <input type="text" class="form-control" id="CreateModal_Exercise_name" placeholder="Exercise Question">
           </div>
-          <div class="modal-body">
-            <div class="form-group m-2">
-              <label for="CreateModal_Exercise_name">Exercise Question</label>
-              <input type="text" class="form-control" id="CreateModal_Exercise_name" placeholder="Exercise Question">
-            </div>
-            
-            <br>
-            <div class="form-group m-2">
-              <label for="CreateModal_Exercise_Answer_input">Create Answer</label>
-              <input 
-                type="text"
-                class="form-control"
-                id="CreateModal_Exercise_Answer_input" >
-              <br>
-              <button id="CreateModal_Exercise_Answer_btn" class="btn btn-success">Add Answer</button>
-              <br>
-              <br>
-              <table id="TableQuestions_Create" class="table table-active">
-                <thead>
-                  <th>ID</th>
-                  <th>Question</th>
-                  <th>Action</th>
-                </thead>
-                <tbody>
-
-                </tbody>
-              </table>
-            
-            
-          </div>
+          
           <br>
-            <div class="form-group m-2">
-              <label for="CreateModal_Exercise_CorrectAnswer">Correct Answer</label>
-              <select id="CreateModal_Exercise_CorrectAnswer"  class="form-control" placeholder="Select A Answer">
-
-              </select>
-            </div>
-  
+          <div class="form-group m-2">
+            <label for="CreateModal_Exercise_Answer_input">Create Answer</label>
+            <input 
+              type="text"
+              class="form-control"
+              id="CreateModal_Exercise_Answer_input" >
             <br>
-            <div class="form-group m-2">
-              <label for="CreateModal_Exercise_Lesson">Lesson</label>
-              <select id="CreateModal_Exercise_Lesson" class="form-control" placeholder="Select A Answer">
+            <button id="CreateModal_Exercise_Answer_btn" class="btn btn-success">Add Answer</button>
+            <br>
+            <br>
+            <table id="TableQuestions_Create" class="table table-active">
+              <thead>
+                <th>ID</th>
+                <th>Question</th>
+                <th>Action</th>
+              </thead>
+              <tbody>
 
-              </select>
-            </div>
-          <div class="modal-footer">
-            <button id="CreateModal_Exercise_CloseBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-  
-            <button id="CreateModal_Exercise_Savebtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Create</button>
+              </tbody>
+            </table>
+          
+          
+        </div>
+        <br>
+          <div class="form-group m-2">
+            <label for="CreateModal_Exercise_CorrectAnswer">Correct Answer</label>
+            <select id="CreateModal_Exercise_CorrectAnswer"  class="form-control" placeholder="Select A Answer">
+
+            </select>
           </div>
+
+          <br>
+          <div class="form-group m-2">
+            <label for="CreateModal_Exercise_Lesson">Lesson</label>
+            <select id="CreateModal_Exercise_Lesson" class="form-control" placeholder="Select A Answer">
+
+            </select>
+          </div>
+        <div class="modal-footer">
+          <button id="CreateModal_Exercise_CloseBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+          <button id="CreateModal_Exercise_Savebtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Create</button>
         </div>
       </div>
     </div>
-    </div>
+  </div>
+  </div>
 
-    <!--  Edit Exercise Modal -->
-    <div class="modal fade " id="EditModal_Exercise" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="EditModal_ExerciseLabel">Edit Exercise</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <!--  Edit Exercise Modal -->
+  <div class="modal fade " id="EditModal_Exercise" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="EditModal_ExerciseLabel">Edit Exercise</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group m-2">
+            <label for="EditModal_Exercise_name">Exercise Question</label>
+            <input type="text" class="form-control" id="EditModal_Exercise_name" placeholder="Exercise Question">
           </div>
-          <div class="modal-body">
-            <div class="form-group m-2">
-              <label for="EditModal_Exercise_name">Exercise Question</label>
-              <input type="text" class="form-control" id="EditModal_Exercise_name" placeholder="Exercise Question">
-            </div>
-            
-            <br>
-            <div class="form-group m-2">
-              <label for="EditModal_Exercise_Answer_input">Create Answer</label>
-              <input 
-                type="text"
-                class="form-control"
-                id="EditModal_Exercise_Answer_input" >
-              <br>
-              <button id="EditModal_Exercise_Answer_btn" class="btn btn-success">Add Answer</button>
-              <br>
-              <br>
-              <table id="TableQuestions_Edit" class="table table-active">
-                <thead>
-                  <th>ID</th>
-                  <th>Question</th>
-                  <th>Action</th>
-                </thead>
-                <tbody>
-
-                </tbody>
-              </table>
-            
-            
-          </div>
+          
           <br>
-            <div class="form-group m-2">
-              <label for="EditModal_Exercise_CorrectAnswer">Correct Answer</label>
-              <select id="EditModal_Exercise_CorrectAnswer"  class="form-control" placeholder="Select A Answer">
-
-              </select>
-            </div>
-  
+          <div class="form-group m-2">
+            <label for="EditModal_Exercise_Answer_input">Create Answer</label>
+            <input 
+              type="text"
+              class="form-control"
+              id="EditModal_Exercise_Answer_input" >
             <br>
-            <div class="form-group m-2">
-              <label for="EditModal_Exercise_Lesson">Lesson</label>
-              <select id="EditModal_Exercise_Lesson" class="form-control" placeholder="Select A Answer">
+            <button id="EditModal_Exercise_Answer_btn" class="btn btn-success">Add Answer</button>
+            <br>
+            <br>
+            <table id="TableQuestions_Edit" class="table table-active">
+              <thead>
+                <th>ID</th>
+                <th>Question</th>
+                <th>Action</th>
+              </thead>
+              <tbody>
 
-              </select>
-            </div>
-          <div class="modal-footer">
-            <button id="EditModal_Exercise_CloseBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-  
-            <button id="EditModal_Exercise_Savebtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Edit</button>
+              </tbody>
+            </table>
+          
+          
+        </div>
+        <br>
+          <div class="form-group m-2">
+            <label for="EditModal_Exercise_CorrectAnswer">Correct Answer</label>
+            <select id="EditModal_Exercise_CorrectAnswer"  class="form-control" placeholder="Select A Answer">
+
+            </select>
           </div>
+
+          <br>
+          <div class="form-group m-2">
+            <label for="EditModal_Exercise_Lesson">Lesson</label>
+            <select id="EditModal_Exercise_Lesson" class="form-control" placeholder="Select A Answer">
+
+            </select>
+          </div>
+        <div class="modal-footer">
+          <button id="EditModal_Exercise_CloseBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+          <button id="EditModal_Exercise_Savebtn" type="button" class="btn btn-primary" data-bs-dismiss="modal">Edit</button>
         </div>
       </div>
     </div>
-    </div>
-    
-   
+  </div>
+  </div>
   
+  
+
 
 </body>
 

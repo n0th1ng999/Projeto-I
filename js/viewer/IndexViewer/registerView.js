@@ -6,11 +6,11 @@ const usersDB = JSON.parse(usersDBjson)
 console.log(usersDB);
 
 /* OPEN MODAL */
-document.querySelector('#Register_Button').addEventListener('click', ()=>{
+document.querySelectorAll('.Register_Button').forEach(btn => btn.addEventListener('click', ()=>{
     
     document.querySelector('#Sign-Up-Modal').style.display = 'flex';
     
-})
+}))
 
 document.querySelector('#Sign-Up-Modal_Close').addEventListener('click', ()=>{
     
