@@ -265,9 +265,156 @@
   bottom: -25px;
 }
 
+#Profile_Image_Container{
+  width: 90px;
+  aspect-ratio: 1/1;
+  background: white;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid var(--Purple);
+}
+
+#Profile_Image_Container img{
+  width: 60px;
+  aspect-ratio: 1/1;
+}
+
+.OpenLessonModal_btn{
+  padding: 0;
+  border-radius: 90px;
+  width: 90px;
+  aspect-ratio: 1/1;
+  border: 10px solid var(--Marroon);
+  box-shadow: 0px 0px 0px 15px var(--Marroon_S_2);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+
+}
+
+.OpenLessonModal_btn img {
+  align-self: center;
+  border-radius: 100%;
+  width: 70px;
+  aspect-ratio: 1/1;
+}
+
+
+.Module{
+  
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+}
+
+.Module h2{
+  width: 100%;
+}
+
+.Lesson{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.LockedImg{
+  padding: 0;
+  height: 0;
+  width: 0;
+  position: relative;
+  top: -10px;
+  right: -60px;
+
+}
+
+.LockedImg Img{
+  height: 40px;
+}
+
+.Rank{
+  color:var(--Black)
+}
+
+.Module{
+  box-shadow: 0px 12px 16px 0px #0000000D;
+}
+
+.Rank .Module:nth-child(n){
+  background-color: var(--Marroon_S_2);
+
+}
+
+.Rank .Module:nth-child(2n){
+  background-color: var(--Marroon_S_3);
+
+}
+
+.Rank .Module:nth-child(3n){
+  background-color: var(--Marroon_S_4);
+
+}
+
+.LoadRound{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  width: 100px;
+  aspect-ratio: 1/1;
+  background: conic-gradient(from -90deg at 50% 50%, 
+  var(--Purple) 0%, 
+  var(--Purple) var(--percentage),
+   #00000000 var(--percentage), 
+   #00000000 100%, 
+   #00000000 100%);
+}
+
+
+
+.tableStatistics {
+  border-spacing: 15px;
+}
+
+.edit{ 
+  position: flex;
+  width: 0;
+  height: 0;
+}
+
+.edit img{ 
+  height: 60px;
+  position: relative;
+  bottom: 250px;
+  right: -150px;
+}
+
+.innercircle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--Yellow_S_1);
+  width: 80px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+
+}
 
 @media only screen and (min-width: 1368px) {
     /* Avatar icon Landing Page*/
+
+    .LoadRound{
+      width: 200px;
+    }
+
+    
+
+    .innercircle{
+      width: 170px;
+    }
+
     .Avatar{
         height: 200px;
     }
@@ -280,5 +427,62 @@
      
       left: -80px;
     }
+
+    .OpenLessonModal_btn{
+
+      aspect-ratio: 1/1;
+      border-radius: 220px;
+      width: 220px;
+      height: 220px;
+    }
+
+    
+.OpenLessonModal_btn img {
+    width: 90%;
+  }
+    
+    .LockedImg{
+      top: -40px;
+      right: -120px;
+    }
+    
+    .LockedImg Img{
+      height: 60px;
+      
+    }
+
+
+    #Profile_Image_Container{
+      width: 220px;
+      aspect-ratio: 1/1;
+      background: white;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 10px solid var(--Purple);
+    }
+
+   
+    #Profile_Image_Container img{
+      width: 180px;
+      aspect-ratio: 1/1;
+    }
+    
+    .edit{ 
+      position: flex;
+      width: 0;
+      height: 0;
+    }
+
+    .edit img{ 
+      height: 120px;
+      position: relative;
+      bottom: 400px;
+      right: -300px;
+    }
+    
+
+
 }
 
