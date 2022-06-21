@@ -13,24 +13,25 @@
    
    
 
+<nav>
 
-<div class="container w-full" >
-    <div class="bg-Purple_S_4">
-        <div id="purpleArrowsSet1">
-            <img src="..\Media\imgs\Icons\purpleArrow1.svg">
-            <img src="..\Media\imgs\Icons\purpleArrow2.svg">
-            <img src="..\Media\imgs\Icons\purpleArrow3.svg">
-        </div> 
-        <h1 class="Heading f-size-L color-Purple">Classification</h1>
-        <h1 class="Heading f-size-L color-Black">Tables</h1>
-        <div id="purpleArrowsSet2">
-            <img src="..\Media\imgs\Icons\purpleArrow1Set2.svg">
-            <img src="..\Media\imgs\Icons\purpleArrow2Set2.svg">
-            <img src="..\Media\imgs\Icons\purpleArrow1Set2.svg">
-            <img src="..\Media\imgs\Icons\purpleArrow3Set2.svg">
+</nav>
+
+    <div class="bg-Purple_S_4 box-Shadow-div w-full">
+        <div  class="margin-L d-flex">
+            
+            <div>
+                <div class=" arrowTitle">
+                    <img src="..\Media\imgs\Icons\PurpleArrow.svg">
+                </div>
+                <h1 class="Heading f-size-XL color-Purple">Classification</h1>
+                <h1 class="Heading f-size-XL color-Black">Tables</h1>
+            </div>
+       
         </div>
     </div>
-    
+
+    <div class="box-Shadow-div w-full">
     <div class="bg-Purple padding-L">
         <h2 class=" Heading f-size-M color-White">Top 10 this week</h2>
     </div>
@@ -48,9 +49,11 @@
         </tbody>
     </table>
     <div>
-        <button value="Top10Table_Week" class="LoadBigTable">See more</button>
+        <button value="Top10Table_Week" class="LoadBigTable  Heading f-size-S color-Black padding-S">See more</button>
+    </div>
     </div>
 
+    <div class="box-Shadow-div w-full">
         <div class="bg-Purple padding-L">
             <h2 class="Heading f-size-M color-White"> Top 10 table this week within <span class="InsertUserRank"></span></h2>
         </div>
@@ -69,64 +72,70 @@
 
         </table>
         <div>
-            <button value="Top10Table_Week_Rank" class="LoadBigTable">See more</button>
+            <button value="Top10Table_Week_Rank" class="LoadBigTable  Heading f-size-S color-Black padding-S">See more</button>
         </div>
-        <div class="bg-Purple  padding-L">
-            <h2 class="Heading f-size-M color-White">Top 10</h2>
-        </div>
+    </div>
 
-        <table class="table text-align-center color-Black" id="Top10Table">
-            <thead class="Heading f-size-S bg-white">
-                <tr>
-                    <th scope="col" class="Heading padding-M">Place</th>
-                    <th scope="col" class="Heading padding-M">User</th>
-                    <th scope="col" class="Heading padding-M">XP</th>
-                </tr>
-            </thead>
-            <tbody class="Body f-size-XXS">
-                
-            </tbody>
-        </table>
-        <div>
-            <button value="Top10Table" class="LoadBigTable">See more</button>
-        </div>
+    <div class="box-Shadow-div w-full">
+    <div class="bg-Purple  padding-L">
+        <h2 class="Heading f-size-M color-White">Top 10</h2>
+    </div>
 
-        <div class="bg-Purple  padding-L">
-            <h2 class="Heading f-size-M color-White">Top 10 on <span class="InsertUserRank"></span></h2>
-        </div>
+    <table class="table text-align-center color-Black" id="Top10Table">
+        <thead class="Heading f-size-S bg-white">
+            <tr>
+                <th scope="col" class="Heading padding-M">Place</th>
+                <th scope="col" class="Heading padding-M">User</th>
+                <th scope="col" class="Heading padding-M">XP</th>
+            </tr>
+        </thead>
+        <tbody class="Body f-size-XXS">
+            
+        </tbody>
+    </table>
+    <div>
+        <button value="Top10Table" class="LoadBigTable  Heading f-size-S color-Black padding-S">See more</button>
+    </div>
+    </div>
+    
+    <div class="box-Shadow-div w-full">
+    <div class="bg-Purple  padding-L ">
+        <h2 class="Heading f-size-M color-White">Top 10 on <span class="InsertUserRank"></span></h2>
+    </div>
 
-        <table class="table text-align-center color-Black" id="Top10Table_Rank">
-            <thead class="Heading f-size-S bg-white">
-                <tr>
-                    <th scope="col" class="Heading padding-M">Place</th>
-                    <th scope="col" class="Heading padding-M">User</th>
-                    <th scope="col" class="Heading padding-M">XP</th>
-                </tr>
-            </thead>
-            <tbody class="Body f-size-XXS">
-                
-            </tbody>
-        </table>
-        <div>
-            <button value="Top10Table_Rank" class="LoadBigTable">See more</button>
-        </div>
+    <table class="table text-align-center color-Black" id="Top10Table_Rank">
+        <thead class="Heading f-size-S bg-white">
+            <tr>
+                <th scope="col" class="Heading padding-M">Place</th>
+                <th scope="col" class="Heading padding-M">User</th>
+                <th scope="col" class="Heading padding-M">XP</th>
+            </tr>
+        </thead>
+        <tbody class="Body f-size-XXS">
+            
+        </tbody>
+    </table>
+    <div>
+        <button value="Top10Table_Rank" class="LoadBigTable Heading f-size-S color-Black padding-S">See more</button>
+    </div>
+    </div>
+    
         
-        
 
         
-        <div class="d-flex space-between">
-            <div>
-            <h2 class="Heading f-size-S color-Black">You have <span class="color-Purple"><!--User XP--> XP</span> Continue</h2>
+        <div class="d-flex space-between w-full">
+            <div class="padding-L">
+            <h2 class="Heading f-size-S color-Black">You have <span id="UserXP" class="color-Purple"><!--User XP--> XP</span> Continue</h2>
             <h2 class="Heading f-size-S color-Black">your lessons to get more</h2>
         </div>
 
-            <a class="padding-L btn-Arrow bg-Purple" href="Lessons.html">
+            <a class="padding-L btn-Arrow bg-Purple flex-center" href="Lessons.html">
                 <svg width="143" height="184" viewBox="0 0 143 184" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5.59825 29.126L83.6912 89.6731C84.2004 90.0679 84.2089 90.834 83.7086 91.2399L5.21132 154.939C-0.270778 159.388 -0.746572 167.585 4.18399 172.638L11.6363 180.275C15.922 184.668 22.8309 185.119 27.6513 181.321L141.987 91.2439C142.5 90.8395 142.494 90.0595 141.974 89.6632L27.6437 2.46033C22.8116 -1.22522 15.9871 -0.716599 11.7547 3.64452L4.33958 11.2852C-0.642252 16.4186 -0.0549707 24.7429 5.59825 29.126Z" fill="white"/>
                 </svg>  
             </a>
         </div>
-    </div> 
+    
 
 
 
@@ -143,26 +152,27 @@
 
                     <h1 class="Heading f-size-M color-White" id="Top50TableTitle"></h1>
                
-                <button id="Leaderboard-Modal_Close" class="closeButton">X</button>
+                <button id="Leaderboard-Modal_Close" class="closeButton Heading f-size-M color-White">X</button>
 
             </div>
 
-            <div class="Custom_Modal_Body margin-L gap-M" >
+            <div class="Custom_Modal_Body gap-M" >
 
                 <div>
                     
-                    <table class="table" id="Top50Table">
-                        <thead>
+                    <table class="table text-align-center color-Black" id="Top50Table">
+                        <thead class="Heading f-size-S bg-white">
                             <tr>
                                 <th>Place</th>
-                            <th>User</th>
-                            <th>XP</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                    </tbody>
-                </table>
+                                <th>User</th>
+                                <th>XP</th>
+                            </tr>
+                        </thead>
+                        <tbody  class="Body f-size-XXS">
+                            
+                        </tbody>
+                    </table>
+
                 </div>
             
 

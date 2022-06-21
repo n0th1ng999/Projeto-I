@@ -45,8 +45,9 @@ function LoadRank_Module_Lesson(){
                    
                     ` <div>
     
-                    <h3>${Lesson.name}</h3>`
-                
+                    <h3>${Lesson.name}</h3>
+
+                    <img alt="Lesson Image" src="../Media/imgs/IconLesson/${Lesson.urlImage}"> `
                     
                     // SE OS REQUESITOS SAO VAZIOS OU SE ESTAO VAZIOS
 
@@ -55,6 +56,7 @@ function LoadRank_Module_Lesson(){
                     if(loggedUser.Lessons.find(el => el == parseInt(Lesson.id))){
                         
                         RankModulesLessonsHtml += `<button id="${Lesson.id}" class="OpenLessonModal_btn" >${Lesson.name}</button>`
+
                         RankModulesLessonsHtml += `<p> Finished </p>`
                         
                     }else if(Lesson.requisitedLessons.every(Rl => loggedUser.Lessons.find(el => el == Rl)))
@@ -121,13 +123,12 @@ function Load_OpenLessonModal_btns() {
                     exercisesstring += `<label>${Exercise.question}</label>
                     <select id="${Exercise.id}" class="Exercise" >`
 
-                   
-
                     for (const AnswerID in Exercise.Answers) {
 
                         exercisesstring  += `<option value="${AnswerID}">${Exercise.Answers[AnswerID]}</option>`
                         
                     }
+
                     exercisesstring += `</select>` 
                 }else if(Exercise.Answers.length == 1){
                     
@@ -208,10 +209,8 @@ document.querySelector('#FinishLesson').addEventListener('click', () => {
                 localStorage.setItem('usersDB',JSON.stringify(usersDB))
 
                 console.log(usersDB)
-                              
-            }
-            
-            
+                                  
+                }
             }
         }
        

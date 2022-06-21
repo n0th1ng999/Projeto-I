@@ -199,7 +199,7 @@
 
 
 .table tr:nth-child(even) {
-  background-color: #FCD6FF;
+  background-color: var(--Purple_S_3);
 }
 
 .btn-Arrow{
@@ -220,6 +220,26 @@
 
 .btn-Arrow:hover svg path{
  fill: var(--Purple);
+}
+
+.LoadBigTable{
+  width: 100%;
+  border: 0;
+  background: var(--Purple_S_2);
+}
+
+.LoadBigTable:focus{
+  width: 100%;
+  background: var(--Purple);
+
+}
+
+.arrowTitle{
+  height: 0;
+  width: 0;
+  position: relative;
+  top: 50%;
+  left: -80px;
 }
 
  #ProgressBar{
@@ -254,6 +274,11 @@
  
     .Pill{
       margin-bottom: 50px;
+    }
+
+    .arrowTitle{
+     
+      left: -80px;
     }
 }
 

@@ -599,16 +599,17 @@ const lesson_create_xp = document.querySelector('#lesson_create_xp')
 
 const lesson_create_videoUrl = document.querySelector('#lesson_create_videoUrl')
 
+const lesson_create_ImageUrl = document.querySelector('#lesson_create_ImageUrl')
+
 const lesson_create_Savebtn = document.querySelector('#lesson_create_Savebtn')
 
 
 lesson_create_Savebtn.addEventListener('click', () => {
 
     if(lesson_create_name.value){
-    
-
-    LessonsDB.push(new Lessons(LessonsDB,lesson_create_name.value,[],lesson_create_videoUrl.value,lesson_create_xp.value))
-    
+            if(lesson_create_ImageUrl.files[0] && lesson_create_videoUrl.files[0]){
+                LessonsDB.push(new Lessons(LessonsDB,lesson_create_name.value,[],lesson_create_videoUrl.files[0].name,lesson_create_xp.value,lesson_create_ImageUrl.files[0].name))
+                
     
 
     lesson_create_name.value = ''
@@ -617,8 +618,13 @@ lesson_create_Savebtn.addEventListener('click', () => {
 
     lesson_create_videoUrl.value = ''
 
+    lesson_create_ImageUrl.value = ''
+
     ModulesTable()
+    }else{
+        alert('Missing Files')
     }
+}
 })
 
 
@@ -635,6 +641,10 @@ const EditModal_Lesson_XP = document.querySelector('#EditModal_Lesson_XP')
 const EditModal_Lesson_Url = document.querySelector('#EditModal_Lesson_Url')
 
 const EditModal_Lesson_CurrentUrl = document.querySelector('#EditModal_Lesson_CurrentUrl')
+
+const EditModal_Image_Url = document.querySelector('#EditModal_Image_Url')
+
+const EditModal_Lesson_CurrentUrl_Image = document.querySelector('#EditModal_Lesson_CurrentUrl_Image')
 
 /* Buttons / DELETE / SAVE */
 const EditModal_Lesson_DelBtn = document.querySelector('#EditModal_Lesson_DelBtn')
@@ -662,6 +672,15 @@ function OpenEditLessonModal() {
                     EditModal_Lesson_CurrentUrl.innerHTML += Lesson.urlVideo
                 }
 
+                if(Lesson.urlImage){
+
+                    EditModal_Lesson_CurrentUrl_Image.innerHTML = '<strong>Current Image File:</strong> '
+
+                    EditModal_Lesson_CurrentUrl_Image.innerHTML += Lesson.urlImage
+
+
+                }
+
                 LessonToEdit = Lesson
 
             }
@@ -680,7 +699,12 @@ EditModal_Lesson_SaveBtn.addEventListener('click', () => {
 
     if (EditModal_Lesson_Url.value) {
 
-        LessonToEdit.urlVideo = EditModal_Lesson_Url.value
+        LessonToEdit.urlVideo = EditModal_Lesson_Url.files[0].name;
+    }
+
+    if (EditModal_Image_Url.value) {
+
+        LessonToEdit.urlImage = EditModal_Image_Url.files[0].name;
     }
 
     for (let Lesson of LessonsDB) {
