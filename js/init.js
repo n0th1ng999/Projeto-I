@@ -62,6 +62,30 @@ let MissionsDBjson = localStorage.getItem('MissionsDB')
             usersDB.push(new users(usersDB,'User28','Password','Email@mail.com'))
             usersDB.push(new users(usersDB,'User29','Password','Email@mail.com'))
             usersDB.push(new users(usersDB,'User30','Password','Email@mail.com'))
+
+            usersDB[1].allXp = 150
+            usersDB[2].allXp = 90
+            usersDB[3].allXp = 80
+            usersDB[4].allXp = 60
+            usersDB[5].allXp = 100
+            usersDB[6].allXp = 80
+            usersDB[7].allXp = 60
+            usersDB[8].allXp = 50
+            usersDB[9].allXp = 100
+            usersDB[10].weekXp = 120
+            usersDB[1].weekXp = 60
+            usersDB[2].weekXp = 40
+            usersDB[3].weekXp = 65
+            usersDB[4].weekXp = 45
+            usersDB[5].weekXp = 25
+            usersDB[6].weekXp = 65
+            usersDB[7].weekXp = 45
+            usersDB[8].weekXp = 25
+            usersDB[9].weekXp = 100
+            usersDB[10].weekXp = 120
+            
+
+
             console.log(usersDB);
 
             /* pass usersDB to string */
