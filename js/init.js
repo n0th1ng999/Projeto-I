@@ -73,6 +73,9 @@ let MissionsDBjson = localStorage.getItem('MissionsDB')
             usersDB[8].allXp = 50
             usersDB[9].allXp = 100
             usersDB[10].weekXp = 120
+            usersDB[1].rank = 'beginner'
+            usersDB[2].rank = 'pro'
+            usersDB[3].rank = 'intermediate'
             usersDB[1].weekXp = 60
             usersDB[2].weekXp = 40
             usersDB[3].weekXp = 65
@@ -104,11 +107,11 @@ let MissionsDBjson = localStorage.getItem('MissionsDB')
             const LessonsDB =  []
             
             /* push Lessons to LessonsDB */
-            LessonsDB.push(new Lessons(LessonsDB,'Introduction to Grammar Rules',[],'',20))
-            LessonsDB.push(new Lessons(LessonsDB,'Alphabet',[],'',20))
-            LessonsDB.push(new Lessons(LessonsDB,'Numbers',[],'',20))
-            LessonsDB.push(new Lessons(LessonsDB,'Day-to-Day Words',[],'',20))
-            LessonsDB.push(new Lessons(LessonsDB,'Colours',[],'',20))
+            LessonsDB.push(new Lessons(LessonsDB,'Introduction to Grammar Rules',[],'Intro to ASL Grammar Rules for Beginners.mp4',20))
+            LessonsDB.push(new Lessons(LessonsDB,'Alphabet',[1],'',20))
+            LessonsDB.push(new Lessons(LessonsDB,'Numbers',[2],'',20))
+            LessonsDB.push(new Lessons(LessonsDB,'Day-to-Day Words',[3],'',20))
+            LessonsDB.push(new Lessons(LessonsDB,'Colours',[4],'',20))
             LessonsDB.push(new Lessons(LessonsDB,'Greetings and Partings',[],'',20))
             LessonsDB.push(new Lessons(LessonsDB,'Phrases for Introductions',[],'',20))
             LessonsDB.push(new Lessons(LessonsDB,'Questions for When You`re Meeting Someone + How to Answer Them',[],'',20))

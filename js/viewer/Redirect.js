@@ -27,7 +27,9 @@ for (const Module of ModulesDB) {
         if(loggedInUser.Lessons[loggedInUser.Lessons.length - 1])
 
         if(loggedInUser.Lessons[loggedInUser.Lessons.length - 1] == lesson){
+            
             console.log(Module.rank)
+
             if(Module.rank == 'pro')
                 loggedInUser.rank = Module.rank
             if(Module.rank == 'intermediate' && loggedInUser.rank != 'pro')
@@ -79,11 +81,12 @@ for (const Achievement of AchievementsDB) {
     if(Achievement.funcIdentifier == 1){
         
         let prop = Achievement.funcProps[0]
-        
+        console.log(prop)
+
         if(prop == "allXp"){
             prop = loggedInUser.allXp
         } 
-        else if(prop == "weekXp"){
+        else if(prop == "weekXP"){
             prop = loggedInUser.weekXp
         } else {
             console.log('Invalid prop')
@@ -98,21 +101,23 @@ for (const Achievement of AchievementsDB) {
         
         
         let target = Achievement.funcProps[0]
-
+        console.log(target)
+        
         if(target == "beginner"){
-            target = loggedInUser.rank
+ 
+            Achievement_Rank(target)
         } 
         else if(target == "intermediate"){
-            target = loggedInUser.rank
 
+            Achievement_Rank(target)
         } else if(target == "pro"){
-            target = loggedInUser.rank
+
+            Achievement_Rank(target)
             
         }else {
             console.log('Invalid prop')
         }
 
-        Achievement_Rank(target)
     }
 
 }

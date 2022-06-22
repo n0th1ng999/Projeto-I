@@ -45,7 +45,7 @@ function LoadRank_Module_Lesson(){
     
                     RankModulesLessonsHtml += 
                    
-                    ` <div class="Lesson margin-L">
+                    ` <div class="Lesson padding-L">
     
                    
 
